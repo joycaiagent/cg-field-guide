@@ -1,7 +1,9 @@
 {
-  "name": "CG Landscape Field Guide",
-  "short_name": "CG Field",
+  "name": "CG Landscape Plant Health",
+  "short_name": "Plant Health",
   "description": "Plant & pest ID for CG Landscape field crews",
+  "categories": ["productivity", "business"],
+  "screenshots": [],
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#1a5c5c",

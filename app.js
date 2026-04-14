@@ -59,67 +59,33 @@
   const takePhotoBtn = $('take-photo-btn');
   const uploadBtn   = $('upload-btn');
   const fileInput   = $('file-input');
+  const cameraInput = $('camera-input');
 
+  // Take Photo → opens environment camera directly (reliable on iOS & Android)
   if (takePhotoBtn) {
-    takePhotoBtn.addEventListener('click', toggleCamera);
-  }
-  if (uploadBtn) {
-    uploadBtn.addEventListener('click', () => fileInput && fileInput.click());
-  }
-  if (fileInput) {
-    fileInput.addEventListener('change', e => {
-      if (e.target.files && e.target.files[0]) {
-        handleFile(e.target.files[0]);
-      }
+    takePhotoBtn.addEventListener('click', () => {
+      if (cameraInput) cameraInput.click();
     });
   }
 
-  async function toggleCamera() {
-    const videoEl = $('camera-video');
-    if (stream) {
-      stopCamera();
-      return;
-    }
-    try {
-      stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
-      videoEl.srcObject = stream;
-      videoEl.classList.remove('hidden');
-      if (takePhotoBtn) takePhotoBtn.textContent = '📷 Capture';
-    } catch (err) {
-      statusMsg.textContent = 'Camera access denied. Try uploading a photo instead.';
-    }
+  // Upload Photo → opens gallery picker
+  if (uploadBtn) {
+    uploadBtn.addEventListener('click', () => {
+      if (fileInput) fileInput.click();
+    });
   }
 
-  function stopCamera() {
-    if (stream) {
-      stream.getTracks().forEach(t => t.stop());
-      stream = null;
-    }
-    const videoEl = $('camera-video');
-    if (videoEl) {
-      videoEl.srcObject = null;
-      videoEl.classList.add('hidden');
-    }
-    if (takePhotoBtn) takePhotoBtn.textContent = '📷 Take Photo';
+  // Camera input (environment camera — iOS/Android)
+  if (cameraInput) {
+    cameraInput.addEventListener('change', e => {
+      if (e.target.files && e.target.files[0]) handleFile(e.target.files[0]);
+    });
   }
 
-  function captureFrame() {
-    const videoEl = $('camera-video');
-    if (!videoEl || !stream) return null;
-    const canvas = document.createElement('canvas');
-    canvas.width  = videoEl.videoWidth  || 640;
-    canvas.height = videoEl.videoHeight || 480;
-    canvas.getContext('2d').drawImage(videoEl, 0, 0);
-    stopCamera();
-    return canvas.toDataURL('image/jpeg', 0.8);
-  }
-
-  // Capture button in video view
-  const captureBtn = $('capture-btn');
-  if (captureBtn) {
-    captureBtn.addEventListener('click', () => {
-      const dataUrl = captureFrame();
-      if (dataUrl) showPreview(dataUrl);
+  // Gallery input (user picks photo)
+  if (fileInput) {
+    fileInput.addEventListener('change', e => {
+      if (e.target.files && e.target.files[0]) handleFile(e.target.files[0]);
     });
   }
 
@@ -138,12 +104,11 @@
       previewImg.src = dataUrl;
       previewImg.classList.remove('hidden');
     }
-    stopCamera();
     identifyPlant(dataUrl);
   }
 
   // ── Plant identification (keyword match + PlantNet fallback) ──
-  const PLANINET_API_KEY = 'demo';  // Replace with real key for production
+  const PLANINET_API_KEY = '2b10QnGeg2NIOcrZ53NXegnd4';
 
   async function identifyPlant(dataUrl) {
     statusMsg.textContent = 'Identifying…';
@@ -153,26 +118,21 @@
       // Try PlantNet API first
       const formData = new FormData();
       formData.append('images', dataURLtoBlob(dataUrl));
-      formData.append('api-key', PLANINET_API_KEY);
 
-      const response = await fetch('https://my-api.plantnet.org/v2/identify/all?org=1', {
+      const response = await fetch('https://my-api.plantnet.org/v2/identify/all?api-key=' + PLANINET_API_KEY + '&org=1', {
         method: 'POST',
         body: formData
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        if (data.results && data.results.length > 0) {
-          const match = data.results[0];
-          const commonName = match.species.commonNames
-            ? match.species.commonNames[0]
-            : match.species.scientificName;
-          const scientificName = match.species.scientificName;
-          const plantName = `${scientificName} (${commonName})`;
-          const plant = findPlantInDB(plantName);
-          displayPlantResult(plant || { name: plantName, size: '—', target: '—', aggression: '—', type: '—', fertilize: '—', calendar: {} });
-          return;
-        }
+      const data = await response.json();
+      if (data.results && data.results.length > 0) {
+        const match = data.results[0];
+        const commonName = match.species?.commonNames?.[0] || '';
+        const scientificName = match.species?.scientificName || match.scientificName || '';
+        const plantName = scientificName + (commonName ? ' (' + commonName + ')' : '');
+        const plant = findPlantInDB(plantName);
+        displayPlantResult(plant || { name: plantName, size: '—', target: '—', aggression: '—', type: '—', fertilize: '—', calendar: {} });
+        return;
       }
     } catch (err) {
       // PlantNet failed — fall through to keyword match
