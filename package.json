@@ -1,0 +1,11 @@
+{
+  "name": "cg-field-guide",
+  "version": "1.0.0",
+  "description": "PWA plant & pest ID tool for CG Landscape field crews",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "build-icons": "node scripts/build-icons.js"
+  },
+  "keywords": ["pwa", "landscape", "plant-id", "cg-landscape"],
+  "license": "UNLICENSED"
+}

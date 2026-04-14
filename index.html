@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#1a5c5c" />
+  <meta name="description" content="Plant & pest ID tool for CG Landscape field crews" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>CG Field Guide</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <svg class="header-logo" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="30" cy="30" rx="28" ry="28" fill="#2d8a8a" opacity="0.2"/>
+        <text x="68" y="26" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="800" fill="white">CG LANDSCAPE</text>
+        <text x="68" y="44" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="500" fill="#2d8a8a">Field Guide</text>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Offline banner -->
+  <div id="offline-banner" class="offline-banner hidden">
+    ⚠️ You're offline — plant & pest data still available
+  </div>
+
+  <!-- Search bar (sticky) -->
+  <div class="search-section">
+    <input
+      id="search-bar"
+      class="search-input"
+      type="search"
+      placeholder="🔍 Search plants by name…"
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false"
+    />
+    <div id="search-results" class="hidden"></div>
+  </div>
+
+  <!-- Tabs -->
+  <nav class="tabs" role="tablist">
+    <button class="tab-btn active" data-tab="plant" role="tab" aria-selected="true">🌿 Plant ID</button>
+    <button class="tab-btn"        data-tab="pest"  role="tab" aria-selected="false">🐛 Pest ID</button>
+  </nav>
+
+  <!-- ── Plant ID panel ── -->
+  <section id="plant-tab" class="tab-panel" role="tabpanel">
+
+    <!-- Camera / upload actions -->
+    <div class="action-row">
+      <button id="take-photo-btn" class="action-btn btn-primary">📷 Take Photo</button>
+      <button id="upload-btn"      class="action-btn btn-secondary">📁 Upload Photo</button>
+    </div>
+    <input type="file" id="file-input" accept="image/*" capture="environment" class="hidden" />
+
+    <!-- Camera video preview -->
+    <video id="camera-video" autoplay playsinline class="hidden"></video>
+    <div class="capture-row hidden" id="capture-row">
+      <button id="capture-btn" aria-label="Capture photo">📸</button>
+    </div>
+
+    <!-- Image preview -->
+    <img id="preview-img" alt="Selected photo" class="hidden" />
+
+    <!-- Status -->
+    <p id="status-msg"></p>
+
+    <!-- Result card -->
+    <div id="result-card" class="hidden">
+      <div id="result-body"></div>
+    </div>
+
+  </section>
+
+  <!-- ── Pest ID panel ── -->
+  <section id="pest-tab" class="tab-panel hidden" role="tabpanel">
+
+    <!-- Search instructions -->
+    <p style="padding:12px 14px; color:var(--muted); font-size:0.9rem; background:white; border-bottom:1px solid var(--border);">
+      Use the search bar above to look up pests by name or affected plant.
+    </p>
+
+    <!-- Pest result card -->
+    <div id="pest-result-card" class="hidden">
+      <div id="pest-result-body"></div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    CG Landscape Field Guide &bull; Works offline once loaded<br/>
+    <span style="color:var(--teal)">📱 Add to Home Screen for best experience</span>
+  </footer>
+
+  <script src="plants.js"></script>
+  <script src="pests.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

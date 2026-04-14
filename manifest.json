@@ -1,0 +1,22 @@
+{
+  "name": "CG Landscape Field Guide",
+  "short_name": "CG Field",
+  "description": "Plant & pest ID for CG Landscape field crews",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#1a5c5c",
+  "theme_color": "#1a5c5c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
