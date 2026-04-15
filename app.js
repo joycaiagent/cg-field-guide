@@ -145,7 +145,6 @@
   if (identifyBtn) {
     identifyBtn.addEventListener('click', () => {
       if (selectedPhotos.length === 0) return;
-      // Identify using first photo (PlantNet multi-image sends all)
       identifyPlantMulti(selectedPhotos.map(p => p.dataUrl));
     });
   }
