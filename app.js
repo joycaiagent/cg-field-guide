@@ -6,6 +6,22 @@
   let currentTab = 'plant';
   let stream = null;
 
+  // ── Photo tips ─────────────────────────────────────────────
+  const TIPS = [
+    'Get close — include leaves or flowers for best results',
+    'Avoid shadows and glare — natural light works best',
+    'Try multiple angles: top, side, and close-up of leaves',
+    'Include the whole plant if possible — not just one branch',
+    'Focus on healthy parts of the plant — avoid damaged areas',
+    'Best results: clear photo of leaves OR flowers OR bark'
+  ];
+  const tipEl = $('photo-tip-text');
+  if (tipEl) tipEl.textContent = TIPS[Math.floor(Math.random() * TIPS.length)];
+
+  // ── Multi-photo state ──────────────────────────────────────
+  let selectedPhotos = [];  // array of { dataUrl, blob }
+  const MAX_PHOTOS = 5;
+
   // ── DOM refs ──────────────────────────────────────────────
   const $ = id => document.getElementById(id);
   const tabBtns   = document.querySelectorAll('.tab-btn');
@@ -18,6 +34,10 @@
   const resultCard  = $('result-card');
   const resultBody  = $('result-body');
   const statusMsg   = $('status-msg');
+  const photoPreviews = $('photo-previews');
+  const addMoreRow  = $('add-more-row');
+  const addMoreBtn  = $('add-more-btn');
+  const identifyBtn = $('identify-btn');
 
   // ── Tab switching ─────────────────────────────────────────
   tabBtns.forEach(btn => {
@@ -40,9 +60,40 @@
 
   function clearResults() {
     resultCard.classList.add('hidden');
-    previewImg.classList.add('hidden');
+    previewImg && previewImg.classList.add('hidden');
     statusMsg.textContent = '';
     if (searchResults) searchResults.classList.add('hidden');
+    selectedPhotos = [];
+    renderPhotoPreviews();
+  }
+
+  // ── Photo previews ────────────────────────────────────────
+  function renderPhotoPreviews() {
+    if (!photoPreviews) return;
+    if (selectedPhotos.length === 0) {
+      photoPreviews.classList.add('hidden');
+      if (addMoreRow) addMoreRow.classList.add('hidden');
+      return;
+    }
+    photoPreviews.classList.remove('hidden');
+    if (addMoreRow) {
+      addMoreRow.classList.remove('hidden');
+      if (addMoreBtn) addMoreBtn.disabled = selectedPhotos.length >= MAX_PHOTOS;
+    }
+    photoPreviews.innerHTML = selectedPhotos.map((p, i) =>
+      `<div class="thumb-wrap">
+        <img src="${p.dataUrl}" class="thumb-img" alt="Photo ${i+1}" />
+        <button class="thumb-remove" data-index="${i}" aria-label="Remove">✕</button>
+        ${i === 0 ? '<span class="thumb-label">Main</span>' : ''}
+      </div>`
+    ).join('');
+    photoPreviews.querySelectorAll('.thumb-remove').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const idx = parseInt(e.currentTarget.dataset.index);
+        selectedPhotos.splice(idx, 1);
+        renderPhotoPreviews();
+      });
+    });
   }
 
   // ── Offline detection ──────────────────────────────────────
@@ -61,9 +112,13 @@
   const fileInput   = $('file-input');
   const cameraInput = $('camera-input');
 
-  // Take Photo → opens environment camera directly (reliable on iOS & Android)
+  // Take Photo → opens environment camera
   if (takePhotoBtn) {
     takePhotoBtn.addEventListener('click', () => {
+      if (selectedPhotos.length >= MAX_PHOTOS) {
+        statusMsg.textContent = `Max ${MAX_PHOTOS} photos allowed.`;
+        return;
+      }
       if (cameraInput) cameraInput.click();
     });
   }
@@ -71,87 +126,120 @@
   // Upload Photo → opens gallery picker
   if (uploadBtn) {
     uploadBtn.addEventListener('click', () => {
+      if (selectedPhotos.length >= MAX_PHOTOS) {
+        statusMsg.textContent = `Max ${MAX_PHOTOS} photos allowed.`;
+        return;
+      }
       if (fileInput) fileInput.click();
     });
   }
 
-  // Camera input (environment camera — iOS/Android)
+  // Add More button
+  if (addMoreBtn) {
+    addMoreBtn.addEventListener('click', () => {
+      if (selectedPhotos.length < MAX_PHOTOS) fileInput && fileInput.click();
+    });
+  }
+
+  // Identify button
+  if (identifyBtn) {
+    identifyBtn.addEventListener('click', () => {
+      if (selectedPhotos.length === 0) return;
+      // Identify using first photo (PlantNet multi-image sends all)
+      identifyPlantMulti(selectedPhotos.map(p => p.dataUrl));
+    });
+  }
+
+  // Camera input
   if (cameraInput) {
     cameraInput.addEventListener('change', e => {
-      if (e.target.files && e.target.files[0]) handleFile(e.target.files[0]);
+      handleFiles(e.target.files);
+      e.target.value = '';
     });
   }
 
-  // Gallery input (user picks photo)
+  // Gallery input
   if (fileInput) {
     fileInput.addEventListener('change', e => {
-      if (e.target.files && e.target.files[0]) handleFile(e.target.files[0]);
+      handleFiles(e.target.files);
+      e.target.value = '';
     });
   }
 
-  function handleFile(file) {
-    if (!file.type.startsWith('image/')) {
-      statusMsg.textContent = 'Please select an image file.';
-      return;
-    }
-    const reader = new FileReader();
-    reader.onload = e => showPreview(e.target.result);
-    reader.readAsDataURL(file);
+  function handleFiles(files) {
+    if (!files) return;
+    Array.from(files).forEach(file => {
+      if (selectedPhotos.length >= MAX_PHOTOS) return;
+      if (!file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        const dataUrl = e.target.result;
+        selectedPhotos.push({ dataUrl, blob: dataURLtoBlob(dataUrl) });
+        renderPhotoPreviews();
+        // Auto-identify on first photo
+        if (selectedPhotos.length === 1) {
+          identifyPlantMulti(selectedPhotos.map(p => p.dataUrl));
+        }
+      };
+      reader.readAsDataURL(file);
+    });
   }
 
-  function showPreview(dataUrl) {
-    if (previewImg) {
-      previewImg.src = dataUrl;
-      previewImg.classList.remove('hidden');
-    }
-    identifyPlant(dataUrl);
-  }
-
-  // ── Plant identification (keyword match + PlantNet fallback) ──
+  // ── Plant identification (multi-photo + PlantNet) ───────────
   const PLANINET_API_KEY = '2b10hewV0342kXX83Sf8sX9ssJu';
 
-  async function identifyPlant(dataUrl) {
-    statusMsg.textContent = 'Identifying…';
+  async function identifyPlantMulti(dataUrls) {
+    statusMsg.textContent = 'Identifying…' + (dataUrls.length > 1 ? ` (${dataUrls.length} photos)` : '');
     resultCard.classList.add('hidden');
 
     try {
-      // Try PlantNet API first
       const formData = new FormData();
-      formData.append('images', dataURLtoBlob(dataUrl));
+      dataUrls.forEach(url => formData.append('images', dataURLtoBlob(url)));
 
-      const response = await fetch('https://my-api.plantnet.org/v2/identify/all?api-key=' + PLANINET_API_KEY + '&org=1', {
-        method: 'POST',
-        body: formData
-      });
+      const response = await fetch(
+        'https://my-api.plantnet.org/v2/identify/all?api-key=' + PLANINET_API_KEY + '&org=1',
+        { method: 'POST', body: formData }
+      );
 
       const data = await response.json();
+
       if (data.results && data.results.length > 0) {
-        // Try top 3 PlantNet results — pick the first one that matches our DB
-        for (const r of data.results.slice(0, 3)) {
+        // Try top 5 PlantNet results with genus-level fallback
+        for (const r of data.results.slice(0, 5)) {
           const scientificName = r.species?.scientificName || r.scientificName || '';
           const commonName = r.species?.commonNames?.[0] || '';
-          const fullName = scientificName + (commonName ? ' (' + commonName + ')' : '');
-          const plant = findBestMatch(scientificName) || (commonName ? findBestMatch(commonName) : null);
+          const plant = findBestMatch(scientificName) || findBestMatch(commonName);
           if (plant) {
             displayPlantResult(plant);
             return;
           }
         }
-        // No DB match — show best PlantNet result with raw data
+        // No DB match — show what PlantNet found
         const top = data.results[0];
-        const scientificName = top.species?.scientificName || top.scientificName || '';
-        const commonName = top.species?.commonNames?.[0] || '';
-        const plantName = scientificName + (commonName ? ' (' + commonName + ')' : '');
-        displayPlantResult({ name: plantName, size: '—', target: '—', aggression: '—', type: '—', fertilize: '—', calendar: {} });
+        const sn = top.species?.scientificName || '';
+        const cn = top.species?.commonNames?.[0] || '';
+        statusMsg.textContent = '';
+        resultCard.classList.remove('hidden');
+        resultBody.innerHTML = `
+          <p class="no-match" style="color:var(--teal);font-weight:600;">Not in our 87-plant database</p>
+          <p class="no-match" style="font-size:0.9rem">PlantNet identified as:</p>
+          <h2 class="plant-name" style="font-style:italic">${sn}</h2>
+          ${cn ? `<p class="plant-common">${cn}</p>` : ''}
+          <p style="font-size:0.85rem;color:#666;margin-top:8px;">This plant isn't in our CG Landscape pruning guide. Check the search bar above or ask your supervisor.</p>
+        `;
         return;
       }
-    } catch (err) {
-      // PlantNet failed — fall through to keyword match
-    }
 
-    // Keyword match against our database
-    const match = keywordMatch(dataUrl);
-    displayPlantResult(match);
+      // No results from PlantNet
+      statusMsg.textContent = 'Could not identify. Try clearer photos.';
+    } catch (err) {
+      statusMsg.textContent = 'Identification failed. Check your connection.';
+    }
+  }
+
+  // Legacy single-photo alias
+  async function identifyPlant(dataUrl) {
+    return identifyPlantMulti([dataUrl]);
   }
 
   function dataURLtoBlob(dataURL) {
@@ -163,19 +251,11 @@
     return new Blob([array], { type: mime });
   }
 
-  function keywordMatch(dataUrl) {
-    // Simple approach: if no filename info, show all or pick first
-    // For production, image recognition would do real matching
-    // Here we show a random or first plant as placeholder
-    // Return null to trigger "no match"
-    return null;
-  }
-
   function findBestMatch(query) {
     if (!query) return null;
     const q = query.toLowerCase().trim();
     const words = q.split(/\s+/);
-    const genus = words[0];
+    const genus = words[0] || '';
 
     let best = null;
     let bestScore = 0;
@@ -183,12 +263,12 @@
     for (const p of PLANTS) {
       const botanical = (p.botanical || '').toLowerCase();
       const common = (p.common || '').toLowerCase();
-      const fullName = botanical + (common ? ' ' + common : '');
+      if (!botanical) continue;
 
       let score = 0;
 
       // Exact full name match
-      if (fullName === q) score = 100;
+      if (botanical === q || (common && common === q)) score = 100;
       // Botanical exact match
       else if (botanical === q) score = 95;
       // Common name exact match
@@ -201,12 +281,10 @@
       else if (common.includes(q)) score = 75;
       // Query contains common
       else if (q.includes(common)) score = 65;
-      // Genus match
-      else if (botanical.startsWith(genus) || genus.startsWith(botanical)) score = 50;
       // Partial — any word match
       else {
         const bWords = botanical.split(/\s+/);
-        const cWords = common.split(/\s+/);
+        const cWords = common ? common.split(/\s+/) : [];
         const matchCount = words.filter(w =>
           bWords.some(bw => bw.includes(w) || w.includes(bw)) ||
           cWords.some(cw => cw.includes(w) || w.includes(cw))
@@ -220,7 +298,30 @@
       }
     }
 
-    return bestScore >= 15 ? best : null;
+    if (best && bestScore >= 15) return best;
+
+    // ── Genus-level fallback ────────────────────────────────
+    // If no good match, try to match just the genus (first word)
+    if (!genus || genus.length < 4) return null; // genus too short to be reliable
+
+    let genusBest = null;
+    let genusBestScore = 0;
+
+    for (const p of PLANTS) {
+      const botanical = (p.botanical || '').toLowerCase();
+      if (!botanical) continue;
+      // Does plant botanical start with this genus?
+      if (botanical.startsWith(genus) || genus.startsWith(botanical.split(/\s+/)[0])) {
+        // Score by how specific the genus match is
+        const score = genus.length > 5 ? 60 : 40;
+        if (score > genusBestScore) {
+          genusBestScore = score;
+          genusBest = p;
+        }
+      }
+    }
+
+    return genusBest;
   }
 
   function findPlantInDB(query) { return findBestMatch(query); }

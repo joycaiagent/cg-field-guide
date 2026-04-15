@@ -52,24 +52,27 @@
   <!-- ── Plant ID panel ── -->
   <section id="plant-tab" class="tab-panel" role="tabpanel">
 
+    <!-- Photo tips -->
+    <div class="photo-tips" id="photo-tips">
+      <strong>📸 Tip:</strong> <span id="photo-tip-text">Get close — include leaves or flowers for best results</span>
+    </div>
+
     <!-- Camera / upload actions -->
     <div class="action-row">
       <button id="take-photo-btn" class="action-btn btn-primary">📷 Take Photo</button>
-      <button id="upload-btn"      class="action-btn btn-secondary">📁 Upload Photo</button>
-    </div>
-    <!-- iOS Safari camera capture (file input with capture attribute) -->
-    <input type="file" id="file-input" accept="image/*" class="hidden" />
-    <!-- Fallback: separate camera input for iOS that uses environment camera -->
-    <input type="file" id="camera-input" accept="image/*" capture="environment" class="hidden" />
-
-    <!-- Camera video preview -->
-    <video id="camera-video" autoplay playsinline class="hidden"></video>
-    <div class="capture-row hidden" id="capture-row">
-      <button id="capture-btn" aria-label="Capture photo">📸</button>
+      <button id="upload-btn"      class="action-btn btn-secondary">📁 Upload Photos</button>
     </div>
 
-    <!-- Image preview -->
-    <img id="preview-img" alt="Selected photo" class="hidden" />
+    <!-- Multi-photo previews -->
+    <div id="photo-previews" class="photo-previews hidden"></div>
+    <div id="add-more-row" class="action-row hidden">
+      <button id="add-more-btn" class="action-btn btn-secondary" style="font-size:0.85rem;padding:8px 14px;">+ Add More Photos</button>
+      <button id="identify-btn" class="action-btn btn-primary" style="font-size:0.85rem;padding:8px 14px;">🔍 Identify</button>
+    </div>
+
+    <!-- iOS Safari camera capture -->
+    <input type="file" id="file-input" accept="image/*" multiple class="hidden" />
+    <input type="file" id="camera-input" accept="image/*" capture="environment" multiple class="hidden" />
 
     <!-- Status -->
     <p id="status-msg"></p>

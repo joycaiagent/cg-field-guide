@@ -447,3 +447,62 @@ body {
   color: var(--muted);
   font-size: 0.8rem;
 }
+
+/* ── Photo tips ── */
+.photo-tips {
+  background: #e8f5f5;
+  border-left: 4px solid var(--teal);
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  color: #444;
+  margin: 0 0 4px 0;
+}
+
+/* ── Photo previews ── */
+.photo-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #fafafa;
+  border-bottom: 1px solid var(--border);
+}
+.thumb-wrap {
+  position: relative;
+  display: inline-block;
+}
+.thumb-img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--teal);
+}
+.thumb-remove {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 11px;
+  cursor: pointer;
+  line-height: 20px;
+  text-align: center;
+  padding: 0;
+}
+.thumb-label {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  background: var(--teal);
+  color: white;
+  font-size: 9px;
+  text-align: center;
+  border-radius: 0 0 6px 6px;
+  padding: 1px;
+}
