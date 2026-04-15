@@ -204,13 +204,13 @@
       const data = await response.json();
 
       if (data.results && data.results.length > 0) {
-        // Try top 5 PlantNet results with genus-level fallback
+        // Try top 5 PlantNet results with improved matching
         for (const r of data.results.slice(0, 5)) {
           const scientificName = r.species?.scientificName || r.scientificName || '';
           const commonName = r.species?.commonNames?.[0] || '';
-          const plant = findBestMatch(scientificName) || findBestMatch(commonName);
-          if (plant) {
-            displayPlantResult(plant);
+          const result = findBestMatch(scientificName) || findBestMatch(commonName);
+          if (result) {
+            displayPlantResult(result.plant, result.confidence);
             return;
           }
         }
@@ -236,7 +236,6 @@
       statusMsg.textContent = 'Identification failed. Check your connection.';
     }
   }
-
   // Legacy single-photo alias
   async function identifyPlant(dataUrl) {
     return identifyPlantMulti([dataUrl]);
@@ -250,132 +249,134 @@
     for (let i = 0; i < binary.length; i++) array[i] = binary.charCodeAt(i);
     return new Blob([array], { type: mime });
   }
+  // ── Fuzzy matching utilities ─────────────────────────────
 
+  /** Levenshtein distance — number of single-char edits to turn a into b */
+  function levenshtein(a, b) {
+    if (!a.length) return b.length;
+    if (!b.length) return a.length;
+    const m = a.length, n = b.length;
+    const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
+    for (let i = 0; i <= m; i++) dp[i][0] = i;
+    for (let j = 0; j <= n; j++) dp[0][j] = j;
+    for (let i = 1; i <= m; i++) {
+      for (let j = 1; j <= n; j++) {
+        dp[i][j] = a[i-1] === b[j-1]
+          ? dp[i-1][j-1]
+          : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+      }
+    }
+    return dp[m][n];
+  }
+
+  /** Score (0-1) for fuzzy match. Returns 0 if too different. */
+  function fuzzyScore(str, query) {
+    if (!str || !query) return 0;
+    const s = str.toLowerCase(), q = query.toLowerCase();
+    if (s === q) return 1;
+    if (s.includes(q) || q.includes(s)) {
+      return 0.85 + 0.1 * Math.min(q.length, s.length) / Math.max(q.length, s.length);
+    }
+    const maxLen = Math.max(s.length, q.length);
+    if (maxLen > 15 && levenshtein(s, q) > 5) return 0;
+    if (maxLen <= 15 && levenshtein(s, q) > Math.floor(maxLen / 2)) return 0;
+    const dist = levenshtein(s, q);
+    const score = 1 - dist / maxLen;
+    return score > 0.55 ? score : 0;
+  }
+
+  /**
+   * Returns { plant, confidence } or null.
+   * confidence: 'exact' | 'high' | 'fuzzy' | 'genus' | null
+   */
   function findBestMatch(query) {
     if (!query) return null;
     const q = query.toLowerCase().trim();
     const words = q.split(/\s+/);
     const genus = words[0] || '';
 
-    let best = null;
-    let bestScore = 0;
+    let best = null, bestScore = 0, bestConfidence = null;
 
     for (const p of PLANTS) {
       const botanical = (p.botanical || '').toLowerCase();
-      const common = (p.common || '').toLowerCase();
-      if (!botanical) continue;
+      const common    = (p.common    || '').toLowerCase();
+      const synonyms  = Array.isArray(p.synonyms) ? p.synonyms.map(s => s.toLowerCase()) : [];
 
-      let score = 0;
+      let score = 0, confidence = null;
 
-      // Exact full name match
-      if (botanical === q || (common && common === q)) score = 100;
-      // Botanical exact match
-      else if (botanical === q) score = 95;
-      // Common name exact match
-      else if (common === q) score = 95;
-      // Botanical contains query
-      else if (botanical.includes(q)) score = 80;
-      // Query contains botanical
-      else if (q.includes(botanical)) score = 70;
-      // Common contains query
-      else if (common.includes(q)) score = 75;
-      // Query contains common
-      else if (q.includes(common)) score = 65;
-      // Partial — any word match
-      else {
+      // Tier 1: Exact & near-exact
+      if (botanical === q || (common && common === q)) {
+        score = 100; confidence = 'exact';
+      } else if (botanical === q) {
+        score = 95; confidence = 'exact';
+      } else if (common === q) {
+        score = 92; confidence = 'high';
+      } else if (synonyms.some(s => s === q)) {
+        score = 90; confidence = 'high';
+      } else if (botanical.includes(q) && q.length > 4) {
+        score = 80; confidence = 'high';
+      } else if (q.includes(botanical) && botanical.length > 4) {
+        score = 75; confidence = 'high';
+      } else if (common.includes(q)) {
+        score = 70; confidence = 'fuzzy';
+      } else if (q.includes(common) && common.length > 3) {
+        score = 65; confidence = 'fuzzy';
+      } else if (synonyms.some(s => s.includes(q))) {
+        score = 65; confidence = 'fuzzy';
+      } else if (synonyms.some(s => q.includes(s) && s.length > 3)) {
+        score = 60; confidence = 'fuzzy';
+      } else {
         const bWords = botanical.split(/\s+/);
         const cWords = common ? common.split(/\s+/) : [];
+        const sWords = synonyms.flatMap(s => s.split(/\s+/));
+        const allWords = [...bWords, ...cWords, ...sWords];
         const matchCount = words.filter(w =>
-          bWords.some(bw => bw.includes(w) || w.includes(bw)) ||
-          cWords.some(cw => cw.includes(w) || w.includes(cw))
+          w.length > 2 && allWords.some(aw => aw.includes(w) || w.includes(aw))
         ).length;
-        if (matchCount > 0) score = 15 * matchCount;
+        if (matchCount > 0) {
+          score = 20 * matchCount; confidence = 'fuzzy';
+        } else {
+          const fScore = Math.max(
+            fuzzyScore(botanical, q),
+            fuzzyScore(common, q),
+            ...synonyms.map(s => fuzzyScore(s, q))
+          );
+          if (fScore > 0) {
+            score = Math.round(fScore * 60); confidence = 'fuzzy';
+          }
+        }
       }
 
-      if (score > bestScore) {
-        bestScore = score;
-        best = p;
-      }
+      if (score > bestScore) { bestScore = score; best = p; bestConfidence = confidence; }
     }
 
-    if (best && bestScore >= 15) return best;
+    if (best && bestScore >= 20) {
+      return { plant: best, confidence: bestConfidence };
+    }
 
-    // ── Genus-level fallback ────────────────────────────────
-    // If no good match, try to match just the genus (first word)
-    if (!genus || genus.length < 4) return null; // genus too short to be reliable
+    // Genus-level fallback
+    if (!genus || genus.length < 4) return null;
 
-    let genusBest = null;
-    let genusBestScore = 0;
-
+    let genusBest = null, genusBestScore = 0;
     for (const p of PLANTS) {
       const botanical = (p.botanical || '').toLowerCase();
       if (!botanical) continue;
-      // Does plant botanical start with this genus?
       if (botanical.startsWith(genus) || genus.startsWith(botanical.split(/\s+/)[0])) {
-        // Score by how specific the genus match is
-        const score = genus.length > 5 ? 60 : 40;
-        if (score > genusBestScore) {
-          genusBestScore = score;
-          genusBest = p;
-        }
+        const score = genus.length > 5 ? 55 : 40;
+        if (score > genusBestScore) { genusBestScore = score; genusBest = p; }
       }
     }
 
-    return genusBest;
+    return genusBest ? { plant: genusBest, confidence: 'genus' } : null;
   }
 
-  function findPlantInDB(query) { return findBestMatch(query); }
+  function findPlantInDB(query) {
+    const result = findBestMatch(query);
+    return result ? result.plant : null;
+  }
 
   // ── Display results ────────────────────────────────────────
-  function displayPlantResult(plant) {
-    if (!plant) {
-      statusMsg.textContent = 'No match found. Try the search bar above.';
-      resultCard.classList.remove('hidden');
-      resultBody.innerHTML = '<p class="no-match">No matching plant found in database.</p>';
-      return;
-    }
-
-    statusMsg.textContent = '';
-    resultCard.classList.remove('hidden');
-    const cal = plant.calendar || {};
-    const monthSymbols = {
-      jan: cal.jan||'', feb: cal.feb||'', mar: cal.mar||'', apr: cal.apr||'',
-      may: cal.may||'', jun: cal.jun||'', jul: cal.jul||'', aug: cal.aug||'',
-      sep: cal.sep||'', oct: cal.oct||'', nov: cal.nov||'', dec: cal.dec||''
-    };
-    const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
-    const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    const calHTML = months.map((m, i) =>
-      `<div class="cal-month${monthSymbols[m] === '■' ? ' best' : monthSymbols[m] === '△' ? ' light' : ''}">
-        <span class="cal-sym">${monthSymbols[m] || '—'}</span>
-        <span class="cal-name">${monthNames[i]}</span>
-      </div>`
-    ).join('');
-
-    const botanical = plant.botanical || plant.name || '';
-    const common = plant.common || '';
-
-    resultBody.innerHTML = `
-      <h2 class="plant-name" style="font-style:italic">${botanical}</h2>
-      ${common ? `<p class="plant-common">${common}</p>` : ''}
-      <div class="result-grid">
-        <div class="result-item"><span class="label">Size</span><span class="value">${plant.size || '—'}</span></div>
-        <div class="result-item"><span class="label">Prune Target</span><span class="value">${plant.target || '—'}</span></div>
-        <div class="result-item"><span class="label">Aggression</span><span class="value">${plant.aggression || '—'}</span></div>
-        <div class="result-item"><span class="label">Type</span><span class="value">${plant.type || '—'}</span></div>
-        <div class="result-item"><span class="label">Fertilize</span><span class="value">${plant.fertilize || '—'}</span></div>
-      </div>
-      <h3>Pruning Calendar</h3>
-      <div class="legend">
-        <span class="leg-item"><span class="sym-box best-box">■</span> Best time</span>
-        <span class="leg-item"><span class="sym-box light-box">△</span> Light only</span>
-        <span class="leg-item"><span class="sym-box avoid-box">—</span> Avoid</span>
-      </div>
-      <div class="cal-grid">${calHTML}</div>
-    `;
-  }
-
-  function displayPestResult(pest) {
+  function displayPlantResult(plant, confidence) {    if (!plant) {      statusMsg.textContent = 'No match found. Try the search bar above.';      resultCard.classList.remove('hidden');      resultBody.innerHTML = '<p class="no-match">No matching plant found in database.</p>';      return;    }    statusMsg.textContent = '';    resultCard.classList.remove('hidden');    // Confidence badge    let badge = '';    if (confidence === 'exact' || confidence === 'high') {      badge = '<span class="match-badge exact">&#10003; Match</span>';    } else if (confidence === 'fuzzy') {      badge = '<span class="match-badge fuzzy">&#126; Close match</span>';    } else if (confidence === 'genus') {      badge = '<span class="match-badge genus">&#63; Genus match — verify species</span>';    }    const cal = plant.calendar || {};    const monthSymbols = {      jan: cal.jan||'', feb: cal.feb||'', mar: cal.mar||'', apr: cal.apr||'',      may: cal.may||'', jun: cal.jun||'', jul: cal.jul||'', aug: cal.aug||'',      sep: cal.sep||'', oct: cal.oct||'', nov: cal.nov||'', dec: cal.dec||''    };    const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];    const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];    const calHTML = months.map((m, i) =>      `<div class="cal-month${monthSymbols[m] === '&#9632;' ? ' best' : monthSymbols[m] === '&#9651;' ? ' light' : ''}">        <span class="cal-sym">${monthSymbols[m] || '&#8212;'}</span>        <span class="cal-name">${monthNames[i]}</span>      </div>`    ).join('');    const botanical = plant.botanical || plant.name || '';    const common = plant.common || '';    resultBody.innerHTML = `      ${badge}      <h2 class="plant-name" style="font-style:italic">${botanical}</h2>      ${common ? `<p class="plant-common">${common}</p>` : ''}      <div class="result-grid">        <div class="result-item"><span class="label">Size</span><span class="value">${plant.size || '&#8212;'}</span></div>        <div class="result-item"><span class="label">Prune Target</span><span class="value">${plant.target || '&#8212;'}</span></div>        <div class="result-item"><span class="label">Aggression</span><span class="value">${plant.aggression || '&#8212;'}</span></div>        <div class="result-item"><span class="label">Type</span><span class="value">${plant.type || '&#8212;'}</span></div>        <div class="result-item"><span class="label">Fertilize</span><span class="value">${plant.fertilize || '&#8212;'}</span></div>      </div>      <h3>Pruning Calendar</h3>      <div class="legend">        <span class="leg-item"><span class="sym-box best-box">&#9632;</span> Best time</span>        <span class="leg-item"><span class="sym-box light-box">&#9651;</span> Light only</span>        <span class="leg-item"><span class="sym-box avoid-box">&#8212;</span> Avoid</span>      </div>      <div class="cal-grid">${calHTML}</div>    `;  }  function displayPestResult(pest) {
     if (!pest) {
       resultBody.innerHTML = '<p class="no-match">No matching pest found.</p>';
       return;
@@ -414,7 +415,7 @@
         if (q && currentTab === 'plant') {
           const result = findBestMatch(q);
           if (result) {
-            displayPlantResult(result);
+            displayPlantResult(result.plant, result.confidence);
             previewImg.classList.add('hidden');
           }
         }
@@ -426,7 +427,8 @@
     const q = query.toLowerCase();
     return PLANTS.filter(p =>
       (p.botanical || '').toLowerCase().includes(q) ||
-      (p.common || '').toLowerCase().includes(q)
+      (p.common || '').toLowerCase().includes(q) ||
+      (Array.isArray(p.synonyms) && p.synonyms.some(s => s.toLowerCase().includes(q)))
     );
   }
 

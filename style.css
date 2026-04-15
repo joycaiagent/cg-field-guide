@@ -369,6 +369,28 @@ body {
   padding: 20px 0;
 }
 
+/* Match confidence badges */
+.match-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.match-badge.exact {
+  background: #d1fae5;
+  color: #065f46;
+}
+.match-badge.fuzzy {
+  background: #fef3c7;
+  color: #92400e;
+}
+.match-badge.genus {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
 /* ── Pest results ── */
 .sev-badge {
   display: inline-block;

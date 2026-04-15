@@ -2,7 +2,9 @@
 const PLANTS = [
   {
     "botanical": "Pittosporum",
-    "common": "",
+    "common": "Pittosporum",
+    "synonyms": ["pitt", "pittosporum"],
+
     "size": "8–15′",
     "target": "-30–50%",
     "aggression": "Med–Heavy",
@@ -25,7 +27,9 @@ const PLANTS = [
   },
   {
     "botanical": "Ligustrum",
-    "common": "",
+    "common": "Privet",
+    "synonyms": ["privet", "wax privet"],
+
     "size": "10–20′",
     "target": "-40–60%",
     "aggression": "Heavy",
@@ -48,7 +52,9 @@ const PLANTS = [
   },
   {
     "botanical": "Podocarpus",
-    "common": "",
+    "common": "Podocarpus",
+    "synonyms": ["podocarpus"],
+
     "size": "10–20′",
     "target": "-30–50%",
     "aggression": "Medium",
@@ -71,7 +77,9 @@ const PLANTS = [
   },
   {
     "botanical": "Westringia",
-    "common": "",
+    "common": "Coast Rosemary",
+    "synonyms": ["westringia", "rosemary", "coast rosemary"],
+
     "size": "4–8′",
     "target": "-25–40%",
     "aggression": "Medium",
@@ -94,7 +102,9 @@ const PLANTS = [
   },
   {
     "botanical": "Roses",
-    "common": "",
+    "common": "Rose",
+    "synonyms": ["rose", "roses", "hybrid rose"],
+
     "size": "3–6′",
     "target": "-20–40%",
     "aggression": "Light–Med",
@@ -117,7 +127,9 @@ const PLANTS = [
   },
   {
     "botanical": "Salvia",
-    "common": "",
+    "common": "Sage",
+    "synonyms": ["salvia", "sage"],
+
     "size": "2–5′",
     "target": "-20–40%",
     "aggression": "Light–Med",
@@ -140,7 +152,9 @@ const PLANTS = [
   },
   {
     "botanical": "Muhlenbergia",
-    "common": "",
+    "common": "Muhly Grass",
+    "synonyms": ["muhly", "muhlenbergia"],
+
     "size": "2–4′",
     "target": "Cut to 2–6\"",
     "aggression": "Heavy",
@@ -163,7 +177,9 @@ const PLANTS = [
   },
   {
     "botanical": "Lomandra",
-    "common": "",
+    "common": "Mat Rush",
+    "synonyms": ["lomandra", "mat rush"],
+
     "size": "2–4′",
     "target": "Cut to 4–8\"",
     "aggression": "Heavy",
@@ -186,7 +202,9 @@ const PLANTS = [
   },
   {
     "botanical": "Ceanothus",
-    "common": "",
+    "common": "California Lilac",
+    "synonyms": ["ceanothus", "california lilac", "wild lilac"],
+
     "size": "3–8′",
     "target": "-20–30%",
     "aggression": "Light",
@@ -301,7 +319,9 @@ const PLANTS = [
   },
   {
     "botanical": "Lomandra longifolia 'Breeze'",
-    "common": "",
+    "common": "Breeze Mat Rush",
+    "synonyms": ["lomandra breeze", "breeze"],
+
     "size": "2–3′",
     "target": "Cut to 4–6\"",
     "aggression": "Heavy",
@@ -347,7 +367,9 @@ const PLANTS = [
   },
   {
     "botanical": "Arctostaphylos 'Emerald Carpet'",
-    "common": "",
+    "common": "Emerald Carpet Manzanita",
+    "synonyms": ["emerald carpet", "manzanita"],
+
     "size": "1–2′",
     "target": "-20–30%",
     "aggression": "Light",
@@ -393,7 +415,9 @@ const PLANTS = [
   },
   {
     "botanical": "Myoporum parvifolium",
-    "common": "",
+    "common": "Myoporum",
+    "synonyms": ["myoporum", "prostrate myoporum"],
+
     "size": "6–12\"",
     "target": "Cut to 2–4\"",
     "aggression": "Heavy",
@@ -439,7 +463,9 @@ const PLANTS = [
   },
   {
     "botanical": "Drosanthemum hispidum",
-    "common": "",
+    "common": "Drosanthemum",
+    "synonyms": ["drosanthemum", "rose carpet"],
+
     "size": "4–8\"",
     "target": "Cut to 2–3\"",
     "aggression": "Heavy",
@@ -485,7 +511,9 @@ const PLANTS = [
   },
   {
     "botanical": "Gazania rigens",
-    "common": "",
+    "common": "Gazania",
+    "synonyms": ["gazania", "treasure flower"],
+
     "size": "6–12\"",
     "target": "Cut to 4–6\"",
     "aggression": "Medium",
@@ -554,7 +582,9 @@ const PLANTS = [
   },
   {
     "botanical": "Nepeta 'Walker's Low'",
-    "common": "",
+    "common": "Walker's Low Catmint",
+    "synonyms": ["walkers low", "catmint", "catnip"],
+
     "size": "2–3′",
     "target": "Cut to 4–6\"",
     "aggression": "Medium",
@@ -646,7 +676,9 @@ const PLANTS = [
   },
   {
     "botanical": "Olea europaea 'Little Ollie'",
-    "common": "",
+    "common": "Little Ollie Olive",
+    "synonyms": ["little ollie", "dwarf olive"],
+
     "size": "6–8′",
     "target": "-20–30%",
     "aggression": "Light",
@@ -692,7 +724,9 @@ const PLANTS = [
   },
   {
     "botanical": "Viburnum davidii",
-    "common": "",
+    "common": "David Viburnum",
+    "synonyms": ["david viburnum", "viburnum"],
+
     "size": "3–4′",
     "target": "-20–30%",
     "aggression": "Light",
@@ -738,7 +772,9 @@ const PLANTS = [
   },
   {
     "botanical": "Buxus 'Green Beauty'",
-    "common": "",
+    "common": "Green Beauty Boxwood",
+    "synonyms": ["green beauty boxwood", "boxwood"],
+
     "size": "3–5′",
     "target": "-20–30%",
     "aggression": "Light–Med",
