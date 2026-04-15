@@ -176,7 +176,7 @@
         const dataUrl = e.target.result;
         selectedPhotos.push({ dataUrl, blob: dataURLtoBlob(dataUrl) });
         renderPhotoPreviews();
-        // Auto-identify on first photo
+        // Auto-identify ONCE on first photo — user controls when to ID more
         if (selectedPhotos.length === 1) {
           identifyPlantMulti(selectedPhotos.map(p => p.dataUrl));
         }
@@ -188,50 +188,101 @@
   // ── Plant identification (multi-photo + PlantNet) ───────────
   const PLANINET_API_KEY = '2b10hewV0342kXX83Sf8sX9ssJu';
 
+  const MAX_IMG_W = 800, MAX_IMG_H = 800, IMG_QUALITY = 0.8;
+
+  /** Analyze one photo against PlantNet + our DB, return ranked results */
+  async function analyzePhoto(dataUrl) {
+    const resized = await resizeImage(dataUrl, MAX_IMG_W, MAX_IMG_H, IMG_QUALITY);
+    const blob = dataURLtoBlob(resized);
+    const formData = new FormData();
+    formData.append('images', blob);
+    const response = await fetch(
+      'https://my-api.plantnet.org/v2/identify/all?api-key=' + PLANINET_API_KEY + '&org=1',
+      { method: 'POST', body: formData }
+    );
+    return response.json();
+  }
+
+  /** Vote across all photo results — pick the most-confident DB match */
+  function voteResults(allResults) {
+    const plantScores = {};
+    for (const r of allResults) {
+      if (!r.plant) continue;
+      const key = r.plant.botanical;
+      const tier = r.confidence === 'exact' ? 4 : r.confidence === 'high' ? 3 : r.confidence === 'fuzzy' ? 2 : r.confidence === 'genus' ? 1 : 0;
+      if (!plantScores[key]) plantScores[key] = { plant: r.plant, confidence: r.confidence, score: 0, count: 0 };
+      plantScores[key].score += tier * 10 + r.score;
+      plantScores[key].count++;
+    }
+    let best = null, bestAvg = 0;
+    for (const ps of Object.values(plantScores)) {
+      const avg = ps.score / ps.count;
+      if (avg > bestAvg) { bestAvg = avg; best = ps; }
+    }
+    return best;
+  }
+
   async function identifyPlantMulti(dataUrls) {
-    statusMsg.textContent = 'Identifying…' + (dataUrls.length > 1 ? ` (${dataUrls.length} photos)` : '');
+    const n = dataUrls.length;
+    statusMsg.textContent = 'Analyzing…';
     resultCard.classList.add('hidden');
 
     try {
-      const formData = new FormData();
-      dataUrls.forEach(url => formData.append('images', dataURLtoBlob(url)));
-
-      const response = await fetch(
-        'https://my-api.plantnet.org/v2/identify/all?api-key=' + PLANINET_API_KEY + '&org=1',
-        { method: 'POST', body: formData }
+      // Compress all photos first
+      statusMsg.textContent = n === 1 ? 'Compressing photo…' : 'Compressing photos…';
+      const compressed = await Promise.all(
+        dataUrls.map(url => resizeImage(url, MAX_IMG_W, MAX_IMG_H, IMG_QUALITY))
       );
 
-      const data = await response.json();
-
-      if (data.results && data.results.length > 0) {
-        // Try top 5 PlantNet results with improved matching
-        for (const r of data.results.slice(0, 5)) {
-          const scientificName = r.species?.scientificName || r.scientificName || '';
-          const commonName = r.species?.commonNames?.[0] || '';
-          const result = findBestMatch(scientificName) || findBestMatch(commonName);
-          if (result) {
-            displayPlantResult(result.plant, result.confidence);
-            return;
+      // Send each photo separately, collect all results
+      const allResults = [];
+      for (let i = 0; i < compressed.length; i++) {
+        statusMsg.textContent = `Checking photo ${i + 1} of ${n}…`;
+        try {
+          const data = await analyzePhoto(compressed[i]);
+          if (!data.results || data.results.length === 0) continue;
+          for (const r of data.results.slice(0, 5)) {
+            const scientificName = r.species?.scientificName || r.scientificName || '';
+            const commonName = r.species?.commonNames?.[0] || '';
+            const result = findBestMatch(scientificName) || findBestMatch(commonName);
+            if (result) {
+              allResults.push({
+                plant: result.plant,
+                confidence: result.confidence,
+                score: result.confidence === 'exact' ? 40 : result.confidence === 'high' ? 30 : result.confidence === 'fuzzy' ? 15 : 5,
+                species: scientificName,
+                common: commonName
+              });
+              if (result.confidence === 'exact' || result.confidence === 'high') break;
+            }
           }
+        } catch (e) {
+          console.warn('Photo', i, 'error:', e);
         }
-        // No DB match — show what PlantNet found
-        const top = data.results[0];
-        const sn = top.species?.scientificName || '';
-        const cn = top.species?.commonNames?.[0] || '';
-        statusMsg.textContent = '';
-        resultCard.classList.remove('hidden');
-        resultBody.innerHTML = `
-          <p class="no-match" style="color:var(--teal);font-weight:600;">Not in our 87-plant database</p>
-          <p class="no-match" style="font-size:0.9rem">PlantNet identified as:</p>
-          <h2 class="plant-name" style="font-style:italic">${sn}</h2>
-          ${cn ? `<p class="plant-common">${cn}</p>` : ''}
-          <p style="font-size:0.85rem;color:#666;margin-top:8px;">This plant isn't in our CG Landscape pruning guide. Check the search bar above or ask your supervisor.</p>
-        `;
-        return;
       }
 
-      // No results from PlantNet
-      statusMsg.textContent = 'Could not identify. Try clearer photos.';
+      if (allResults.length > 0) {
+        const winner = voteResults(allResults);
+        if (winner) {
+          displayPlantResult(winner.plant, winner.confidence);
+          return;
+        }
+      }
+
+      // No confident DB match
+      const bestPN = allResults.find(r => r.species) || { species: '', common: '' };
+      const tip = allResults.length === 0
+        ? 'No plant detected. Try including leaves, flowers, or bark in the photo.'
+        : "This plant isn't in the CG Landscape pruning guide. Ask your supervisor.";
+      statusMsg.textContent = '';
+      resultCard.classList.remove('hidden');
+      resultBody.innerHTML = `
+        <p class="no-match" style="color:var(--teal);font-weight:600;">Not in our 87-plant database</p>
+        <p class="no-match" style="font-size:0.9rem">PlantNet identified as:</p>
+        <h2 class="plant-name" style="font-style:italic">${bestPN.species || 'Unknown'}</h2>
+        ${bestPN.common ? `<p class="plant-common">${bestPN.common}</p>` : ''}
+        <p style="font-size:0.85rem;color:#666;margin-top:8px;">${tip}</p>
+      `;
     } catch (err) {
       statusMsg.textContent = 'Identification failed. Check your connection.';
     }
@@ -239,6 +290,28 @@
   // Legacy single-photo alias
   async function identifyPlant(dataUrl) {
     return identifyPlantMulti([dataUrl]);
+  }
+
+  /** Resize an image to maxWidth×maxHeight, return new dataURL */
+  function resizeImage(dataUrl, maxWidth, maxHeight, quality) {
+    return new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => {
+        let { width, height } = img;
+        if (width > maxWidth || height > maxHeight) {
+          const ratio = Math.min(maxWidth / width, maxHeight / height);
+          width = Math.round(width * ratio);
+          height = Math.round(height * ratio);
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.onerror = () => resolve(dataUrl); // fallback: return original
+      img.src = dataUrl;
+    });
   }
 
   function dataURLtoBlob(dataURL) {
