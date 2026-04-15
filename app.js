@@ -108,7 +108,7 @@
   }
 
   // ── Plant identification (keyword match + PlantNet fallback) ──
-  const PLANINET_API_KEY = '2b10QnGeg2NIOcrZ53NXegnd4';
+  const PLANINET_API_KEY = '2b10hewV0342kXX83Sf8sX9ssJu';
 
   async function identifyPlant(dataUrl) {
     statusMsg.textContent = 'Identifying…';
@@ -126,12 +126,23 @@
 
       const data = await response.json();
       if (data.results && data.results.length > 0) {
-        const match = data.results[0];
-        const commonName = match.species?.commonNames?.[0] || '';
-        const scientificName = match.species?.scientificName || match.scientificName || '';
+        // Try top 3 PlantNet results — pick the first one that matches our DB
+        for (const r of data.results.slice(0, 3)) {
+          const scientificName = r.species?.scientificName || r.scientificName || '';
+          const commonName = r.species?.commonNames?.[0] || '';
+          const fullName = scientificName + (commonName ? ' (' + commonName + ')' : '');
+          const plant = findBestMatch(scientificName) || (commonName ? findBestMatch(commonName) : null);
+          if (plant) {
+            displayPlantResult(plant);
+            return;
+          }
+        }
+        // No DB match — show best PlantNet result with raw data
+        const top = data.results[0];
+        const scientificName = top.species?.scientificName || top.scientificName || '';
+        const commonName = top.species?.commonNames?.[0] || '';
         const plantName = scientificName + (commonName ? ' (' + commonName + ')' : '');
-        const plant = findPlantInDB(plantName);
-        displayPlantResult(plant || { name: plantName, size: '—', target: '—', aggression: '—', type: '—', fertilize: '—', calendar: {} });
+        displayPlantResult({ name: plantName, size: '—', target: '—', aggression: '—', type: '—', fertilize: '—', calendar: {} });
         return;
       }
     } catch (err) {
@@ -160,14 +171,59 @@
     return null;
   }
 
-  function findPlantInDB(query) {
+  function findBestMatch(query) {
     if (!query) return null;
-    const q = query.toLowerCase();
-    return PLANTS.find(p =>
-      p.name.toLowerCase().includes(q) ||
-      q.includes(p.name.toLowerCase())
-    ) || null;
+    const q = query.toLowerCase().trim();
+    const words = q.split(/\s+/);
+    const genus = words[0];
+
+    let best = null;
+    let bestScore = 0;
+
+    for (const p of PLANTS) {
+      const botanical = (p.botanical || '').toLowerCase();
+      const common = (p.common || '').toLowerCase();
+      const fullName = botanical + (common ? ' ' + common : '');
+
+      let score = 0;
+
+      // Exact full name match
+      if (fullName === q) score = 100;
+      // Botanical exact match
+      else if (botanical === q) score = 95;
+      // Common name exact match
+      else if (common === q) score = 95;
+      // Botanical contains query
+      else if (botanical.includes(q)) score = 80;
+      // Query contains botanical
+      else if (q.includes(botanical)) score = 70;
+      // Common contains query
+      else if (common.includes(q)) score = 75;
+      // Query contains common
+      else if (q.includes(common)) score = 65;
+      // Genus match
+      else if (botanical.startsWith(genus) || genus.startsWith(botanical)) score = 50;
+      // Partial — any word match
+      else {
+        const bWords = botanical.split(/\s+/);
+        const cWords = common.split(/\s+/);
+        const matchCount = words.filter(w =>
+          bWords.some(bw => bw.includes(w) || w.includes(bw)) ||
+          cWords.some(cw => cw.includes(w) || w.includes(cw))
+        ).length;
+        if (matchCount > 0) score = 15 * matchCount;
+      }
+
+      if (score > bestScore) {
+        bestScore = score;
+        best = p;
+      }
+    }
+
+    return bestScore >= 15 ? best : null;
   }
+
+  function findPlantInDB(query) { return findBestMatch(query); }
 
   // ── Display results ────────────────────────────────────────
   function displayPlantResult(plant) {
@@ -195,8 +251,12 @@
       </div>`
     ).join('');
 
+    const botanical = plant.botanical || plant.name || '';
+    const common = plant.common || '';
+
     resultBody.innerHTML = `
-      <h2 class="plant-name">${plant.name}</h2>
+      <h2 class="plant-name" style="font-style:italic">${botanical}</h2>
+      ${common ? `<p class="plant-common">${common}</p>` : ''}
       <div class="result-grid">
         <div class="result-item"><span class="label">Size</span><span class="value">${plant.size || '—'}</span></div>
         <div class="result-item"><span class="label">Prune Target</span><span class="value">${plant.target || '—'}</span></div>
@@ -251,7 +311,7 @@
       if (e.key === 'Enter') {
         const q = e.target.value.trim();
         if (q && currentTab === 'plant') {
-          const result = findPlantInDB(q);
+          const result = findBestMatch(q);
           if (result) {
             displayPlantResult(result);
             previewImg.classList.add('hidden');
@@ -263,7 +323,10 @@
 
   function searchPlants(query) {
     const q = query.toLowerCase();
-    return PLANTS.filter(p => p.name.toLowerCase().includes(q));
+    return PLANTS.filter(p =>
+      (p.botanical || '').toLowerCase().includes(q) ||
+      (p.common || '').toLowerCase().includes(q)
+    );
   }
 
   function searchPests(query) {
@@ -283,7 +346,8 @@
     }
     searchResults.innerHTML = results.slice(0, 10).map(item => {
       if (currentTab === 'plant') {
-        return `<button class="search-item" data-name="${item.name}">${item.name}</button>`;
+        const label = item.botanical + (item.common ? ' (' + item.common + ')' : '');
+        return `<button class="search-item" data-name="${item.botanical}">${label}</button>`;
       } else {
         return `<button class="search-item" data-name="${item.name}">${item.name} <span class="sev-tag ${item.severity === 'High' ? 'sev-high' : 'sev-med'}">${item.severity}</span></button>`;
       }
@@ -292,11 +356,11 @@
 
     searchResults.querySelectorAll('.search-item').forEach(btn => {
       btn.addEventListener('click', () => {
-        const name = btn.dataset.name;
-        searchBar.value = name;
+        const botanical = btn.dataset.name;
+        searchBar.value = botanical;
         searchResults.classList.add('hidden');
         if (currentTab === 'plant') {
-          const plant = PLANTS.find(p => p.name === name);
+          const plant = PLANTS.find(p => p.botanical === botanical);
           displayPlantResult(plant);
           previewImg.classList.add('hidden');
         } else {

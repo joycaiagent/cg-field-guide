@@ -1,7 +1,8 @@
 // Plant database — 87 plants from CG Pruning Schedule
 const PLANTS = [
   {
-    "name": "Pittosporum",
+    "botanical": "Pittosporum",
+    "common": "",
     "size": "8–15′",
     "target": "-30–50%",
     "aggression": "Med–Heavy",
@@ -23,7 +24,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Ligustrum",
+    "botanical": "Ligustrum",
+    "common": "",
     "size": "10–20′",
     "target": "-40–60%",
     "aggression": "Heavy",
@@ -45,7 +47,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Podocarpus",
+    "botanical": "Podocarpus",
+    "common": "",
     "size": "10–20′",
     "target": "-30–50%",
     "aggression": "Medium",
@@ -67,7 +70,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Westringia",
+    "botanical": "Westringia",
+    "common": "",
     "size": "4–8′",
     "target": "-25–40%",
     "aggression": "Medium",
@@ -89,7 +93,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Roses",
+    "botanical": "Roses",
+    "common": "",
     "size": "3–6′",
     "target": "-20–40%",
     "aggression": "Light–Med",
@@ -111,7 +116,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Salvia",
+    "botanical": "Salvia",
+    "common": "",
     "size": "2–5′",
     "target": "-20–40%",
     "aggression": "Light–Med",
@@ -133,7 +139,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Muhlenbergia",
+    "botanical": "Muhlenbergia",
+    "common": "",
     "size": "2–4′",
     "target": "Cut to 2–6\"",
     "aggression": "Heavy",
@@ -155,7 +162,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Lomandra",
+    "botanical": "Lomandra",
+    "common": "",
     "size": "2–4′",
     "target": "Cut to 4–8\"",
     "aggression": "Heavy",
@@ -177,7 +185,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Ceanothus",
+    "botanical": "Ceanothus",
+    "common": "",
     "size": "3–8′",
     "target": "-20–30%",
     "aggression": "Light",
@@ -199,7 +208,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Muhlenbergia rigens (Deer Grass)",
+    "botanical": "Muhlenbergia rigens",
+    "common": "Deer Grass",
     "size": "3–5′",
     "target": "Cut to 6–12\"",
     "aggression": "Heavy",
@@ -221,7 +231,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Pennisetum setaceum (Fountain Grass)",
+    "botanical": "Pennisetum setaceum",
+    "common": "Fountain Grass",
     "size": "3–4′",
     "target": "Cut to 4–6\"",
     "aggression": "Heavy",
@@ -243,7 +254,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Nassella tenuissima (Mexican Feather Grass)",
+    "botanical": "Nassella tenuissima",
+    "common": "Mexican Feather Grass",
     "size": "1–2′",
     "target": "Cut to 3–4\"",
     "aggression": "Medium",
@@ -265,7 +277,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Festuca glauca (Blue Fescue)",
+    "botanical": "Festuca glauca",
+    "common": "Blue Fescue",
     "size": "1–2′",
     "target": "Cut to 2–3\"",
     "aggression": "Medium",
@@ -287,7 +300,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Lomandra longifolia 'Breeze'",
+    "botanical": "Lomandra longifolia 'Breeze'",
+    "common": "",
     "size": "2–3′",
     "target": "Cut to 4–6\"",
     "aggression": "Heavy",
@@ -309,7 +323,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Dietes iridioides (Fortnight Lily)",
+    "botanical": "Dietes iridioides",
+    "common": "Fortnight Lily",
     "size": "2–3′",
     "target": "Cut to 6\"",
     "aggression": "Medium",
@@ -331,7 +346,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Arctostaphylos 'Emerald Carpet'",
+    "botanical": "Arctostaphylos 'Emerald Carpet'",
+    "common": "",
     "size": "1–2′",
     "target": "-20–30%",
     "aggression": "Light",
@@ -353,7 +369,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Carex pensylvanica (PA Sedge)",
+    "botanical": "Carex pensylvanica",
+    "common": "PA Sedge",
     "size": "1–2′",
     "target": "-20–30%",
     "aggression": "Light",
@@ -375,7 +392,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Myoporum parvifolium",
+    "botanical": "Myoporum parvifolium",
+    "common": "",
     "size": "6–12\"",
     "target": "Cut to 2–4\"",
     "aggression": "Heavy",
@@ -397,7 +415,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Senecio mandraliscae (Blue Senecio)",
+    "botanical": "Senecio mandraliscae",
+    "common": "Blue Senecio",
     "size": "1–2′",
     "target": "Cut to 2–4\"",
     "aggression": "Heavy",
@@ -419,7 +438,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Drosanthemum hispidum",
+    "botanical": "Drosanthemum hispidum",
+    "common": "",
     "size": "4–8\"",
     "target": "Cut to 2–3\"",
     "aggression": "Heavy",
@@ -441,7 +461,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Erigeron karvinskianus (Santa Barbara Daisy)",
+    "botanical": "Erigeron karvinskianus",
+    "common": "Santa Barbara Daisy",
     "size": "1–2′",
     "target": "-20–30%",
     "aggression": "Light",
@@ -463,7 +484,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Gazania rigens",
+    "botanical": "Gazania rigens",
+    "common": "",
     "size": "6–12\"",
     "target": "Cut to 4–6\"",
     "aggression": "Medium",
@@ -485,7 +507,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Lantana camera (Lantana)",
+    "botanical": "Lantana camera",
+    "common": "Lantana",
     "size": "3–5′",
     "target": "-30–50%",
     "aggression": "Heavy",
@@ -507,7 +530,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Salvia leucantha (Mexican Bush Sage)",
+    "botanical": "Salvia leucantha",
+    "common": "Mexican Bush Sage",
     "size": "3–4′",
     "target": "Cut to 6–12\"",
     "aggression": "Heavy",
@@ -529,7 +553,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Nepeta 'Walker's Low'",
+    "botanical": "Nepeta 'Walker's Low'",
+    "common": "",
     "size": "2–3′",
     "target": "Cut to 4–6\"",
     "aggression": "Medium",
@@ -551,7 +576,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Lavandula angustifolia 'Hidcote' (Lavender)",
+    "botanical": "Lavandula angustifolia 'Hidcote'",
+    "common": "Lavender",
     "size": "2–3′",
     "target": "Cut to 6–8\"",
     "aggression": "Medium",
@@ -573,7 +599,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Heuchera maxima (Coral Bells)",
+    "botanical": "Heuchera maxima",
+    "common": "Coral Bells",
     "size": "1–2′",
     "target": "-20–30%",
     "aggression": "Light",
@@ -595,7 +622,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Rosa hybrids (Shrub Roses)",
+    "botanical": "Rosa hybrids",
+    "common": "Shrub Roses",
     "size": "3–5′",
     "target": "-20–40%",
     "aggression": "Light–Med",
@@ -617,7 +645,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Olea europaea 'Little Ollie'",
+    "botanical": "Olea europaea 'Little Ollie'",
+    "common": "",
     "size": "6–8′",
     "target": "-20–30%",
     "aggression": "Light",
@@ -639,7 +668,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Trachelospermum jasminoides (Star Jasmine)",
+    "botanical": "Trachelospermum jasminoides",
+    "common": "Star Jasmine",
     "size": "10–15′",
     "target": "-20–30%",
     "aggression": "Light–Med",
@@ -661,7 +691,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Viburnum davidii",
+    "botanical": "Viburnum davidii",
+    "common": "",
     "size": "3–4′",
     "target": "-20–30%",
     "aggression": "Light",
@@ -683,7 +714,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Photinia × fraseri (Fraser Photinia)",
+    "botanical": "Photinia × fraseri",
+    "common": "Fraser Photinia",
     "size": "8–15′",
     "target": "-30–40%",
     "aggression": "Med–Heavy",
@@ -705,7 +737,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Buxus 'Green Beauty'",
+    "botanical": "Buxus 'Green Beauty'",
+    "common": "",
     "size": "3–5′",
     "target": "-20–30%",
     "aggression": "Light–Med",
@@ -727,7 +760,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Heteromeles arbutifolia (Toyon)",
+    "botanical": "Heteromeles arbutifolia",
+    "common": "Toyon",
     "size": "8–15′",
     "target": "-20–30%",
     "aggression": "Light",
@@ -749,7 +783,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Quercus agrifolia (Coast Live Oak)",
+    "botanical": "Quercus agrifolia",
+    "common": "Coast Live Oak",
     "size": "15–30′",
     "target": "",
     "aggression": "Light",
@@ -771,7 +806,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Arbutus 'Marina' (Marina Strawberry Tree)",
+    "botanical": "Arbutus 'Marina'",
+    "common": "Marina Strawberry Tree",
     "size": "15–30′",
     "target": "",
     "aggression": "Light",
@@ -793,7 +829,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Prunus ilicifolia ssp. lyonii (Catalina Cherry)",
+    "botanical": "Prunus ilicifolia ssp. lyonii",
+    "common": "Catalina Cherry",
     "size": "",
     "target": "",
     "aggression": "Light–Med",
@@ -815,7 +852,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Chilopsis linearis (Desert Willow)",
+    "botanical": "Chilopsis linearis",
+    "common": "Desert Willow",
     "size": "15–30′",
     "target": "",
     "aggression": "Light",
@@ -837,7 +875,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "x Chitalpa tashkentensis 'Pink Dawn' (Pink Chitalpa)",
+    "botanical": "x Chitalpa tashkentensis 'Pink Dawn'",
+    "common": "Pink Chitalpa",
     "size": "15–30′",
     "target": "",
     "aggression": "Light",
@@ -859,7 +898,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Cercis occidentalis (Western Redbud)",
+    "botanical": "Cercis occidentalis",
+    "common": "Western Redbud",
     "size": "",
     "target": "",
     "aggression": "Light–Med",
@@ -881,29 +921,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Aesculus californica (California Buckeye)",
-    "size": "15–30′",
-    "target": "",
-    "aggression": "Light–Med",
-    "type": "Year",
-    "fertilize": "Light spring fert",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "",
-      "jul": "",
-      "aug": "",
-      "sep": "",
-      "oct": "",
-      "nov": "△",
-      "dec": "△"
-    }
-  },
-  {
-    "name": "Juglans californica var. californica (Southern California Black Walnut)",
+    "botanical": "Aesculus californica",
+    "common": "California Buckeye",
     "size": "15–30′",
     "target": "",
     "aggression": "Light–Med",
@@ -925,865 +944,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Artemisia californica (California Sagebrush)",
-    "size": "3–8′",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Artemisia californica 'Canyon Gray' (Canyon Gray Sagebrush)",
-    "size": "",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Artemisia californica 'Montara' (Montara Sagebrush)",
-    "size": "",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Rhus ovata (Sugar Bush)",
-    "size": "3–8′",
-    "target": "",
-    "aggression": "Light–Med",
-    "type": "Warm",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Rhus integrifolia (Lemonade Berry)",
-    "size": "3–8′",
-    "target": "",
-    "aggression": "Light–Med",
-    "type": "Warm",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Prunus ilicifolia ssp. ilicifolia (Hollyleaf Cherry)",
-    "size": "3–8′",
-    "target": "",
-    "aggression": "Light–Med",
-    "type": "Shade",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Rhamnus californica (Coffeeberry)",
-    "size": "3–8′",
-    "target": "",
-    "aggression": "Light–Med",
-    "type": "Shade",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Calliandra californica (Baja Fairy Duster)",
-    "size": "3–8′",
-    "target": "",
-    "aggression": "Light–Med",
-    "type": "Warm",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Isomeris arborea (Bladderpod)",
-    "size": "3–8′",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Eriogonum fasciculatum (California Buckwheat)",
-    "size": "",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Eriogonum cinereum (Ashyleaf Buckwheat)",
-    "size": "3–8′",
-    "target": "",
-    "aggression": "Light–Med",
-    "type": "Warm",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Eriogonum arborescens (Santa Cruz Island Buckwheat)",
-    "size": "3–8′",
-    "target": "",
-    "aggression": "Light–Med",
-    "type": "Warm",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Eriogonum fasciculatum 'Theodore Payne' (Theodore Payne Buckwheat)",
-    "size": "",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Baccharis pilularis 'Pigeon Point' (Pigeon Point Coyote Brush)",
-    "size": "",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Shade",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Lepechinia fragrans (Fragrant Pitcher Sage)",
-    "size": "3–8′",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Shade",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Abutilon palmeri (Palmer's Indian Mallow)",
-    "size": "3–8′",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Sphaeralcea ambigua (Desert Mallow / Apricot Mallow)",
-    "size": "1–3′",
-    "target": "",
-    "aggression": "Light–Med",
-    "type": "Warm",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Eriogonum grande var. rubescens (Red Buckwheat)",
-    "size": "1–3′",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Achillea millefolium (Common Yarrow)",
-    "size": "1–3′",
-    "target": "",
-    "aggression": "Light–Med",
-    "type": "Shade",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Asclepias fascicularis (Narrow Leaf Milkweed)",
-    "size": "1–3′",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Asclepias speciosa (Showy Milkweed)",
-    "size": "1–3′",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Anemopsis californica (Yerba Mansa)",
-    "size": "1–3′",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Shade",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Iris douglasiana (Douglas Iris)",
-    "size": "1–3′",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Shade",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Bouteloua gracilis (Blue Grama)",
-    "size": "2–4′",
-    "target": "",
-    "aggression": "Heavy",
-    "type": "Shade",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "",
-      "feb": "△",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "△",
-      "aug": "",
-      "sep": "",
-      "oct": "",
-      "nov": "",
-      "dec": "△"
-    }
-  },
-  {
-    "name": "Leymus condensatus 'Canyon Prince' (Canyon Prince Wild Rye)",
-    "size": "2–4′",
-    "target": "",
-    "aggression": "Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "",
-      "feb": "△",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "△",
-      "aug": "",
-      "sep": "",
-      "oct": "",
-      "nov": "",
-      "dec": "△"
-    }
-  },
-  {
-    "name": "Carex tumulicola (Foothill Sedge / Berkeley Sedge)",
-    "size": "",
-    "target": "",
-    "aggression": "Light–Med",
-    "type": "Shade",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Carex pansa (Sand Dune Sedge)",
-    "size": "",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Carex barbarae (Valley Sedge)",
-    "size": "",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Shade",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Sesleria autumnalis (Sesleria Autumnalis)",
-    "size": "2–4′",
-    "target": "",
-    "aggression": "Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "",
-      "feb": "△",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "△",
-      "aug": "",
-      "sep": "",
-      "oct": "",
-      "nov": "",
-      "dec": "△"
-    }
-  },
-  {
-    "name": "Berberis aquifolium var. repens (Creeping Barberry / Creeping Oregon Grape)",
-    "size": "",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Shade",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Erigeron glaucus (Seaside Daisy)",
-    "size": "1–3′",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Hesperaloe parviflora (Red Yucca)",
-    "size": "",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Agave attenuata 'Boutin Blue' (Blue Fox Tail Agave)",
-    "size": "1–4′",
-    "target": "",
-    "aggression": "Light",
-    "type": "Warm",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "",
-      "feb": "",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "■",
-      "aug": "■",
-      "sep": "■",
-      "oct": "■",
-      "nov": "■",
-      "dec": ""
-    }
-  },
-  {
-    "name": "Agave attenuata (Fox Tail Agave)",
-    "size": "1–4′",
-    "target": "",
-    "aggression": "Light",
-    "type": "Warm",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "",
-      "feb": "",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "■",
-      "aug": "■",
-      "sep": "■",
-      "oct": "■",
-      "nov": "■",
-      "dec": ""
-    }
-  },
-  {
-    "name": "Agave 'Blue Flame' (Blue Flame Agave)",
-    "size": "1–4′",
-    "target": "",
-    "aggression": "Light",
-    "type": "Warm",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "",
-      "feb": "",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "■",
-      "aug": "■",
-      "sep": "■",
-      "oct": "■",
-      "nov": "■",
-      "dec": ""
-    }
-  },
-  {
-    "name": "Aloe vera (Aloe Vera)",
-    "size": "1–4′",
-    "target": "",
-    "aggression": "Light",
-    "type": "Warm",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "",
-      "feb": "",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "■",
-      "aug": "■",
-      "sep": "■",
-      "oct": "■",
-      "nov": "■",
-      "dec": ""
-    }
-  },
-  {
-    "name": "Aloe 'Blue Elf' (Blue Elf Aloe)",
-    "size": "1–4′",
-    "target": "",
-    "aggression": "Light",
-    "type": "Warm",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "",
-      "feb": "",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "■",
-      "aug": "■",
-      "sep": "■",
-      "oct": "■",
-      "nov": "■",
-      "dec": ""
-    }
-  },
-  {
-    "name": "Rosmarinus officinalis (Rosemary)",
-    "size": "3–8′",
-    "target": "",
-    "aggression": "Light–Med",
-    "type": "Warm",
-    "fertilize": "Minimal",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Bougainvillea spectabilis (Bougainvillea)",
-    "size": "",
-    "target": "",
-    "aggression": "Med–Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "△",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "△",
-      "jul": "△",
-      "aug": "△",
-      "sep": "△",
-      "oct": "△",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
-    "name": "Olea europaea (Olive Tree)",
+    "botanical": "Juglans californica var. californica",
+    "common": "Southern California Black Walnut",
     "size": "15–30′",
     "target": "",
     "aggression": "Light–Med",
@@ -1805,30 +967,78 @@ const PLANTS = [
     }
   },
   {
-    "name": "Cupressus sempervirens (Italian Cypress)",
-    "size": "15–30′",
+    "botanical": "Artemisia californica",
+    "common": "California Sagebrush",
+    "size": "3–8′",
     "target": "",
-    "aggression": "Light",
+    "aggression": "Med–Heavy",
     "type": "Year",
-    "fertilize": "Minimal",
+    "fertilize": "Light fert spring",
     "calendar": {
       "jan": "△",
       "feb": "■",
       "mar": "■",
       "apr": "■",
       "may": "■",
-      "jun": "",
-      "jul": "",
-      "aug": "",
-      "sep": "",
-      "oct": "",
-      "nov": "△",
-      "dec": "△"
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
     }
   },
   {
-    "name": "Juniperus chinensis 'Torulosa' (Juniper)",
+    "botanical": "Artemisia californica 'Canyon Gray'",
+    "common": "Canyon Gray Sagebrush",
     "size": "",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Artemisia californica 'Montara'",
+    "common": "Montara Sagebrush",
+    "size": "",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Rhus ovata",
+    "common": "Sugar Bush",
+    "size": "3–8′",
     "target": "",
     "aggression": "Light–Med",
     "type": "Warm",
@@ -1849,7 +1059,238 @@ const PLANTS = [
     }
   },
   {
-    "name": "Rhaphiolepis indica (Indian Hawthorn)",
+    "botanical": "Rhus integrifolia",
+    "common": "Lemonade Berry",
+    "size": "3–8′",
+    "target": "",
+    "aggression": "Light–Med",
+    "type": "Warm",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Prunus ilicifolia ssp. ilicifolia",
+    "common": "Hollyleaf Cherry",
+    "size": "3–8′",
+    "target": "",
+    "aggression": "Light–Med",
+    "type": "Shade",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Rhamnus californica",
+    "common": "Coffeeberry",
+    "size": "3–8′",
+    "target": "",
+    "aggression": "Light–Med",
+    "type": "Shade",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Calliandra californica",
+    "common": "Baja Fairy Duster",
+    "size": "3–8′",
+    "target": "",
+    "aggression": "Light–Med",
+    "type": "Warm",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Isomeris arborea",
+    "common": "Bladderpod",
+    "size": "3–8′",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Eriogonum fasciculatum",
+    "common": "California Buckwheat",
+    "size": "",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Eriogonum cinereum",
+    "common": "Ashyleaf Buckwheat",
+    "size": "3–8′",
+    "target": "",
+    "aggression": "Light–Med",
+    "type": "Warm",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Eriogonum arborescens",
+    "common": "Santa Cruz Island Buckwheat",
+    "size": "3–8′",
+    "target": "",
+    "aggression": "Light–Med",
+    "type": "Warm",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Eriogonum fasciculatum 'Theodore Payne'",
+    "common": "Theodore Payne Buckwheat",
+    "size": "",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Baccharis pilularis 'Pigeon Point'",
+    "common": "Pigeon Point Coyote Brush",
+    "size": "",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Shade",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Lepechinia fragrans",
+    "common": "Fragrant Pitcher Sage",
     "size": "3–8′",
     "target": "",
     "aggression": "Med–Heavy",
@@ -1871,7 +1312,652 @@ const PLANTS = [
     }
   },
   {
-    "name": "Carissa macrocarpa (Natal Plum)",
+    "botanical": "Abutilon palmeri",
+    "common": "Palmer's Indian Mallow",
+    "size": "3–8′",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Sphaeralcea ambigua",
+    "common": "Desert Mallow / Apricot Mallow",
+    "size": "1–3′",
+    "target": "",
+    "aggression": "Light–Med",
+    "type": "Warm",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Eriogonum grande var. rubescens",
+    "common": "Red Buckwheat",
+    "size": "1–3′",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Achillea millefolium",
+    "common": "Common Yarrow",
+    "size": "1–3′",
+    "target": "",
+    "aggression": "Light–Med",
+    "type": "Shade",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Asclepias fascicularis",
+    "common": "Narrow Leaf Milkweed",
+    "size": "1–3′",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Asclepias speciosa",
+    "common": "Showy Milkweed",
+    "size": "1–3′",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Anemopsis californica",
+    "common": "Yerba Mansa",
+    "size": "1–3′",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Shade",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Iris douglasiana",
+    "common": "Douglas Iris",
+    "size": "1–3′",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Shade",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Bouteloua gracilis",
+    "common": "Blue Grama",
+    "size": "2–4′",
+    "target": "",
+    "aggression": "Heavy",
+    "type": "Shade",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "",
+      "feb": "△",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "△",
+      "aug": "",
+      "sep": "",
+      "oct": "",
+      "nov": "",
+      "dec": "△"
+    }
+  },
+  {
+    "botanical": "Leymus condensatus 'Canyon Prince'",
+    "common": "Canyon Prince Wild Rye",
+    "size": "2–4′",
+    "target": "",
+    "aggression": "Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "",
+      "feb": "△",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "△",
+      "aug": "",
+      "sep": "",
+      "oct": "",
+      "nov": "",
+      "dec": "△"
+    }
+  },
+  {
+    "botanical": "Carex tumulicola",
+    "common": "Foothill Sedge / Berkeley Sedge",
+    "size": "",
+    "target": "",
+    "aggression": "Light–Med",
+    "type": "Shade",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Carex pansa",
+    "common": "Sand Dune Sedge",
+    "size": "",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Carex barbarae",
+    "common": "Valley Sedge",
+    "size": "",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Shade",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Sesleria autumnalis",
+    "common": "Sesleria Autumnalis",
+    "size": "2–4′",
+    "target": "",
+    "aggression": "Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "",
+      "feb": "△",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "△",
+      "aug": "",
+      "sep": "",
+      "oct": "",
+      "nov": "",
+      "dec": "△"
+    }
+  },
+  {
+    "botanical": "Berberis aquifolium var. repens",
+    "common": "Creeping Barberry / Creeping Oregon Grape",
+    "size": "",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Shade",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Erigeron glaucus",
+    "common": "Seaside Daisy",
+    "size": "1–3′",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Hesperaloe parviflora",
+    "common": "Red Yucca",
+    "size": "",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Agave attenuata 'Boutin Blue'",
+    "common": "Blue Fox Tail Agave",
+    "size": "1–4′",
+    "target": "",
+    "aggression": "Light",
+    "type": "Warm",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Agave attenuata",
+    "common": "Fox Tail Agave",
+    "size": "1–4′",
+    "target": "",
+    "aggression": "Light",
+    "type": "Warm",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Agave 'Blue Flame'",
+    "common": "Blue Flame Agave",
+    "size": "1–4′",
+    "target": "",
+    "aggression": "Light",
+    "type": "Warm",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Aloe vera",
+    "common": "Aloe Vera",
+    "size": "1–4′",
+    "target": "",
+    "aggression": "Light",
+    "type": "Warm",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Aloe 'Blue Elf'",
+    "common": "Blue Elf Aloe",
+    "size": "1–4′",
+    "target": "",
+    "aggression": "Light",
+    "type": "Warm",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Rosmarinus officinalis",
+    "common": "Rosemary",
+    "size": "3–8′",
+    "target": "",
+    "aggression": "Light–Med",
+    "type": "Warm",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Bougainvillea spectabilis",
+    "common": "Bougainvillea",
+    "size": "",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Olea europaea",
+    "common": "Olive Tree",
+    "size": "15–30′",
+    "target": "",
+    "aggression": "Light–Med",
+    "type": "Year",
+    "fertilize": "Light spring fert",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "",
+      "jul": "",
+      "aug": "",
+      "sep": "",
+      "oct": "",
+      "nov": "△",
+      "dec": "△"
+    }
+  },
+  {
+    "botanical": "Cupressus sempervirens",
+    "common": "Italian Cypress",
+    "size": "15–30′",
+    "target": "",
+    "aggression": "Light",
+    "type": "Year",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "",
+      "jul": "",
+      "aug": "",
+      "sep": "",
+      "oct": "",
+      "nov": "△",
+      "dec": "△"
+    }
+  },
+  {
+    "botanical": "Juniperus chinensis 'Torulosa'",
+    "common": "Juniper",
+    "size": "",
+    "target": "",
+    "aggression": "Light–Med",
+    "type": "Warm",
+    "fertilize": "Minimal",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Rhaphiolepis indica",
+    "common": "Indian Hawthorn",
+    "size": "3–8′",
+    "target": "",
+    "aggression": "Med–Heavy",
+    "type": "Shade",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Carissa macrocarpa",
+    "common": "Natal Plum",
     "size": "3–8′",
     "target": "",
     "aggression": "Light–Med",
@@ -1893,7 +1979,8 @@ const PLANTS = [
     }
   },
   {
-    "name": "Phormium tenax (New Zealand Flax)",
+    "botanical": "Phormium tenax",
+    "common": "New Zealand Flax",
     "size": "1–3′",
     "target": "",
     "aggression": "Med–Heavy",
@@ -1915,5 +2002,3 @@ const PLANTS = [
     }
   }
 ];
-// Export for module use
-if (typeof module !== "undefined" && module.exports) module.exports = PLANTS;

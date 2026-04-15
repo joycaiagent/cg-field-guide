@@ -1,24 +1,24 @@
 {
-  "name": "CG Landscape Plant Health",
-  "short_name": "Plant Health",
-  "description": "Plant & pest ID for CG Landscape field crews",
-  "categories": ["productivity", "business"],
-  "screenshots": [],
-  "start_url": "/index.html",
-  "display": "standalone",
-  "background_color": "#1a5c5c",
-  "theme_color": "#1a5c5c",
-  "orientation": "portrait-primary",
-  "icons": [
-    {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
-}
+ 	'name': 'CG Grow with us',
+ 	'short_name': 'CG Grow',
+ 	'description': 'Plant & pest ID for CG Landscape field crews',
+ 	'categories': ['productivity', 'business'],
+ 	'screenshots': [],
+ 	'start_url': '/index.html',
+ 	'display': 'standalone',
+ 	'background_color': '#1a5c5c',
+ 	'theme_color': '#1a5c5c',
+ 	'orientation': 'portrait-primary',
+ 	'icons': [
+ 		{
+ 			'src': 'icons/icon-192.png',
+ 			'sizes': '192x192',
+ 			'type': 'image/png'
+ 		},
+ 		{
+ 			'src': 'icons/icon-512.png',
+ 			'sizes': '512x512',
+ 			'type': 'image/png'
+ 		}
+ 	]
+ }
