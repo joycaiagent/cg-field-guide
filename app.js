@@ -6,6 +6,9 @@
   let currentTab = 'plant';
   let stream = null;
 
+  // ── DOM refs ──────────────────────────────────────────────
+  const $ = id => document.getElementById(id);
+
   // ── Photo tips ─────────────────────────────────────────────
   const TIPS = [
     'Get close — include leaves or flowers for best results',
@@ -22,8 +25,6 @@
   let selectedPhotos = [];  // array of { dataUrl, blob }
   const MAX_PHOTOS = 5;
 
-  // ── DOM refs ──────────────────────────────────────────────
-  const $ = id => document.getElementById(id);
   const tabBtns   = document.querySelectorAll('.tab-btn');
   const plantTab   = $('plant-tab');
   const pestTab    = $('pest-tab');
