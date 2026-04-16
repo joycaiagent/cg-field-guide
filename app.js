@@ -107,6 +107,13 @@
   window.addEventListener('offline', updateOnlineStatus);
   updateOnlineStatus();
 
+  // DEBUG: auto-load Coast Live Oak on page open to verify result card works
+  window.addEventListener('load', () => {
+    const test = PLANTS.find(p => p.botanical === 'Quercus agrifolia');
+    if (test) { console.log('AUTO TEST: calling displayPlantResult'); displayPlantResult(test, 'exact'); }
+    else { console.log('AUTO TEST: Quercus agrifolia not found'); }
+  });
+
   // ── Camera / Upload ────────────────────────────────────────
   const takePhotoBtn = $('take-photo-btn');
   const uploadBtn   = $('upload-btn');
