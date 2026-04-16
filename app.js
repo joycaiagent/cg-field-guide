@@ -492,7 +492,7 @@
           const result = findBestMatch(q);
           if (result) {
             displayPlantResult(result.plant, result.confidence);
-            previewImg.classList.add('hidden');
+            if (previewImg) previewImg.classList.add('hidden');
           }
         }
       }
@@ -541,9 +541,9 @@
         if (currentTab === 'plant') {
           const plant = PLANTS.find(p => p.botanical === botanical);
           displayPlantResult(plant);
-          previewImg.classList.add('hidden');
+          if (previewImg) previewImg.classList.add('hidden');
         } else {
-          const pest = PESTS.find(p => p.name === name);
+          const pest = PESTS.find(p => p.name === botanical);
           displayPestResult(pest);
         }
       });

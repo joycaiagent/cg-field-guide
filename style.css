@@ -435,7 +435,7 @@ body {
 }
 
 /* ── Hidden utility ── */
-.hidden { visibility: hidden !important; }
+.hidden { display: none !important; }
 
 /* ── Install prompt ── */
 .install-prompt {
