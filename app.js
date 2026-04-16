@@ -107,11 +107,14 @@
   window.addEventListener('offline', updateOnlineStatus);
   updateOnlineStatus();
 
-  // DEBUG: auto-load Coast Live Oak on page open to verify result card works
+  // Auto-test on page load: write to the #test-card visible element
   window.addEventListener('load', () => {
     const test = PLANTS.find(p => p.botanical === 'Quercus agrifolia');
-    if (test) { console.log('AUTO TEST: calling displayPlantResult'); displayPlantResult(test, 'exact'); }
-    else { console.log('AUTO TEST: Quercus agrifolia not found'); }
+    const statusEl = document.getElementById('test-status');
+    if (!test) { if (statusEl) statusEl.textContent = 'ERROR: Quercus agrifolia not found in PLANTS'; return; }
+    if (statusEl) statusEl.textContent = 'Found Quercus agrifolia — calling displayPlantResult…';
+    displayPlantResult(test, 'exact');
+    if (statusEl) statusEl.textContent = 'displayPlantResult called! Result card should appear below.';
   });
 
   // ── Camera / Upload ────────────────────────────────────────
@@ -282,7 +285,10 @@
         ? 'No plant detected. Try including leaves, flowers, or bark in the photo.'
         : "This plant isn't in the CG Landscape pruning guide. Ask your supervisor.";
       statusMsg.textContent = '';
+      const _ts = document.getElementById('test-status');
+      if (_ts) _ts.textContent = 'Step 1: removing hidden from result-card…';
       resultCard.classList.remove('hidden');
+      if (_ts) _ts.textContent = 'Step 2: result-card visible, writing HTML to result-body…';
       resultBody.innerHTML = `
         <p class="no-match" style="color:var(--teal);font-weight:600;">Not in our 87-plant database</p>
         <p class="no-match" style="font-size:0.9rem">PlantNet identified as:</p>
