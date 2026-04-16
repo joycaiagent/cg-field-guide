@@ -1,5 +1,6 @@
 // CG Landscape Field Guide — Service Worker
-const CACHE_NAME = 'cg-grow-v4';
+const CACHE_NAME = 'cg-grow-v6';
+
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -34,24 +35,35 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch: network-first for HTML, cache-first for assets
+// Fetch: network-first for HTML (always fresh), cache-first for assets
 self.addEventListener('fetch', event => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Don't cache cross-origin requests
-  if (url.origin !== location.origin && !url.href.includes('plantnet')) {
-    return;
-  }
-
+  // Skip non-GET
   if (request.method !== 'GET') return;
 
+  // API calls — network only
   if (url.href.includes('plantnet') || url.href.includes('my-api.plantnet')) {
-    // Network-only for API calls
     event.respondWith(fetch(request));
     return;
   }
 
+  // HTML — always network first, no cache
+  if (url.pathname.endsWith('.html') || url.pathname === '/' || !url.pathname.includes('.')) {
+    event.respondWith(
+      fetch(request).then(response => {
+        if (response && response.status === 200) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
+        }
+        return response;
+      }).catch(() => caches.match(request))
+    );
+    return;
+  }
+
+  // Static assets — cache first, then network
   event.respondWith(
     caches.match(request).then(cached => {
       const fetchPromise = fetch(request).then(response => {
@@ -61,7 +73,6 @@ self.addEventListener('fetch', event => {
         }
         return response;
       }).catch(() => cached);
-
       return cached || fetchPromise;
     })
   );
