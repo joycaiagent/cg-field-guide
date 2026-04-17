@@ -237,15 +237,36 @@ body {
 }
 
 /* ── Result card ── */
-#result-card { display: block; overflow: visible; 
+#result-card {
+  display: block;
   margin: 12px;
   background: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  border: 1px solid rgba(26,92,92,0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   overflow: hidden;
 }
 #result-card.hidden { display: none; }
 #result-body { padding: 16px; }
+
+.result-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.result-kicker {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal-lt);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.result-badge-wrap {
+  flex-shrink: 0;
+}
 
 /* ── Plant name heading ── */
 .plant-name {
@@ -267,13 +288,17 @@ body {
 .result-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 16px;
 }
 .result-item {
-  background: var(--gray-bg);
-  border-radius: 8px;
-  padding: 10px 12px;
+  background: linear-gradient(180deg, #fafcfc 0%, #f2f7f7 100%);
+  border: 1px solid rgba(26,92,92,0.08);
+  border-radius: 10px;
+  padding: 11px 12px;
+}
+.result-item-wide {
+  grid-column: 1 / -1;
 }
 .result-item .label {
   display: block;
@@ -297,7 +322,25 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
-  margin: 14px 0 8px;
+  margin: 0 0 6px;
+}
+.calendar-card {
+  background: #fbfcfc;
+  border: 1px solid rgba(26,92,92,0.08);
+  border-radius: 12px;
+  padding: 14px;
+}
+.calendar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.calendar-caption {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.4;
 }
 .legend {
   display: flex;
@@ -527,4 +570,14 @@ body {
   text-align: center;
   border-radius: 0 0 6px 6px;
   padding: 1px;
+}
+
+@media (max-width: 420px) {
+  .result-header {
+    flex-direction: column;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
 }

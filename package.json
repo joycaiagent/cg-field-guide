@@ -4,7 +4,9 @@
   "description": "PWA plant & pest ID tool for CG Landscape field crews",
   "scripts": {
     "start": "npx serve . -l 3000",
-    "build-icons": "node scripts/build-icons.js"
+    "build-icons": "node scripts/build-icons.js",
+    "export-plants-csv": "node scripts/export-plants-csv.js",
+    "import-plants-csv": "node scripts/import-plants-csv.js"
   },
   "keywords": ["pwa", "landscape", "plant-id", "cg-landscape"],
   "license": "UNLICENSED"

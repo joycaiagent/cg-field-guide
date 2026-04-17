@@ -4,7 +4,6 @@
   'use strict';
 
   let currentTab = 'plant';
-  let stream = null;
 
   // ── DOM refs ──────────────────────────────────────────────
   const $ = id => document.getElementById(id);
@@ -60,11 +59,19 @@
     clearResults();
   }
 
+  function hidePreview() {
+    if (previewImg) previewImg.classList.add('hidden');
+  }
+
+  function hideSearchResults() {
+    if (searchResults) searchResults.classList.add('hidden');
+  }
+
   function clearResults() {
     resultCard.classList.add('hidden');
-    previewImg && previewImg.classList.add('hidden');
+    hidePreview();
     statusMsg.textContent = '';
-    if (searchResults) searchResults.classList.add('hidden');
+    hideSearchResults();
     selectedPhotos = [];
     renderPhotoPreviews();
   }
@@ -492,25 +499,39 @@
     const common = plant.common || '';
 
     resultBody.innerHTML = `
-      ${badge}
-      <h2 class="plant-name" style="font-style:italic">${botanical}</h2>
-      ${common ? `<p class="plant-common">${common}</p>` : ''}
+      <div class="result-header">
+        <div>
+          <p class="result-kicker">Plant match</p>
+          <h2 class="plant-name" style="font-style:italic">${botanical}</h2>
+          ${common ? `<p class="plant-common">${common}</p>` : ''}
+        </div>
+        ${badge ? `<div class="result-badge-wrap">${badge}</div>` : ''}
+      </div>
       <div class="result-grid">
         <div class="result-item"><span class="label">Size</span><span class="value">${plant.size || '&#8212;'}</span></div>
         <div class="result-item"><span class="label">Prune Target</span><span class="value">${plant.target || '&#8212;'}</span></div>
         <div class="result-item"><span class="label">Aggression</span><span class="value">${plant.aggression || '&#8212;'}</span></div>
-        <div class="result-item"><span class="label">Type</span><span class="value">${plant.type || '&#8212;'}</span></div>
-        <div class="result-item"><span class="label">Fertilize</span><span class="value">${plant.fertilize || '&#8212;'}</span></div>
+        <div class="result-item"><span class="label">Season</span><span class="value">${plant.type || '&#8212;'}</span></div>
+        <div class="result-item result-item-wide"><span class="label">Feed After Prune</span><span class="value">${plant.fertilize || '&#8212;'}</span></div>
       </div>
-      <h3>Pruning Calendar</h3>
-      <div class="legend">
-        <span class="leg-item"><span class="sym-box best-box">■</span> Best time</span>
-        <span class="leg-item"><span class="sym-box light-box">△</span> Light only</span>
-        <span class="leg-item"><span class="sym-box avoid-box">&#8212;</span> Avoid</span>
-      </div>
-      <div class="cal-grid">${calHTML}</div>
+      <section class="calendar-card">
+        <div class="calendar-head">
+          <div>
+            <h3>Pruning Calendar</h3>
+            <p class="calendar-caption">Dark teal is best time, light teal is light pruning only.</p>
+          </div>
+        </div>
+        <div class="legend">
+          <span class="leg-item"><span class="sym-box best-box">■</span> Best time</span>
+          <span class="leg-item"><span class="sym-box light-box">△</span> Light only</span>
+          <span class="leg-item"><span class="sym-box avoid-box">&#8212;</span> Avoid</span>
+        </div>
+        <div class="cal-grid">${calHTML}</div>
+      </section>
     `;
-  }  function displayPestResult(pest) {
+  }
+
+  function displayPestResult(pest) {
     if (!pest) {
       resultBody.innerHTML = '<p class="no-match">No matching pest found.</p>';
       return;
@@ -561,7 +582,7 @@
           const result = findBestMatch(q);
           if (result) {
             displayPlantResult(result.plant, result.confidence);
-            if (previewImg) previewImg.classList.add('hidden');
+            hidePreview();
           }
         }
       }
@@ -588,16 +609,16 @@
     );
     if (exact) {
       displayPlantResult(exact, 'exact');
-      if (searchResults) searchResults.classList.add('hidden');
-      if (previewImg) previewImg.classList.add('hidden');
+      hideSearchResults();
+      hidePreview();
       return true;
     }
 
     const results = searchPlants(q);
     if (results.length === 1) {
       displayPlantResult(results[0], 'exact');
-      if (searchResults) searchResults.classList.add('hidden');
-      if (previewImg) previewImg.classList.add('hidden');
+      hideSearchResults();
+      hidePreview();
       return true;
     }
 
@@ -616,11 +637,11 @@
     const item = visibleSearchItems[index];
     if (!item) return;
     searchBar.value = currentTab === 'plant' ? item.botanical : item.name;
-    searchResults.classList.add('hidden');
+    hideSearchResults();
     statusMsg.textContent = 'Looking up…';
     if (currentTab === 'plant') {
       displayPlantResult(item, 'exact');
-      if (previewImg) previewImg.classList.add('hidden');
+      hidePreview();
       if (resultCard && resultCard.scrollIntoView) {
         setTimeout(() => resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30);
       }
@@ -667,7 +688,7 @@
   const pestResultCard = $('pest-result-card');
   const pestResultBody = $('pest-result-body');
 
-  function displayPestResult2(pest) {
+  function displayPestResult(pest) {
     if (!pest) {
       pestResultBody.innerHTML = '<p class="no-match">No matching pest found.</p>';
       pestResultCard.classList.remove('hidden');
