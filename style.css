@@ -21,7 +21,7 @@ html { font-size: 16px; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--gray-bg);
+  background: linear-gradient(180deg, #eef4f4 0%, #f6f8f8 35%, var(--gray-bg) 100%);
   color: var(--text);
   min-height: 100vh;
   -webkit-tap-highlight-color: transparent;
@@ -29,13 +29,13 @@ body {
 
 /* ── Header ── */
 .header {
-  background: var(--teal);
+  background: linear-gradient(135deg, #174d4d 0%, #1a5c5c 55%, #2d8a8a 100%);
   color: var(--white);
   padding: 14px 16px 12px;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
 .header-inner {
   display: flex;
@@ -256,6 +256,9 @@ body {
   gap: 10px;
   margin-bottom: 14px;
 }
+.result-header-rich {
+  margin-bottom: 10px;
+}
 .result-kicker {
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -266,6 +269,41 @@ body {
 }
 .result-badge-wrap {
   flex-shrink: 0;
+}
+.plant-aliases {
+  margin-top: 6px;
+  color: #567070;
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+.hero-note-card {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(26,92,92,0.96) 0%, rgba(45,138,138,0.92) 100%);
+  color: white;
+  box-shadow: 0 8px 20px rgba(26,92,92,0.18);
+}
+.hero-note-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.hero-note-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.hero-note-value {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.hero-note-sub {
+  margin-top: 6px;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.86);
 }
 .result-summary {
   margin: -2px 0 14px;
@@ -309,6 +347,24 @@ body {
 }
 .result-item-wide {
   grid-column: 1 / -1;
+}
+.detail-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 0 0 16px;
+}
+.detail-card {
+  background: white;
+  border: 1px solid rgba(26,92,92,0.08);
+  border-radius: 10px;
+  padding: 12px;
+}
+.detail-card p {
+  margin-top: 4px;
+  color: #486060;
+  line-height: 1.45;
+  font-size: 0.9rem;
 }
 .result-item .label {
   display: block;
@@ -595,5 +651,9 @@ body {
 
   .result-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-note-value {
+    font-size: 0.95rem;
   }
 }

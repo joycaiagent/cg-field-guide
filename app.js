@@ -482,13 +482,28 @@
     }
 
     const cal = plant.calendar || {};
+    const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const monthSymbols = {
       jan: cal.jan || '', feb: cal.feb || '', mar: cal.mar || '', apr: cal.apr || '',
       may: cal.may || '', jun: cal.jun || '', jul: cal.jul || '', aug: cal.aug || '',
       sep: cal.sep || '', oct: cal.oct || '', nov: cal.nov || '', dec: cal.dec || ''
     };
-    const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
-    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const bestMonths = months.filter(m => monthSymbols[m] === '■').map((m, i) => monthNames[months.indexOf(m)]);
+    const lightMonths = months.filter(m => monthSymbols[m] === '△').map((m, i) => monthNames[months.indexOf(m)]);
+    const seasonLabelMap = {
+      Warm: 'Warmer growing season plant',
+      Cool: 'Cool season or cooler weather performer',
+      Year: 'Can usually be maintained through most of the year',
+      Shade: 'Use extra caution, usually slower recovery in shade'
+    };
+    const aggressionNoteMap = {
+      Light: 'Stay conservative, shape more than reduce.',
+      'Light–Med': 'Moderate shaping is usually safe.',
+      Medium: 'Can take a noticeable cutback if healthy.',
+      'Med–Heavy': 'Can handle a strong reduction when timed right.',
+      Heavy: 'Can be cut back hard during the right window.'
+    };
     const calHTML = months.map((m, i) =>
       `<div class="cal-month${monthSymbols[m] === '■' ? ' best' : monthSymbols[m] === '△' ? ' light' : ''}">
         <span class="cal-sym">${monthSymbols[m] || '&#8212;'}</span>
@@ -498,17 +513,35 @@
 
     const botanical = plant.botanical || plant.name || '';
     const common = plant.common || '';
+    const synonyms = Array.isArray(plant.synonyms) && plant.synonyms.length
+      ? plant.synonyms.join(', ')
+      : '';
+    const bestMonthsText = bestMonths.length ? bestMonths.join(', ') : 'No strong prune window listed';
+    const lightMonthsText = lightMonths.length ? lightMonths.join(', ') : 'None listed';
+    const seasonNote = seasonLabelMap[plant.type] || 'Follow the calendar window and plant health.';
+    const aggressionNote = aggressionNoteMap[plant.aggression] || 'Match pruning intensity to plant health and site conditions.';
 
     resultBody.innerHTML = `
-      <div class="result-header">
+      <div class="result-header result-header-rich">
         <div>
           <p class="result-kicker">Plant match</p>
           <h2 class="plant-name" style="font-style:italic">${botanical}</h2>
           ${common ? `<p class="plant-common">${common}</p>` : ''}
+          ${synonyms ? `<p class="plant-aliases"><strong>Also called:</strong> ${synonyms}</p>` : ''}
         </div>
         ${badge ? `<div class="result-badge-wrap">${badge}</div>` : ''}
       </div>
-      <div class="result-summary">Use this as a quick field guide for pruning timing and cutback level.</div>
+
+      <div class="hero-note-card">
+        <div class="hero-note-main">
+          <span class="hero-note-label">Best prune window</span>
+          <span class="hero-note-value">${bestMonthsText}</span>
+        </div>
+        <div class="hero-note-sub">Light prune only: ${lightMonthsText}</div>
+      </div>
+
+      <div class="result-summary">Use this as a quick field guide for pruning timing, cutback level, and feed timing.</div>
+
       <div class="result-grid">
         <div class="result-item"><span class="label">Size</span><span class="value">${plant.size || '&#8212;'}</span></div>
         <div class="result-item"><span class="label">Prune Target</span><span class="value">${plant.target || '&#8212;'}</span></div>
@@ -516,6 +549,18 @@
         <div class="result-item"><span class="label">Season</span><span class="value">${plant.type || '&#8212;'}</span></div>
         <div class="result-item result-item-wide"><span class="label">Feed After Prune</span><span class="value">${plant.fertilize || '&#8212;'}</span></div>
       </div>
+
+      <div class="detail-stack">
+        <div class="detail-card">
+          <span class="label">Pruning note</span>
+          <p>${aggressionNote}</p>
+        </div>
+        <div class="detail-card">
+          <span class="label">Season note</span>
+          <p>${seasonNote}</p>
+        </div>
+      </div>
+
       <section class="calendar-card">
         <div class="calendar-head">
           <div>
