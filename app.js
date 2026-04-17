@@ -480,10 +480,19 @@
         if (searchResults) searchResults.classList.add('hidden');
         return;
       }
+      if (currentTab === 'plant' && tryDisplayTypedPlant(q)) return;
       const results = currentTab === 'plant'
         ? searchPlants(q)
         : searchPests(q);
       renderSearchResults(results);
+    });
+
+    searchBar.addEventListener('change', e => {
+      tryDisplayTypedPlant(e.target.value);
+    });
+
+    searchBar.addEventListener('blur', e => {
+      setTimeout(() => tryDisplayTypedPlant(e.target.value), 120);
     });
 
     searchBar.addEventListener('keydown', e => {
@@ -491,6 +500,7 @@
         e.preventDefault(); // prevent form submit / blur cascade
         const q = e.target.value.trim();
         if (q && currentTab === 'plant') {
+          if (tryDisplayTypedPlant(q)) return;
           const result = findBestMatch(q);
           if (result) {
             displayPlantResult(result.plant, result.confidence);
@@ -508,6 +518,33 @@
       (p.common || '').toLowerCase().includes(q) ||
       (Array.isArray(p.synonyms) && p.synonyms.some(s => s.toLowerCase().includes(q)))
     );
+  }
+
+  function tryDisplayTypedPlant(query) {
+    const q = (query || '').trim();
+    if (!q || currentTab !== 'plant') return false;
+
+    const exact = PLANTS.find(p =>
+      (p.botanical || '').toLowerCase() === q.toLowerCase() ||
+      (p.common || '').toLowerCase() === q.toLowerCase() ||
+      (Array.isArray(p.synonyms) && p.synonyms.some(s => s.toLowerCase() === q.toLowerCase()))
+    );
+    if (exact) {
+      displayPlantResult(exact, 'exact');
+      if (searchResults) searchResults.classList.add('hidden');
+      if (previewImg) previewImg.classList.add('hidden');
+      return true;
+    }
+
+    const results = searchPlants(q);
+    if (results.length === 1) {
+      displayPlantResult(results[0], 'exact');
+      if (searchResults) searchResults.classList.add('hidden');
+      if (previewImg) previewImg.classList.add('hidden');
+      return true;
+    }
+
+    return false;
   }
 
   function searchPests(query) {
