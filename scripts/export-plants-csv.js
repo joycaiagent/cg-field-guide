@@ -25,7 +25,7 @@ function csvEscape(value) {
 }
 
 const plants = loadPlants();
-const header = ['botanical', 'common', 'synonyms', 'size', 'target', 'aggression', 'type', 'fertilize', ...MONTHS];
+const header = ['botanical', 'common', 'synonyms', 'image', 'size', 'target', 'aggression', 'type', 'fertilize', ...MONTHS];
 const lines = [header.join(',')];
 
 for (const plant of plants) {
@@ -33,6 +33,7 @@ for (const plant of plants) {
     plant.botanical || '',
     plant.common || '',
     Array.isArray(plant.synonyms) ? plant.synonyms.join('|') : '',
+    plant.image || '',
     plant.size || '',
     plant.target || '',
     plant.aggression || '',

@@ -7,7 +7,7 @@ const inputPath = path.resolve(inputArg);
 const plantsPath = path.join(repoRoot, 'plants.js');
 const backupDir = path.join(repoRoot, 'admin', 'backups');
 const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
-const REQUIRED = ['botanical', 'common', 'synonyms', 'size', 'target', 'aggression', 'type', 'fertilize', ...MONTHS];
+const REQUIRED = ['botanical', 'common', 'synonyms', 'image', 'size', 'target', 'aggression', 'type', 'fertilize', ...MONTHS];
 const ALLOWED_MONTH_VALUES = new Set(['', '■', '△']);
 
 function parseCsv(text) {
@@ -96,6 +96,7 @@ const plants = rows.slice(1).map((row, idx) => {
   const plant = {
     botanical,
     common: get('common'),
+    image: get('image'),
     size: get('size'),
     target: get('target'),
     aggression: get('aggression'),
@@ -109,6 +110,7 @@ const plants = rows.slice(1).map((row, idx) => {
     .map(s => s.trim())
     .filter(Boolean);
 
+  if (!plant.image) delete plant.image;
   if (synonyms.length) plant.synonyms = synonyms;
   return plant;
 });

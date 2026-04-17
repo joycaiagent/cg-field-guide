@@ -20,16 +20,18 @@ Let someone update plant schedule data in a spreadsheet-style CSV without hand-e
    - `node scripts/export-plants-csv.js`
 2. Edit `admin/plant-schedule-template.csv`
 3. Keep these columns exactly as-is:
-   - `botanical, common, synonyms, size, target, aggression, type, fertilize`
+   - `botanical, common, synonyms, image, size, target, aggression, type, fertilize`
    - `jan` through `dec`
 4. Month values must be one of:
    - blank
    - `■`
    - `△`
 5. Separate synonyms with `|`
-6. Import the CSV:
+6. For local photos, use a workspace-relative path like:
+   - `assets/plants/lomandra-breeze.jpg`
+7. Import the CSV:
    - `node scripts/import-plants-csv.js`
-7. Test locally, then commit and push
+8. Test locally, then commit and push
 
 ## Why this is safe
 

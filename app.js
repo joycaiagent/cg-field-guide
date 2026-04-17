@@ -513,6 +513,7 @@
 
     const botanical = plant.botanical || plant.name || '';
     const common = plant.common || '';
+    const image = plant.image || '';
     const synonyms = Array.isArray(plant.synonyms) && plant.synonyms.length
       ? plant.synonyms.join(', ')
       : '';
@@ -522,14 +523,17 @@
     const aggressionNote = aggressionNoteMap[plant.aggression] || 'Match pruning intensity to plant health and site conditions.';
 
     resultBody.innerHTML = `
-      <div class="result-header result-header-rich">
+      <div class="result-header result-header-rich${image ? ' result-header-with-image' : ''}">
         <div>
           <p class="result-kicker">Plant match</p>
           <h2 class="plant-name" style="font-style:italic">${botanical}</h2>
           ${common ? `<p class="plant-common">${common}</p>` : ''}
           ${synonyms ? `<p class="plant-aliases"><strong>Also called:</strong> ${synonyms}</p>` : ''}
         </div>
-        ${badge ? `<div class="result-badge-wrap">${badge}</div>` : ''}
+        <div class="result-header-side">
+          ${badge ? `<div class="result-badge-wrap">${badge}</div>` : ''}
+          ${image ? `<div class="plant-image-card"><img src="${image}" alt="${common || botanical}" class="plant-image" loading="lazy" /></div>` : ''}
+        </div>
       </div>
 
       <div class="hero-note-card">
