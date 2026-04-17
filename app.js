@@ -555,6 +555,23 @@
     );
   }
 
+  function selectSearchResult(index) {
+    const item = visibleSearchItems[index];
+    if (!item) return;
+    searchBar.value = currentTab === 'plant' ? item.botanical : item.name;
+    searchResults.classList.add('hidden');
+    statusMsg.textContent = 'Looking up…';
+    if (currentTab === 'plant') {
+      displayPlantResult(item, 'exact');
+      if (previewImg) previewImg.classList.add('hidden');
+      if (resultCard && resultCard.scrollIntoView) {
+        setTimeout(() => resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30);
+      }
+    } else {
+      displayPestResult(item);
+    }
+  }
+
   function renderSearchResults(results) {
     if (!searchResults) return;
     visibleSearchItems = results.slice(0, 10);
@@ -572,26 +589,21 @@
       }
     }).join('');
     searchResults.classList.remove('hidden');
+  }
 
-    searchResults.querySelectorAll('.search-item').forEach(btn => {
-      const selectResult = e => {
-        e.preventDefault();
-        e.stopPropagation();
-        const index = parseInt(btn.dataset.resultIndex, 10);
-        const item = visibleSearchItems[index];
-        if (!item) return;
-        searchBar.value = currentTab === 'plant' ? item.botanical : item.name;
-        searchResults.classList.add('hidden');
-        statusMsg.textContent = 'Looking up…';
-        if (currentTab === 'plant') {
-          displayPlantResult(item);
-          if (previewImg) previewImg.classList.add('hidden');
-        } else {
-          displayPestResult(item);
-        }
-      };
-      btn.addEventListener(window.PointerEvent ? 'pointerdown' : 'click', selectResult);
-    });
+  if (searchResults) {
+    const handleSearchSelection = e => {
+      const btn = e.target.closest('.search-item');
+      if (!btn) return;
+      e.preventDefault();
+      e.stopPropagation();
+      const index = parseInt(btn.dataset.resultIndex, 10);
+      if (Number.isNaN(index)) return;
+      selectSearchResult(index);
+    };
+    searchResults.addEventListener('touchstart', handleSearchSelection, { passive: false });
+    searchResults.addEventListener('mousedown', handleSearchSelection);
+    searchResults.addEventListener('click', handleSearchSelection);
   }
 
   // ── Pest tab search & display ─────────────────────────────
