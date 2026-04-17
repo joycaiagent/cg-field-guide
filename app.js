@@ -4,6 +4,7 @@
   'use strict';
 
   let currentTab = 'plant';
+  const APP_LAST_UPDATED = 'Apr 17, 2026';
 
   // ── DOM refs ──────────────────────────────────────────────
   const $ = id => document.getElementById(id);
@@ -507,6 +508,7 @@
         </div>
         ${badge ? `<div class="result-badge-wrap">${badge}</div>` : ''}
       </div>
+      <div class="result-summary">Use this as a quick field guide for pruning timing and cutback level.</div>
       <div class="result-grid">
         <div class="result-item"><span class="label">Size</span><span class="value">${plant.size || '&#8212;'}</span></div>
         <div class="result-item"><span class="label">Prune Target</span><span class="value">${plant.target || '&#8212;'}</span></div>
@@ -528,6 +530,7 @@
         </div>
         <div class="cal-grid">${calHTML}</div>
       </section>
+      <p class="result-meta">Schedule last updated ${APP_LAST_UPDATED}</p>
     `;
   }
 
