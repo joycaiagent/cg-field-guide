@@ -23,6 +23,7 @@
 
   // ── Multi-photo state ──────────────────────────────────────
   let selectedPhotos = [];  // array of { dataUrl, blob }
+  let visibleSearchItems = [];
   const MAX_PHOTOS = 5;
 
   const tabBtns   = document.querySelectorAll('.tab-btn');
@@ -519,36 +520,40 @@
 
   function renderSearchResults(results) {
     if (!searchResults) return;
-    if (results.length === 0) {
+    visibleSearchItems = results.slice(0, 10);
+    if (visibleSearchItems.length === 0) {
       searchResults.innerHTML = '<div class="search-empty">No results</div>';
       searchResults.classList.remove('hidden');
       return;
     }
-    searchResults.innerHTML = results.slice(0, 10).map(item => {
+    searchResults.innerHTML = visibleSearchItems.map((item, index) => {
       if (currentTab === 'plant') {
         const label = item.botanical + (item.common ? ' (' + item.common + ')' : '');
-        return `<button class="search-item" data-name="${item.botanical}">${label}</button>`;
+        return `<button type="button" class="search-item" data-result-index="${index}">${label}</button>`;
       } else {
-        return `<button class="search-item" data-name="${item.name}">${item.name} <span class="sev-tag ${item.severity === 'High' ? 'sev-high' : 'sev-med'}">${item.severity}</span></button>`;
+        return `<button type="button" class="search-item" data-result-index="${index}">${item.name} <span class="sev-tag ${item.severity === 'High' ? 'sev-high' : 'sev-med'}">${item.severity}</span></button>`;
       }
     }).join('');
     searchResults.classList.remove('hidden');
 
     searchResults.querySelectorAll('.search-item').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const botanical = btn.dataset.name;
-        searchBar.value = botanical;
+      const selectResult = e => {
+        e.preventDefault();
+        e.stopPropagation();
+        const index = parseInt(btn.dataset.resultIndex, 10);
+        const item = visibleSearchItems[index];
+        if (!item) return;
+        searchBar.value = currentTab === 'plant' ? item.botanical : item.name;
         searchResults.classList.add('hidden');
         statusMsg.textContent = 'Looking up…';
         if (currentTab === 'plant') {
-          const plant = PLANTS.find(p => p.botanical === botanical);
-          displayPlantResult(plant);
+          displayPlantResult(item);
           if (previewImg) previewImg.classList.add('hidden');
         } else {
-          const pest = PESTS.find(p => p.name === botanical);
-          displayPestResult(pest);
+          displayPestResult(item);
         }
-      });
+      };
+      btn.addEventListener(window.PointerEvent ? 'pointerdown' : 'click', selectResult);
     });
   }
 
