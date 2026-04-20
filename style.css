@@ -294,6 +294,23 @@ body {
   object-fit: cover;
   display: block;
 }
+.plant-gallery {
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px 4px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.plant-gallery .gallery-img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(26,92,92,0.15);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
 .plant-aliases {
   margin-top: 6px;
   color: #567070;

@@ -1971,6 +1971,11 @@ const PLANTS = [
   {
     "botanical": "Rhaphiolepis indica",
     "common": "Indian Hawthorn",
+    "images": [
+      "assets/plants/rhaphiolepis_indica_1.jpg",
+      "assets/plants/rhaphiolepis_indica_2.jpg",
+      "assets/plants/rhaphiolepis_indica_3.jpg"
+    ],
     "size": "3–8′",
     "target": "",
     "aggression": "Med–Heavy",

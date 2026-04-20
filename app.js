@@ -514,6 +514,7 @@
     const botanical = plant.botanical || plant.name || '';
     const common = plant.common || '';
     const image = plant.image || '';
+    const images = Array.isArray(plant.images) ? plant.images : (image ? [image] : []);
     const synonyms = Array.isArray(plant.synonyms) && plant.synonyms.length
       ? plant.synonyms.join(', ')
       : '';
@@ -535,6 +536,10 @@
           ${image ? `<div class="plant-image-card"><img src="${image}" alt="${common || botanical}" class="plant-image" loading="lazy" /></div>` : ''}
         </div>
       </div>
+      ${images.length ? `
+      <div class="plant-gallery">
+        ${images.map((img, i) => `<img src="${img}" alt="Reference ${i+1}" class="gallery-img" loading="lazy" />`).join('')}
+      </div>` : ''}
 
       <div class="hero-note-card">
         <div class="hero-note-main">
