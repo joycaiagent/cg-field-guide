@@ -105,8 +105,23 @@
     <span style="color:var(--teal)">📱 Add to Home Screen for best experience</span>
   </footer>
 
+  <div id="image-lightbox" class="image-lightbox hidden" aria-hidden="true">
+    <div class="image-lightbox-bar">
+      <div class="image-lightbox-actions">
+        <button id="zoom-out-btn" class="lightbox-btn" type="button">－</button>
+        <button id="zoom-reset-btn" class="lightbox-btn" type="button">100%</button>
+        <button id="zoom-in-btn" class="lightbox-btn" type="button">＋</button>
+      </div>
+      <button id="lightbox-close-btn" class="lightbox-btn lightbox-close" type="button">✕</button>
+    </div>
+    <div id="image-lightbox-stage" class="image-lightbox-stage">
+      <img id="image-lightbox-img" class="image-lightbox-img" alt="Expanded plant image" />
+    </div>
+    <div class="image-lightbox-hint">Tap image to open, then use + / − to zoom</div>
+  </div>
+
   <script src="plants.js?v=11"></script>
   <script src="pests.js?v=6"></script>
-  <script src="app.js?v=18"></script>
+  <script src="app.js?v=19"></script>
 </body>
 </html>

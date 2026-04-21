@@ -40,6 +40,14 @@
   const addMoreRow  = $('add-more-row');
   const addMoreBtn  = $('add-more-btn');
   const identifyBtn = $('identify-btn');
+  const lightbox = $('image-lightbox');
+  const lightboxImg = $('image-lightbox-img');
+  const lightboxStage = $('image-lightbox-stage');
+  const lightboxCloseBtn = $('lightbox-close-btn');
+  const zoomInBtn = $('zoom-in-btn');
+  const zoomOutBtn = $('zoom-out-btn');
+  const zoomResetBtn = $('zoom-reset-btn');
+  let lightboxZoom = 1;
 
   // ── Tab switching ─────────────────────────────────────────
   tabBtns.forEach(btn => {
@@ -75,6 +83,39 @@
     hideSearchResults();
     selectedPhotos = [];
     renderPhotoPreviews();
+  }
+
+  function setLightboxZoom(nextZoom) {
+    lightboxZoom = Math.max(1, Math.min(4, nextZoom));
+    if (lightboxImg) {
+      lightboxImg.style.transform = `scale(${lightboxZoom})`;
+    }
+    if (zoomResetBtn) {
+      zoomResetBtn.textContent = `${Math.round(lightboxZoom * 100)}%`;
+    }
+  }
+
+  function openLightbox(src, alt) {
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || 'Expanded plant image';
+    lightbox.classList.remove('hidden');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (lightboxStage) {
+      lightboxStage.scrollTop = 0;
+      lightboxStage.scrollLeft = 0;
+    }
+    setLightboxZoom(1);
+  }
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxImg) return;
+    lightbox.classList.add('hidden');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+    setLightboxZoom(1);
   }
 
   // ── Photo previews ────────────────────────────────────────
@@ -606,6 +647,29 @@
       <div class="treatment-steps">${pest.treatment.split('\n').map(s => `<p>${s}</p>`).join('')}</div>
     `;
   }
+
+  if (resultBody) {
+    resultBody.addEventListener('click', e => {
+      const img = e.target.closest('.plant-image, .gallery-img');
+      if (!img) return;
+      openLightbox(img.getAttribute('src'), img.getAttribute('alt'));
+    });
+  }
+
+  if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+  if (zoomInBtn) zoomInBtn.addEventListener('click', () => setLightboxZoom(lightboxZoom + 0.5));
+  if (zoomOutBtn) zoomOutBtn.addEventListener('click', () => setLightboxZoom(lightboxZoom - 0.5));
+  if (zoomResetBtn) zoomResetBtn.addEventListener('click', () => setLightboxZoom(1));
+  if (lightbox) {
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
+      closeLightbox();
+    }
+  });
 
   // ── Search bar ─────────────────────────────────────────────
   if (searchBar) {
