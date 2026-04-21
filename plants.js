@@ -380,7 +380,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/lomandra_longifolia_breeze.jpg"
+    ]
   },
   {
     "botanical": "Dietes iridioides",
@@ -799,7 +801,9 @@ const PLANTS = [
       "nov": "△",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/trachelospermum_jasminoides.jpg"
+    ]
   },
   {
     "botanical": "Viburnum davidii",
@@ -2205,7 +2209,10 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/carissa_green_carpet.jpg",
+      "assets/plants/carissa_macrocarpa_booxwood_beauty.jpg"
+    ]
   },
   {
     "botanical": "Phormium tenax",
@@ -2255,7 +2262,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/achillea_millefolium_pomegranate.jpg"
+    ]
   },
   {
     "botanical": "Azalea 'Orange Delight'",
@@ -2280,7 +2289,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/azalea_orange_delight.jpg"
+    ]
   },
   {
     "botanical": "Hydrangea macrophylla 'Nikko Blue'",
@@ -2305,7 +2316,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/hydrangea_macrophylla_nikko_blue.jpg"
+    ]
   },
   {
     "botanical": "Hydrangea macrophylla 'Leuchtfeuer'",
@@ -2330,7 +2343,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/hydrangea_macrophylla_leuchtfeuer.jpg"
+    ]
   },
   {
     "botanical": "Xylosma congestum",
@@ -2355,7 +2370,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/xylosma_congestum.jpg"
+    ]
   },
   {
     "botanical": "Asparagus densiflorus 'Myers'",
@@ -2380,7 +2397,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/asparagus_densiflorus_myers.jpg"
+    ]
   },
   {
     "botanical": "Philodendron 'Xanadu'",
@@ -2405,7 +2424,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/philodendron_xanadu.jpg"
+    ]
   },
   {
     "botanical": "Limonium perezii",
@@ -2430,7 +2451,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/limonium_perezii.jpg"
+    ]
   },
   {
     "botanical": "Dietes",
@@ -2455,7 +2478,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/dietes.jpg"
+    ]
   },
   {
     "botanical": "Lavandula dentata",
@@ -2480,7 +2505,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/lavandula_dentata.jpg"
+    ]
   },
   {
     "botanical": "Lavandula ginginsii 'Goodwin Creek Grey'",
@@ -2505,7 +2532,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/lavandula_ginginsii_goodwin_creek_grey.jpg"
+    ]
   },
   {
     "botanical": "Tulbaghia violacea",
@@ -2530,7 +2559,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/tulbaghia_violacea.jpg"
+    ]
   },
   {
     "botanical": "Phlomis fruticosa",
@@ -2555,7 +2586,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/phlomis_fruticosa.jpg"
+    ]
   },
   {
     "botanical": "Achillea 'Moonshine' Yellow",
@@ -2580,7 +2613,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/achillea_moonshine_yellow.jpg"
+    ]
   },
   {
     "botanical": "Lantana 'New Gold'",
@@ -2605,7 +2640,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/lanatana_new_gold.jpg"
+    ]
   },
   {
     "botanical": "Lantana 'Confetti'",
@@ -2630,7 +2667,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/lanatana_confetti.jpg"
+    ]
   },
   {
     "botanical": "Azalea 'Southern Charm' (Pink)",
@@ -2655,7 +2694,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/azalea_southern_charm_pink.jpg"
+    ]
   },
   {
     "botanical": "Azalea 'Red Bird'",
@@ -2680,7 +2721,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/azalea_red_bird.jpg"
+    ]
   },
   {
     "botanical": "Lomandra longifolia 'Platinum Beauty'ï",
@@ -2705,7 +2748,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/lomandra_longifolia_platinum_beauty.jpg"
+    ]
   },
   {
     "botanical": "Strelitzia nicolai",
@@ -2730,7 +2775,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/strelitzia_nocolao.jpg"
+    ]
   },
   {
     "botanical": "Tecomaria capensis (Orange)",
@@ -2755,7 +2802,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/tecomaria_capensis_orange.jpg"
+    ]
   },
   {
     "botanical": "Strelitzia reginae",
@@ -2780,7 +2829,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/strelitzia_regimae.jpg"
+    ]
   },
   {
     "botanical": "Tacoma orange Jubliee",
@@ -2805,7 +2856,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/tacoma_orange_jubliee.jpg"
+    ]
   },
   {
     "botanical": "Lantana montevidensis (Purple)",
@@ -2830,7 +2883,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/lantana_montevidensis_purple.jpg"
+    ]
   },
   {
     "botanical": "Salvia 'Allen Chickering'",
@@ -2855,7 +2910,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/salvia_allen_chickering.jpg"
+    ]
   },
   {
     "botanical": "Salvia leucantha 'Santa Barbara'",
@@ -2880,7 +2937,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/salvia_leucantha_santa_barbara.jpg"
+    ]
   },
   {
     "botanical": "Salvia leucantha 'Daniela's Dream'",
@@ -2905,7 +2964,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/salvia_leucantha_danielles_dream.jpg"
+    ]
   },
   {
     "botanical": "Salvia 'Mystic Spires'",
@@ -2930,7 +2991,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/salvia_mystic_spires.jpg"
+    ]
   },
   {
     "botanical": "Bougainvillea 'La jolla'",
@@ -2955,7 +3018,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/bougainvillea_la_jolla.jpg"
+    ]
   },
   {
     "botanical": "Cordyline 'Lime Passion'",
@@ -2980,7 +3045,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/cordyline_lime_passion.jpg"
+    ]
   },
   {
     "botanical": "Bougainvillea 'Barbara Karst'",
@@ -3005,7 +3072,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/bougainvillea_barbara_karst.jpg"
+    ]
   },
   {
     "botanical": "Leucadendron discolor 'pom pom'",
@@ -3030,7 +3099,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/leucadendron_discolor_pom_pom.jpg"
+    ]
   },
   {
     "botanical": "Cordyline 'Design-a-line'",
@@ -3055,7 +3126,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/cordyline_design_a_line.jpg"
+    ]
   },
   {
     "botanical": "Dianella 'Tesmanica Variegata'",
@@ -3080,7 +3153,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/dianella_tesmanica_variegata.jpg"
+    ]
   },
   {
     "botanical": "Dianella revoluta 'Little Rev'",
@@ -3105,7 +3180,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/dianella_revoluta_little_rev.jpg"
+    ]
   },
   {
     "botanical": "Pennisetum 'Massalsium' 'Red Bunny'",
@@ -3130,7 +3207,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/pennisetum_massalcum_red_bunny.jpg"
+    ]
   },
   {
     "botanical": "Agapanthus 'Tinkerbell'",
@@ -3155,7 +3234,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/agapanthus_tinkerbell.jpg"
+    ]
   },
   {
     "botanical": "Hemerocallis 'stella d orro'",
@@ -3180,6 +3261,8 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/hemercocallis_stella_d_orro.jpg"
+    ]
   }
 ];
