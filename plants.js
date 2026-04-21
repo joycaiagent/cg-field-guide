@@ -310,13 +310,7 @@ const PLANTS = [
       "dec": "△"
     },
     "images": [
-      "assets/plants/pennisetum_setaceum_2.jpg",
-      "assets/plants/pennisetum_setaceum_3.jpg",
-      "assets/plants/pennisetum_setaceum_4.jpg",
-      "assets/plants/pennisetum_setaceum_5.jpg",
-      "assets/plants/pennisetum_setaceum_6.jpg",
-      "assets/plants/pennisetum_setaceum_7.jpg",
-      "assets/plants/pennisetum_setaceum_8.jpg"
+      "assets/plants/pennisetum_setaceum_7.jpg"
     ]
   },
   {
