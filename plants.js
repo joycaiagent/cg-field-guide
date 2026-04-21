@@ -321,6 +321,11 @@ const PLANTS = [
     "botanical": "Lomandra longifolia 'Breeze'",
     "common": "Breeze Mat Rush",
     "synonyms": ["lomandra breeze", "breeze"],
+    "images": [
+      "assets/plants/lomandra_longifolia_breeze_1.jpg",
+      "assets/plants/lomandra_longifolia_breeze_2.jpg",
+      "assets/plants/lomandra_longifolia_breeze_3.jpg"
+    ],
 
     "size": "2–3′",
     "target": "Cut to 4–6\"",
