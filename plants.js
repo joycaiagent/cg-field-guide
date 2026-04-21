@@ -110,14 +110,7 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": [
-      "assets/plants/westringia_2.jpg",
-      "assets/plants/westringia_3.jpg",
-      "assets/plants/westringia_4.jpg",
-      "assets/plants/westringia_5.jpg",
-      "assets/plants/westringia_6.jpg",
-      "assets/plants/westringia_7.jpg"
-    ]
+    "images": []
   },
   {
     "botanical": "Roses",
@@ -309,9 +302,7 @@ const PLANTS = [
       "nov": "",
       "dec": "△"
     },
-    "images": [
-      "assets/plants/pennisetum_setaceum_7.jpg"
-    ]
+    "images": []
   },
   {
     "botanical": "Nassella tenuissima",
@@ -1718,11 +1709,7 @@ const PLANTS = [
       "nov": "",
       "dec": "△"
     },
-    "images": [
-      "assets/plants/bouteloua_gracilis_2.jpg",
-      "assets/plants/bouteloua_gracilis_3.jpg",
-      "assets/plants/bouteloua_gracilis_4.jpg"
-    ]
+    "images": []
   },
   {
     "botanical": "Leymus condensatus 'Canyon Prince'",
@@ -2097,9 +2084,7 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": [
-      "assets/plants/bougainvillea_spectabilis_4.jpg"
-    ]
+    "images": []
   },
   {
     "botanical": "Olea europaea",
@@ -3061,8 +3046,7 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/cordyline_lime_passion.jpg",
-      "assets/plants/cordyline_lime_passion_2.jpg"
+      "assets/plants/cordyline_lime_passion.jpg"
     ]
   },
   {
@@ -3143,8 +3127,7 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/cordyline_design_a_line.jpg",
-      "assets/plants/cordyline_design_a_line_2.jpg"
+      "assets/plants/cordyline_design_a_line.jpg"
     ]
   },
   {
