@@ -110,7 +110,14 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/westringia_2.jpg",
+      "assets/plants/westringia_3.jpg",
+      "assets/plants/westringia_4.jpg",
+      "assets/plants/westringia_5.jpg",
+      "assets/plants/westringia_6.jpg",
+      "assets/plants/westringia_7.jpg"
+    ]
   },
   {
     "botanical": "Roses",
@@ -302,7 +309,15 @@ const PLANTS = [
       "nov": "",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/pennisetum_setaceum_2.jpg",
+      "assets/plants/pennisetum_setaceum_3.jpg",
+      "assets/plants/pennisetum_setaceum_4.jpg",
+      "assets/plants/pennisetum_setaceum_5.jpg",
+      "assets/plants/pennisetum_setaceum_6.jpg",
+      "assets/plants/pennisetum_setaceum_7.jpg",
+      "assets/plants/pennisetum_setaceum_8.jpg"
+    ]
   },
   {
     "botanical": "Nassella tenuissima",
@@ -1709,7 +1724,11 @@ const PLANTS = [
       "nov": "",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/bouteloua_gracilis_2.jpg",
+      "assets/plants/bouteloua_gracilis_3.jpg",
+      "assets/plants/bouteloua_gracilis_4.jpg"
+    ]
   },
   {
     "botanical": "Leymus condensatus 'Canyon Prince'",
@@ -2084,7 +2103,11 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/bougainvillea_spectabilis_2.jpg",
+      "assets/plants/bougainvillea_spectabilis_3.jpg",
+      "assets/plants/bougainvillea_spectabilis_4.jpg"
+    ]
   },
   {
     "botanical": "Olea europaea",
@@ -3046,7 +3069,8 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/cordyline_lime_passion.jpg"
+      "assets/plants/cordyline_lime_passion.jpg",
+      "assets/plants/cordyline_lime_passion_2.jpg"
     ]
   },
   {
@@ -3127,7 +3151,8 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/cordyline_design_a_line.jpg"
+      "assets/plants/cordyline_design_a_line.jpg",
+      "assets/plants/cordyline_design_a_line_2.jpg"
     ]
   },
   {
