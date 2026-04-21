@@ -1,5 +1,5 @@
 // CG Landscape Field Guide — Service Worker
-const CACHE_NAME = 'cg-grow-v20';
+const CACHE_NAME = 'cg-grow-v21';
 
 const STATIC_ASSETS = [
   './',

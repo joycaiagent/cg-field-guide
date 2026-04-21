@@ -2104,8 +2104,6 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/bougainvillea_spectabilis_2.jpg",
-      "assets/plants/bougainvillea_spectabilis_3.jpg",
       "assets/plants/bougainvillea_spectabilis_4.jpg"
     ]
   },
