@@ -333,6 +333,9 @@ body {
   justify-content: space-between;
   gap: 10px;
   margin-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 .image-lightbox-actions {
   display: flex;
@@ -350,7 +353,9 @@ body {
   font-weight: 700;
 }
 .lightbox-close {
-  min-width: 52px;
+  min-width: 64px;
+  min-height: 52px;
+  font-size: 1.2rem;
 }
 .image-lightbox-stage {
   flex: 1;
@@ -361,6 +366,7 @@ body {
   border-radius: 14px;
   background: rgba(255,255,255,0.03);
   -webkit-overflow-scrolling: touch;
+  padding: 18px;
 }
 .image-lightbox-img {
   display: block;
@@ -374,6 +380,11 @@ body {
   text-align: center;
   font-size: 0.84rem;
   padding: 10px 4px 4px;
+}
+@media (max-width: 420px) {
+  .image-lightbox-hint {
+    font-size: 0.8rem;
+  }
 }
 .plant-aliases {
   margin-top: 6px;

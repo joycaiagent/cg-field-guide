@@ -660,6 +660,17 @@
   if (zoomInBtn) zoomInBtn.addEventListener('click', () => setLightboxZoom(lightboxZoom + 0.5));
   if (zoomOutBtn) zoomOutBtn.addEventListener('click', () => setLightboxZoom(lightboxZoom - 0.5));
   if (zoomResetBtn) zoomResetBtn.addEventListener('click', () => setLightboxZoom(1));
+  if (lightboxStage) {
+    lightboxStage.addEventListener('click', e => {
+      if (e.target === lightboxStage) {
+        closeLightbox();
+        return;
+      }
+      if (e.target === lightboxImg && lightboxZoom <= 1.05) {
+        closeLightbox();
+      }
+    });
+  }
   if (lightbox) {
     lightbox.addEventListener('click', e => {
       if (e.target === lightbox) closeLightbox();
