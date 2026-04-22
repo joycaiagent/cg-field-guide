@@ -1,4 +1,4 @@
-// Plant database — 151 plants from CG Pruning Schedule
+// Plant database — 152 plants from CG Pruning Schedule
 const PLANTS = [
   {
     "botanical": "Pittosporum",
@@ -624,8 +624,6 @@ const PLANTS = [
       "nov": "",
       "dec": "△"
     },
-    "images": []
-  },
     "images": []
   },
   {
@@ -2239,7 +2237,10 @@ const PLANTS = [
   {
     "botanical": "Carissa macrocarpa 'Green Carpet'",
     "common": "Green Carpet Natal Plum",
-    "synonyms": ["carissa green carpet", "green carpet"],
+    "synonyms": [
+      "carissa green carpet",
+      "green carpet"
+    ],
     "size": "1–2′",
     "target": "Light shape as needed",
     "aggression": "Light",
@@ -3631,7 +3632,10 @@ const PLANTS = [
   {
     "botanical": "Bougainvillea 'Raspberry Ice'",
     "common": "Raspberry Ice Bougainvillea",
-    "synonyms": ["bougainvillea raspberry ice", "raspberry ice"],
+    "synonyms": [
+      "bougainvillea raspberry ice",
+      "raspberry ice"
+    ],
     "size": "4–6'",
     "target": "Trim to shape, remove dead blooms",
     "aggression": "Medium",
@@ -3660,7 +3664,10 @@ const PLANTS = [
   {
     "botanical": "Bougainvillea 'Jamaica White'",
     "common": "Jamaica White Bougainvillea",
-    "synonyms": ["bougainvillea jamaica white", "jamaica white"],
+    "synonyms": [
+      "bougainvillea jamaica white",
+      "jamaica white"
+    ],
     "size": "6–10′",
     "target": "Trim to shape, remove dead blooms",
     "aggression": "Medium",
@@ -3689,7 +3696,10 @@ const PLANTS = [
   {
     "botanical": "Bougainvillea brasiliensis",
     "common": "Brazilian Bougainvillea",
-    "synonyms": ["bougainvillea brasiliensis", "brasiliensis"],
+    "synonyms": [
+      "bougainvillea brasiliensis",
+      "brasiliensis"
+    ],
     "size": "10–20′",
     "target": "Trim to shape, remove dead blooms",
     "aggression": "Medium",
