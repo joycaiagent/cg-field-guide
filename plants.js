@@ -3654,6 +3654,9 @@ const PLANTS = [
     "botanical": "Bougainvillea 'Raspberry Ocean'",
     "common": "Raspberry Ocean Bougainvillea",
     "images": [
+      "assets/plants/bougainvillea_rosenka_1.jpg",
+      "assets/plants/bougainvillea_rosenka_2.jpg",
+      "assets/plants/bougainvillea_rosenka_3.jpg",
       "assets/plants/bougainvillea_raspberry_oce.jpg"
     ],
     "size": "4–6′",
