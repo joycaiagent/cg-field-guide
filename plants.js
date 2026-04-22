@@ -2995,8 +2995,7 @@ const PLANTS = [
       "dec": "△"
     },
     "images": [
-      "assets/plants/tecoma_stans.jpg",
-      "assets/plants/tecomaria_stans.jpg",
+      "assets/plants/tecoma_stans_1.jpg",
       "assets/plants/tecoma_stans_2.jpg",
       "assets/plants/tecoma_stans_3.jpg"
     ]
