@@ -2624,9 +2624,6 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/dietes.jpg",
-      "assets/plants/dietes2.jpg",
-      "assets/plants/dietes3.jpg",
       "assets/plants/dietes_1.jpg",
       "assets/plants/dietes_2.jpg",
       "assets/plants/dietes_3.jpg",
