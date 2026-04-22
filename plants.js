@@ -113,7 +113,10 @@ const PLANTS = [
     "images": [
       "assets/plants/westringia_gray_box_1.jpg",
       "assets/plants/westringia_gray_box_2.jpg",
-      "assets/plants/westringia_gray_box_3.jpg"
+      "assets/plants/westringia_gray_box_3.jpg",
+      "assets/plants/westringia_fruticosa_mundi_1.jpg",
+      "assets/plants/westringia_fruticosa_mundi_2.jpg",
+      "assets/plants/westringia_fruticosa_mundi_3.jpg"
     ]
   },
   {
