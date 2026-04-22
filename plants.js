@@ -110,7 +110,13 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/westringia_2.jpg",
+      "assets/plants/westringia_3.jpg",
+      "assets/plants/westringia_4.jpg",
+      "assets/plants/westringia_5.jpg",
+      "assets/plants/westringia_6.jpg"
+    ]
   },
   {
     "botanical": "Roses",
@@ -139,7 +145,9 @@ const PLANTS = [
       "nov": "△",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/roses_2.jpg"
+    ]
   },
   {
     "botanical": "Salvia",
@@ -302,7 +310,10 @@ const PLANTS = [
       "nov": "",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/pennisetum_setaceum_7.jpg",
+      "assets/plants/pennisetum_setaceum_9.jpg"
+    ]
   },
   {
     "botanical": "Nassella tenuissima",
@@ -2084,7 +2095,9 @@ const PLANTS = [
       "nov": "■",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/bougainvillea_spectabilis_4.jpg"
+    ]
   },
   {
     "botanical": "Olea europaea",
@@ -2857,7 +2870,8 @@ const PLANTS = [
       "dec": "△"
     },
     "images": [
-      "assets/plants/tacoma_orange_jubliee.jpg"
+      "assets/plants/tacoma_orange_jubliee.jpg",
+      "assets/plants/tacoma_orange_jubliee_2.jpg"
     ]
   },
   {
@@ -3127,7 +3141,8 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/cordyline_design_a_line.jpg"
+      "assets/plants/cordyline_design_a_line.jpg",
+      "assets/plants/cordyline_design_a_line_2.jpg"
     ]
   },
   {
