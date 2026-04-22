@@ -2875,6 +2875,37 @@ const PLANTS = [
     ]
   },
   {
+    "botanical": "Tecoma stans",
+    "common": "Yellow Bells",
+    "synonyms": [
+      "tacoma stans",
+      "yellow bells",
+      "yellow elder"
+    ],
+    "size": "6–12′",
+    "target": "-30–50%",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light fert after prune",
+    "calendar": {
+      "jan": "",
+      "feb": "△",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "△",
+      "aug": "",
+      "sep": "",
+      "oct": "△",
+      "nov": "■",
+      "dec": "△"
+    },
+    "images": [
+      "assets/plants/tecoma_stans.jpg"
+    ]
+  },
+  {
     "botanical": "Lantana montevidensis (Purple)",
     "common": "Purple Lantana",
     "synonyms": [],
