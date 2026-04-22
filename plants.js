@@ -3606,9 +3606,6 @@ const PLANTS = [
     "botanical": "Lantana montevidensis",
     "common": "Purple Lantana",
     "images": [
-      "assets/plants/lantana_montevidensis_purple.jpg",
-      "assets/plants/lantana_montevidensis_purple2.jpg",
-      "assets/plants/lantana_montevidensis_purple3.jpg",
       "assets/plants/lantana_montevidensis_1.jpg",
       "assets/plants/lantana_montevidensis_2.jpg",
       "assets/plants/lantana_montevidensis_3.jpg",
