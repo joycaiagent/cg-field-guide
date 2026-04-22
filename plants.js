@@ -120,6 +120,32 @@ const PLANTS = [
       "assets/plants/westringia_aussie_box_1.jpg",
       "assets/plants/westringia_aussie_box_2.jpg",
       "assets/plants/westringia_aussie_box_3.jpg",
+    ]
+  },
+  {
+    "botanical": "Westringia fruticosa 'Morning Light'",
+    "common": "Morning Light Westringia",
+    "synonyms": ["westringia morning light", "morning light westringia"],
+    "size": "2–3′",
+    "target": "Light shape after bloom",
+    "aggression": "Light",
+    "type": "Year",
+    "fertilize": "Light fert after trim",
+    "calendar": {
+      "jan": "",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": "■"
+    },
+    "images": [
       "assets/plants/westringia_fruticosa_morning_light_1.jpg",
       "assets/plants/westringia_fruticosa_morning_light_2.jpg",
       "assets/plants/westringia_fruticosa_morning_light_3.jpg"
