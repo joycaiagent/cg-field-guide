@@ -3714,6 +3714,35 @@ const PLANTS = [
     ]
   },
   {
+    "botanical": "Bougainvillea 'Jamaica White'",
+    "common": "Jamaica White Bougainvillea",
+    "synonyms": ["bougainvillea jamaica white", "jamaica white"],
+    "size": "6–10′",
+    "target": "Trim to shape, remove dead blooms",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "",
+      "dec": ""
+    },
+    "images": [
+      "assets/plants/bougainvillea_jamaica_white_1.jpg",
+      "assets/plants/bougainvillea_jamaica_white_2.jpg",
+      "assets/plants/bougainvillea_jamaica_white_3.jpg"
+    ]
+  },
+  {
     "botanical": "Cordyline australis \"Red Star\"",
     "common": "Red Star Cordyline",
     "images": [
