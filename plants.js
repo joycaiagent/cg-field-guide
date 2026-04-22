@@ -3660,8 +3660,7 @@ const PLANTS = [
     "images": [
       "assets/plants/bougainvillea_rosenka_1.jpg",
       "assets/plants/bougainvillea_rosenka_2.jpg",
-      "assets/plants/bougainvillea_rosenka_3.jpg",
-      "assets/plants/bougainvillea_raspberry_oce.jpg"
+      "assets/plants/bougainvillea_rosenka_3.jpg"
     ],
     "size": "4–6′",
     "target": "Trim to shape, remove dead blooms",
