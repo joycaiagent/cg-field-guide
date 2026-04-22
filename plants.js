@@ -3498,11 +3498,9 @@ const PLANTS = [
     "botanical": "Chondropetalum Tectorum",
     "common": "Cape Rush",
     "images": [
-      "assets/plants/chondropetalum_tectorum_00.jpg",
-      "assets/plants/chondropetalum_tectorum_01.jpg",
-      "assets/plants/chondropetalum_tectorum_02.jpg",
-      "assets/plants/chondropetalum_tectorum2.jpg",
-      "assets/plants/chondropetalum_tectorum3.jpg"
+      "assets/plants/chondropetalum_tectorum_1.jpg",
+      "assets/plants/chondropetalum_tectorum_2.jpg",
+      "assets/plants/chondropetalum_tectorum_3.jpg"
     ],
     "size": "3–4′",
     "target": "Cut old stalks to ground annually",
