@@ -2266,6 +2266,35 @@ const PLANTS = [
     ]
   },
   {
+    "botanical": "Carissa macrocarpa 'Green Carpet'",
+    "common": "Green Carpet Natal Plum",
+    "synonyms": ["carissa green carpet", "green carpet"],
+    "size": "1–2′",
+    "target": "Light shape as needed",
+    "aggression": "Light",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "calendar": {
+      "jan": "",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": "■"
+    },
+    "images": [
+      "assets/plants/carissa_green_carpet_1.jpg",
+      "assets/plants/carissa_green_carpet_2.jpg",
+      "assets/plants/carissa_green_carpet_3.jpg"
+    ]
+  },
+  {
     "botanical": "Phormium tenax",
     "common": "New Zealand Flax",
     "synonyms": [],
