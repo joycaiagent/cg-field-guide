@@ -3874,7 +3874,9 @@ const PLANTS = [
     "botanical": "Pennisetum Fairy Tails",
     "common": "Fairy Tails Fountain Grass",
     "images": [
-      "assets/plants/pennisetum_fairy_tails.jpg"
+      "assets/plants/pennisetum_fairy_tails.jpg",
+      "assets/plants/pennisetum_fairy_tails_2.jpg",
+      "assets/plants/pennisetum_fairy_tails_3.jpg"
     ],
     "size": "3–4′",
     "target": "Cut to 6″ in late winter",
