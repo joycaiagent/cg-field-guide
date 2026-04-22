@@ -3354,11 +3354,8 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/cordyline_design_a_line.jpg",
-      "assets/plants/cordyline_design_a_line_2.jpg",
-      "assets/plants/cordyline_design_a_line2.jpg",
-      "assets/plants/cordyline_design_a_line3.jpg",
       "assets/plants/cordyline_design_a_line_1.jpg",
+      "assets/plants/cordyline_design_a_line_2.jpg",
       "assets/plants/cordyline_design_a_line_3.jpg",
       "assets/plants/cordyline_design_a_line_4.jpg",
       "assets/plants/cordyline_design_a_line_5.jpg",
