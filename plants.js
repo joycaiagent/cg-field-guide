@@ -3812,7 +3812,9 @@ const PLANTS = [
     "botanical": "Helictotrichon sempervirens",
     "common": "Blue Oat Grass",
     "images": [
-      "assets/plants/helictotrichon_sempervirens.jpg"
+      "assets/plants/helictotrichon_sempervirens.jpg",
+      "assets/plants/helictotrichon_sempervirens_2.jpg",
+      "assets/plants/helictotrichon_sempervirens_3.jpg"
     ],
     "size": "2–3′",
     "target": "Cut to 6″ in late winter",
