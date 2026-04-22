@@ -2708,15 +2708,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/phlomis_fruticosa.jpg",
-      "assets/plants/phlomis_fruticosa2.jpg",
-      "assets/plants/phlomis_fruticosa3.jpg",
       "assets/plants/phlomis_fruticosa_1.jpg",
       "assets/plants/phlomis_fruticosa_2.jpg",
-      "assets/plants/phlomis_fruticosa_3.jpg",
-      "assets/plants/phlomis_fruticosa_4.jpg",
-      "assets/plants/phlomis_fruticosa_5.jpg",
-      "assets/plants/phlomis_fruticosa_6.jpg"
+      "assets/plants/phlomis_fruticosa_3.jpg"
     ]
   },
   {
