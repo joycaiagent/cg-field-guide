@@ -4108,7 +4108,6 @@ const PLANTS = [
     },
     "images": [
       "assets/plants/westringia_fruticosa_smokey.jpg",
-      "assets/plants/westringia_fruticosa_smokey_2.jpg",
       "assets/plants/westringia_fruticosa_smokey_3.jpg"
     ]
   },
