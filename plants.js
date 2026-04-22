@@ -3025,15 +3025,9 @@ const PLANTS = [
       "dec": "△"
     },
     "images": [
-      "assets/plants/salvia_allen_chickering.jpg",
-      "assets/plants/salvia_allen_chickering2.jpg",
-      "assets/plants/salvia_allen_chickering3.jpg",
       "assets/plants/salvia_allen_chickering_1.jpg",
       "assets/plants/salvia_allen_chickering_2.jpg",
-      "assets/plants/salvia_allen_chickering_3.jpg",
-      "assets/plants/salvia_allen_chickering_4.jpg",
-      "assets/plants/salvia_allen_chickering_5.jpg",
-      "assets/plants/salvia_allen_chickering_6.jpg"
+      "assets/plants/salvia_allen_chickering_3.jpg"
     ]
   },
   {
