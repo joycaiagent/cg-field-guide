@@ -666,7 +666,7 @@ body {
 }
 
 /* ── Hidden utility ── */
-.hidden { display: none !important; }
+.hidden { display: none; }
 
 /* ── Install prompt ── */
 .install-prompt {

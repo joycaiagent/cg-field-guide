@@ -1,4 +1,4 @@
-// Plant database — 125 plants from CG Pruning Schedule
+// Plant database — 130 plants from CG Pruning Schedule
 const PLANTS = [
   {
     "botanical": "Pittosporum",
@@ -2631,60 +2631,6 @@ const PLANTS = [
     ]
   },
   {
-    "botanical": "Lantana 'New Gold'",
-    "common": "New Gold Lantana",
-    "synonyms": [],
-    "size": "2–3′",
-    "target": "Cut back 50%",
-    "aggression": "Medium",
-    "type": "Warm",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "",
-      "feb": "△",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "△",
-      "aug": "",
-      "sep": "",
-      "oct": "△",
-      "nov": "■",
-      "dec": "△"
-    },
-    "images": [
-      "assets/plants/lanatana_new_gold.jpg"
-    ]
-  },
-  {
-    "botanical": "Lantana 'Confetti'",
-    "common": "Confetti Lantana",
-    "synonyms": [],
-    "size": "2–3′",
-    "target": "Cut back 50%",
-    "aggression": "Medium",
-    "type": "Warm",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "",
-      "feb": "△",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "△",
-      "aug": "",
-      "sep": "",
-      "oct": "△",
-      "nov": "■",
-      "dec": "△"
-    },
-    "images": [
-      "assets/plants/lanatana_confetti.jpg"
-    ]
-  },
-  {
     "botanical": "Azalea 'Southern Charm' (Pink)",
     "common": "Southern Charm Azalea",
     "synonyms": [],
@@ -2789,7 +2735,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/strelitzia_nocolao.jpg"
+      "assets/plants/Strelitzia_Nocolao_00.jpg",
+      "assets/plants/Strelitzia_Nocolao_01.jpg",
+      "assets/plants/Strelitzia_Nocolao_02.jpg"
     ]
   },
   {
@@ -2843,7 +2791,10 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/strelitzia_regimae.jpg"
+      "assets/plants/Strelitzia_Regimae_00.jpg",
+      "assets/plants/Strelitzia_Regimae_01.jpg",
+      "assets/plants/Strelitzia_Regimae_02.jpg",
+      "assets/plants/Strelitzia_Regimae_03.jpg"
     ]
   },
   {
@@ -2903,33 +2854,6 @@ const PLANTS = [
     },
     "images": [
       "assets/plants/tecoma_stans.jpg"
-    ]
-  },
-  {
-    "botanical": "Lantana montevidensis (Purple)",
-    "common": "Purple Lantana",
-    "synonyms": [],
-    "size": "2–3′",
-    "target": "Cut back 50%",
-    "aggression": "Medium",
-    "type": "Warm",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "",
-      "feb": "△",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "△",
-      "aug": "",
-      "sep": "",
-      "oct": "△",
-      "nov": "■",
-      "dec": "△"
-    },
-    "images": [
-      "assets/plants/lantana_montevidensis_purple.jpg"
     ]
   },
   {
@@ -3310,5 +3234,199 @@ const PLANTS = [
     "images": [
       "assets/plants/hemercocallis_stella_d_orro.jpg"
     ]
+  },
+  {
+    "botanical": "Chondropetalum Tectorum",
+    "common": "Cape Rush",
+    "images": [
+      "assets/plants/Chondropetalum_Tectorum_00.jpg",
+      "assets/plants/Chondropetalum_Tectorum_01.jpg",
+      "assets/plants/Chondropetalum_Tectorum_02.jpg"
+    ],
+    "size": "3–4′",
+    "target": "Cut old stalks to ground annually",
+    "aggression": "Light",
+    "type": "Year-round",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "■",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Hemercocallis \"Stella d'Orro\"",
+    "common": "Stella d'Orro Daylily",
+    "images": [
+      "assets/plants/Hemercocallis_stella_d_orro.jpg"
+    ],
+    "size": "12–18″",
+    "target": "Cut to 6″ after bloom",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Feed after first bloom",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Lantana \"Confetti\"",
+    "common": "Confetti Lantana",
+    "images": [
+      "assets/plants/Lanatana_Confetti_00.jpg",
+      "assets/plants/Lanatana_Confetti_01.jpg",
+      "assets/plants/Lanatana_Confetti_02.jpg"
+    ],
+    "size": "3–4′",
+    "target": "Hard cut to 12″ in late winter",
+    "aggression": "Heavy",
+    "type": "Warm",
+    "fertilize": "Light fert after hard cut",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Lantana \"New Gold\"",
+    "common": "New Gold Lantana",
+    "images": [
+      "assets/plants/Lanatana_New_Gold_00.jpg",
+      "assets/plants/Lanatana_New_Gold_01.jpg",
+      "assets/plants/Lanatana_New_Gold_02.jpg"
+    ],
+    "size": "12–18″",
+    "target": "Trim lightly to shape",
+    "aggression": "Light",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Pennisetum Massalcum \"Red Bunny\"",
+    "common": "Red Bunny Fountain Grass",
+    "images": [
+      "assets/plants/Pennisetum_Massalcum_Red_Bunny_00.jpg",
+      "assets/plants/Pennisetum_Massalcum_Red_Bunny_01.jpg",
+      "assets/plants/Pennisetum_Massalcum_Red_Bunny_02.jpg"
+    ],
+    "size": "2–3′",
+    "target": "Cut to 6″ in late winter",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Shefflera Arboricola",
+    "common": "Arboricola",
+    "images": [
+      "assets/plants/Shefflera_Arboricola_00.jpg",
+      "assets/plants/Shefflera_Arboricola_01.jpg",
+      "assets/plants/Shefflera_Arboricola_02.jpg"
+    ],
+    "size": "6–8′",
+    "target": "Light shaping cuts only",
+    "aggression": "Light",
+    "type": "Year-round",
+    "fertilize": "Feed in spring",
+    "calendar": {
+      "jan": "■",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Lantana montevidensis",
+    "common": "Purple Lantana",
+    "images": [
+      "assets/plants/lantana_montevidensis_purple.jpg"
+    ],
+    "size": "2–3′",
+    "target": "Trim to shape in late winter",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "",
+      "dec": ""
+    }
   }
 ];
+
+module.exports = PLANTS;
