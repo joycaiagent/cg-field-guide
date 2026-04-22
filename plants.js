@@ -2413,9 +2413,6 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/hydrangea_macrophylla_nikko_blue.jpg",
-      "assets/plants/hydrangea_macrophylla_nikko_blue2.jpg",
-      "assets/plants/hydrangea_macrophylla_nikko_blue3.jpg",
       "assets/plants/hydrangea_macrophylla_nikko_blue_1.jpg",
       "assets/plants/hydrangea_macrophylla_nikko_blue_2.jpg",
       "assets/plants/hydrangea_macrophylla_nikko_blue_3.jpg",
