@@ -3907,7 +3907,10 @@ const PLANTS = [
     "botanical": "Rosa Iceberg",
     "common": "Iceberg Rose",
     "images": [
-      "assets/plants/rosa_iceberg.jpg"
+      "assets/plants/rosa_iceberg.jpg",
+      "assets/plants/rosa_iceberg_1.jpg",
+      "assets/plants/rosa_iceberg_2.jpg",
+      "assets/plants/rosa_iceberg_3.jpg"
     ],
     "size": "3–4′",
     "target": "Rose - prune hard in winter, deadhead in season",
