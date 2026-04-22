@@ -3112,15 +3112,9 @@ const PLANTS = [
       "dec": "△"
     },
     "images": [
-      "assets/plants/salvia_mystic_spires.jpg",
-      "assets/plants/salvia_mystic_spires2.jpg",
-      "assets/plants/salvia_mystic_spires3.jpg",
       "assets/plants/salvia_mystic_spires_1.jpg",
       "assets/plants/salvia_mystic_spires_2.jpg",
-      "assets/plants/salvia_mystic_spires_3.jpg",
-      "assets/plants/salvia_mystic_spires_4.jpg",
-      "assets/plants/salvia_mystic_spires_5.jpg",
-      "assets/plants/salvia_mystic_spires_6.jpg"
+      "assets/plants/salvia_mystic_spires_3.jpg"
     ]
   },
   {
