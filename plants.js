@@ -3527,9 +3527,6 @@ const PLANTS = [
     "botanical": "Pennisetum 'Red Bunny'",
     "common": "Red Bunny Fountain Grass",
     "images": [
-      "assets/plants/pennisetum_massalcum_red_bunny_00.jpg",
-      "assets/plants/pennisetum_massalcum_red_bunny_01.jpg",
-      "assets/plants/pennisetum_massalcum_red_bunny_02.jpg",
       "assets/plants/pennisetum_massalcum_red_bunny.jpg",
       "assets/plants/pennisetum_massalcum_red_bunny2.jpg",
       "assets/plants/pennisetum_massalcum_red_bunny3.jpg"
