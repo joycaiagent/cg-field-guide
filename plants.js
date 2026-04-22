@@ -2448,9 +2448,6 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/hydrangea_macrophylla_leuchtfeuer.jpg",
-      "assets/plants/hydrangea_macrophylla_leuchtfeuer2.jpg",
-      "assets/plants/hydrangea_macrophylla_leuchtfeuer3.jpg",
       "assets/plants/hydrangea_macrophylla_leuchtfeuer_1.jpg",
       "assets/plants/hydrangea_macrophylla_leuchtfeuer_2.jpg",
       "assets/plants/hydrangea_macrophylla_leuchtfeuer_3.jpg",
