@@ -3683,6 +3683,35 @@ const PLANTS = [
     }
   },
   {
+    "botanical": "Bougainvillea 'Raspberry Ice'",
+    "common": "Raspberry Ice Bougainvillea",
+    "synonyms": ["bougainvillea raspberry ice", "raspberry ice"],
+    "size": "4–6'",
+    "target": "Trim to shape, remove dead blooms",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "",
+      "dec": ""
+    },
+    "images": [
+      "assets/plants/bougainvillea_raspberry_ice_1.jpg",
+      "assets/plants/bougainvillea_raspberry_ice_2.jpg",
+      "assets/plants/bougainvillea_raspberry_ice_3.jpg"
+    ]
+  },
+  {
     "botanical": "Cordyline australis \"Red Star\"",
     "common": "Red Star Cordyline",
     "images": [
