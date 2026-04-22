@@ -2260,24 +2260,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/carissa_green_carpet.jpg",
-      "assets/plants/carissa_macrocarpa_booxwood_beauty.jpg",
-      "assets/plants/carissa_green_carpet2.jpg",
-      "assets/plants/carissa_green_carpet3.jpg",
-      "assets/plants/carissa_macrocarpa_booxwood_beauty2.jpg",
-      "assets/plants/carissa_macrocarpa_booxwood_beauty3.jpg",
       "assets/plants/carissa_macrocarpa_1.jpg",
       "assets/plants/carissa_macrocarpa_2.jpg",
-      "assets/plants/carissa_macrocarpa_3.jpg",
-      "assets/plants/carissa_macrocarpa_4.jpg",
-      "assets/plants/carissa_macrocarpa_5.jpg",
-      "assets/plants/carissa_macrocarpa_6.jpg",
-      "assets/plants/carissa_macrocarpa_7.jpg",
-      "assets/plants/carissa_macrocarpa_8.jpg",
-      "assets/plants/carissa_macrocarpa_9.jpg",
-      "assets/plants/carissa_macrocarpa_10.jpg",
-      "assets/plants/carissa_macrocarpa_11.jpg",
-      "assets/plants/carissa_macrocarpa_12.jpg"
+      "assets/plants/carissa_macrocarpa_3.jpg"
     ]
   },
   {
