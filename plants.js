@@ -3796,7 +3796,9 @@ const PLANTS = [
     "botanical": "Cordyline australis \"Red Star\"",
     "common": "Red Star Cordyline",
     "images": [
-      "assets/plants/cordyline_red_star.jpg"
+      "assets/plants/cordyline_red_star.jpg",
+      "assets/plants/cordyline_australis_red_star_2.jpg",
+      "assets/plants/cordyline_australis_red_star_3.jpg"
     ],
     "size": "6–8′",
     "target": "Remove dead lower leaves",
