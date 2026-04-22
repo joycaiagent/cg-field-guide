@@ -119,7 +119,10 @@ const PLANTS = [
       "assets/plants/westringia_fruticosa_mundi_3.jpg",
       "assets/plants/westringia_aussie_box_1.jpg",
       "assets/plants/westringia_aussie_box_2.jpg",
-      "assets/plants/westringia_aussie_box_3.jpg"
+      "assets/plants/westringia_aussie_box_3.jpg",
+      "assets/plants/westringia_fruticosa_morning_light_1.jpg",
+      "assets/plants/westringia_fruticosa_morning_light_2.jpg",
+      "assets/plants/westringia_fruticosa_morning_light_3.jpg"
     ]
   },
   {
