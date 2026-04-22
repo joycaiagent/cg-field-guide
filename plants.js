@@ -4172,34 +4172,6 @@ const PLANTS = [
     }
   },
   {
-    "botanical": "Hemerocallis 'stella d orro'",
-    "common": "Stella de Oro Daylily",
-    "size": "1–2′",
-    "target": "Cut back in late winter",
-    "aggression": "Medium",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "images": [
-      "assets/plants/hemerocallis_stella_d_orro_1.jpg",
-      "assets/plants/hemerocallis_stella_d_orro_2.jpg",
-      "assets/plants/hemerocallis_stella_d_orro_3.jpg"
-    ],
-    "calendar": {
-      "jan": "",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "■",
-      "aug": "■",
-      "sep": "■",
-      "oct": "■",
-      "nov": "■",
-      "dec": "■"
-    }
-  },
-  {
     "botanical": "Lantana 'Confetti'",
     "common": "Confetti Lantana",
     "size": "2–3′",
