@@ -2627,9 +2627,6 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/lavandula_dentata.jpg",
-      "assets/plants/lavandula_dentata2.jpg",
-      "assets/plants/lavandula_dentata3.jpg",
       "assets/plants/lavandula_dentata_1.jpg",
       "assets/plants/lavandula_dentata_2.jpg",
       "assets/plants/lavandula_dentata_3.jpg",
