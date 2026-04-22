@@ -110,7 +110,11 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/westringia_gray_box_1.jpg",
+      "assets/plants/westringia_gray_box_2.jpg",
+      "assets/plants/westringia_gray_box_3.jpg"
+    ]
   },
   {
     "botanical": "Roses",
