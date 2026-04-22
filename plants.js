@@ -3054,15 +3054,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/salvia_leucantha_santa_barbara.jpg",
-      "assets/plants/salvia_leucantha_santa_barbara2.jpg",
-      "assets/plants/salvia_leucantha_santa_barbara3.jpg",
       "assets/plants/salvia_leucantha_santa_barbara_1.jpg",
       "assets/plants/salvia_leucantha_santa_barbara_2.jpg",
-      "assets/plants/salvia_leucantha_santa_barbara_3.jpg",
-      "assets/plants/salvia_leucantha_santa_barbara_4.jpg",
-      "assets/plants/salvia_leucantha_santa_barbara_5.jpg",
-      "assets/plants/salvia_leucantha_santa_barbara_6.jpg"
+      "assets/plants/salvia_leucantha_santa_barbara_3.jpg"
     ]
   },
   {
