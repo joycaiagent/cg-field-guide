@@ -632,29 +632,6 @@ const PLANTS = [
     },
     "images": []
   },
-  {
-    "botanical": "Lantana camara",
-    "common": "Lantana",
-    "synonyms": [],
-    "size": "3–5′",
-    "target": "-30–50%",
-    "aggression": "Heavy",
-    "type": "Warm",
-    "fertilize": "Spring fert",
-    "calendar": {
-      "jan": "",
-      "feb": "△",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "■",
-      "aug": "■",
-      "sep": "■",
-      "oct": "△",
-      "nov": "",
-      "dec": ""
-    },
     "images": []
   },
   {
