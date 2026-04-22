@@ -409,15 +409,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/lomandra_longifolia_breeze.jpg",
-      "assets/plants/lomandra_longifolia_breeze2.jpg",
-      "assets/plants/lomandra_longifolia_breeze3.jpg",
-      "assets/plants/lomandra_longifolia_breeze_4.jpg",
-      "assets/plants/lomandra_longifolia_breeze_5.jpg",
-      "assets/plants/lomandra_longifolia_breeze_6.jpg",
-      "assets/plants/lomandra_longifolia_breeze_7.jpg",
-      "assets/plants/lomandra_longifolia_breeze_8.jpg",
-      "assets/plants/lomandra_longifolia_breeze_9.jpg"
+      "assets/plants/lomandra_longifolia_breeze_1.jpg",
+      "assets/plants/lomandra_longifolia_breeze_2.jpg",
+      "assets/plants/lomandra_longifolia_breeze_3.jpg"
     ]
   },
   {
