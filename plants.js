@@ -2560,9 +2560,6 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/limonium_perezii.jpg",
-      "assets/plants/limonium_perezii2.jpg",
-      "assets/plants/limonium_perezii3.jpg",
       "assets/plants/limonium_perezii_1.jpg",
       "assets/plants/limonium_perezii_2.jpg",
       "assets/plants/limonium_perezii_3.jpg",
