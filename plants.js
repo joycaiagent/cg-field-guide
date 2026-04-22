@@ -3743,6 +3743,35 @@ const PLANTS = [
     ]
   },
   {
+    "botanical": "Bougainvillea brasiliensis",
+    "common": "Brazilian Bougainvillea",
+    "synonyms": ["bougainvillea brasiliensis", "brasiliensis"],
+    "size": "10–20′",
+    "target": "Trim to shape, remove dead blooms",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "",
+      "dec": ""
+    },
+    "images": [
+      "assets/plants/bougainvillea_brasiliensis_1.jpg",
+      "assets/plants/bougainvillea_brasiliensis_2.jpg",
+      "assets/plants/bougainvillea_brasiliensis_3.jpg"
+    ]
+  },
+  {
     "botanical": "Cordyline australis \"Red Star\"",
     "common": "Red Star Cordyline",
     "images": [
