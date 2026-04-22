@@ -2845,15 +2845,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/lomandra_longifolia_platinum_beauty.jpg",
-      "assets/plants/lomandra_longifolia_platinum_beauty2.jpg",
-      "assets/plants/lomandra_longifolia_platinum_beauty3.jpg",
       "assets/plants/lomandra_longifolia_platinum_beauty_1.jpg",
       "assets/plants/lomandra_longifolia_platinum_beauty_2.jpg",
-      "assets/plants/lomandra_longifolia_platinum_beauty_3.jpg",
-      "assets/plants/lomandra_longifolia_platinum_beauty_4.jpg",
-      "assets/plants/lomandra_longifolia_platinum_beauty_5.jpg",
-      "assets/plants/lomandra_longifolia_platinum_beauty_6.jpg"
+      "assets/plants/lomandra_longifolia_platinum_beauty_3.jpg"
     ]
   },
   {
