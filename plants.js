@@ -2674,15 +2674,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/tulbaghia_violacea.jpg",
-      "assets/plants/tulbaghia_violacea2.jpg",
-      "assets/plants/tulbaghia_violacea3.jpg",
       "assets/plants/tulbaghia_violacea_1.jpg",
       "assets/plants/tulbaghia_violacea_2.jpg",
-      "assets/plants/tulbaghia_violacea_3.jpg",
-      "assets/plants/tulbaghia_violacea_4.jpg",
-      "assets/plants/tulbaghia_violacea_5.jpg",
-      "assets/plants/tulbaghia_violacea_6.jpg"
+      "assets/plants/tulbaghia_violacea_3.jpg"
     ]
   },
   {
