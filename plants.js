@@ -1,4 +1,4 @@
-// Plant database — 130 plants from CG Pruning Schedule
+// Plant database — 151 plants from CG Pruning Schedule
 const PLANTS = [
   {
     "botanical": "Pittosporum",
@@ -110,13 +110,7 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     },
-    "images": [
-      "assets/plants/westringia_2.jpg",
-      "assets/plants/westringia_3.jpg",
-      "assets/plants/westringia_4.jpg",
-      "assets/plants/westringia_5.jpg",
-      "assets/plants/westringia_6.jpg"
-    ]
+    "images": []
   },
   {
     "botanical": "Roses",
@@ -146,7 +140,8 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/roses_2.jpg"
+      "assets/plants/roses_2.jpg",
+      "assets/plants/rosa_iceberg.jpg"
     ]
   },
   {
@@ -178,8 +173,8 @@ const PLANTS = [
     "images": []
   },
   {
-    "botanical": "Muhlenbergia",
-    "common": "Muhly Grass",
+    "botanical": "Muhlenbergia capillaris",
+    "common": "Pink Muhly Grass",
     "synonyms": [
       "muhly",
       "muhlenbergia"
@@ -203,7 +198,11 @@ const PLANTS = [
       "nov": "",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/muhlenbergia_capillaris.jpg",
+      "assets/plants/muhlenbergia_capillaris2.jpg",
+      "assets/plants/muhlenbergia_capillaris3.jpg"
+    ]
   },
   {
     "botanical": "Lomandra",
@@ -285,7 +284,9 @@ const PLANTS = [
       "nov": "",
       "dec": "■"
     },
-    "images": []
+    "images": [
+      "assets/plants/muhlenbergia_rigens.jpg"
+    ]
   },
   {
     "botanical": "Pennisetum setaceum",
@@ -312,7 +313,8 @@ const PLANTS = [
     },
     "images": [
       "assets/plants/pennisetum_setaceum_7.jpg",
-      "assets/plants/pennisetum_setaceum_9.jpg"
+      "assets/plants/pennisetum_setaceum2.jpg",
+      "assets/plants/pennisetum_setaceum3.jpg"
     ]
   },
   {
@@ -338,7 +340,9 @@ const PLANTS = [
       "nov": "△",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/stipa_nassella_tenuissima.jpg"
+    ]
   },
   {
     "botanical": "Festuca glauca",
@@ -392,7 +396,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/lomandra_longifolia_breeze.jpg"
+      "assets/plants/lomandra_longifolia_breeze.jpg",
+      "assets/plants/lomandra_longifolia_breeze2.jpg",
+      "assets/plants/lomandra_longifolia_breeze3.jpg",
+      "assets/plants/lomandra_longifolia_breeze_4.jpg",
+      "assets/plants/lomandra_longifolia_breeze_5.jpg",
+      "assets/plants/lomandra_longifolia_breeze_6.jpg",
+      "assets/plants/lomandra_longifolia_breeze_7.jpg",
+      "assets/plants/lomandra_longifolia_breeze_8.jpg",
+      "assets/plants/lomandra_longifolia_breeze_9.jpg"
     ]
   },
   {
@@ -608,7 +620,7 @@ const PLANTS = [
     "images": []
   },
   {
-    "botanical": "Lantana camera",
+    "botanical": "Lantana camara",
     "common": "Lantana",
     "synonyms": [],
     "size": "3–5′",
@@ -813,7 +825,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/trachelospermum_jasminoides.jpg"
+      "assets/plants/trachelospermum_jasminoides.jpg",
+      "assets/plants/trachelospermum_jasminoides2.jpg",
+      "assets/plants/trachelospermum_jasminoides3.jpg",
+      "assets/plants/trachelospermum_jasminoides_1.jpg",
+      "assets/plants/trachelospermum_jasminoides_2.jpg",
+      "assets/plants/trachelospermum_jasminoides_3.jpg",
+      "assets/plants/trachelospermum_jasminoides_4.jpg",
+      "assets/plants/trachelospermum_jasminoides_5.jpg",
+      "assets/plants/trachelospermum_jasminoides_6.jpg"
     ]
   },
   {
@@ -1720,7 +1740,11 @@ const PLANTS = [
       "nov": "",
       "dec": "△"
     },
-    "images": []
+    "images": [
+      "assets/plants/bouteloua_gracilis_blonde_ambition.jpg",
+      "assets/plants/bouteloua_gracilis2.jpg",
+      "assets/plants/bouteloua_gracilis3.jpg"
+    ]
   },
   {
     "botanical": "Leymus condensatus 'Canyon Prince'",
@@ -2096,7 +2120,7 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/bougainvillea_spectabilis_4.jpg"
+      "assets/plants/bougainvillea_rosenka_pink_gold.jpg"
     ]
   },
   {
@@ -2224,7 +2248,23 @@ const PLANTS = [
     },
     "images": [
       "assets/plants/carissa_green_carpet.jpg",
-      "assets/plants/carissa_macrocarpa_booxwood_beauty.jpg"
+      "assets/plants/carissa_macrocarpa_booxwood_beauty.jpg",
+      "assets/plants/carissa_green_carpet2.jpg",
+      "assets/plants/carissa_green_carpet3.jpg",
+      "assets/plants/carissa_macrocarpa_booxwood_beauty2.jpg",
+      "assets/plants/carissa_macrocarpa_booxwood_beauty3.jpg",
+      "assets/plants/carissa_macrocarpa_1.jpg",
+      "assets/plants/carissa_macrocarpa_2.jpg",
+      "assets/plants/carissa_macrocarpa_3.jpg",
+      "assets/plants/carissa_macrocarpa_4.jpg",
+      "assets/plants/carissa_macrocarpa_5.jpg",
+      "assets/plants/carissa_macrocarpa_6.jpg",
+      "assets/plants/carissa_macrocarpa_7.jpg",
+      "assets/plants/carissa_macrocarpa_8.jpg",
+      "assets/plants/carissa_macrocarpa_9.jpg",
+      "assets/plants/carissa_macrocarpa_10.jpg",
+      "assets/plants/carissa_macrocarpa_11.jpg",
+      "assets/plants/carissa_macrocarpa_12.jpg"
     ]
   },
   {
@@ -2276,7 +2316,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/achillea_millefolium_pomegranate.jpg"
+      "assets/plants/achillea_millefolium_pomegranate.jpg",
+      "assets/plants/achillea_millefolium_pomegranate2.jpg",
+      "assets/plants/achillea_millefolium_pomegranate3.jpg",
+      "assets/plants/achillea_millefolium_pomegranate_1.jpg",
+      "assets/plants/achillea_millefolium_pomegranate_2.jpg",
+      "assets/plants/achillea_millefolium_pomegranate_3.jpg",
+      "assets/plants/achillea_millefolium_pomegranate_4.jpg",
+      "assets/plants/achillea_millefolium_pomegranate_5.jpg",
+      "assets/plants/achillea_millefolium_pomegranate_6.jpg"
     ]
   },
   {
@@ -2303,7 +2351,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/azalea_orange_delight.jpg"
+      "assets/plants/azalea_orange_delight.jpg",
+      "assets/plants/azalea_orange_delight_2.jpg",
+      "assets/plants/azalea_orange_delight_3.jpg",
+      "assets/plants/azalea_orange_delight_1.jpg",
+      "assets/plants/azalea_orange_delight_4.jpg",
+      "assets/plants/azalea_orange_delight_5.jpg",
+      "assets/plants/azalea_orange_delight_6.jpg",
+      "assets/plants/azalea_orange_delight_7.jpg",
+      "assets/plants/azalea_orange_delight_8.jpg"
     ]
   },
   {
@@ -2330,7 +2386,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/hydrangea_macrophylla_nikko_blue.jpg"
+      "assets/plants/hydrangea_macrophylla_nikko_blue.jpg",
+      "assets/plants/hydrangea_macrophylla_nikko_blue2.jpg",
+      "assets/plants/hydrangea_macrophylla_nikko_blue3.jpg",
+      "assets/plants/hydrangea_macrophylla_nikko_blue_1.jpg",
+      "assets/plants/hydrangea_macrophylla_nikko_blue_2.jpg",
+      "assets/plants/hydrangea_macrophylla_nikko_blue_3.jpg",
+      "assets/plants/hydrangea_macrophylla_nikko_blue_4.jpg",
+      "assets/plants/hydrangea_macrophylla_nikko_blue_5.jpg",
+      "assets/plants/hydrangea_macrophylla_nikko_blue_6.jpg"
     ]
   },
   {
@@ -2357,7 +2421,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/hydrangea_macrophylla_leuchtfeuer.jpg"
+      "assets/plants/hydrangea_macrophylla_leuchtfeuer.jpg",
+      "assets/plants/hydrangea_macrophylla_leuchtfeuer2.jpg",
+      "assets/plants/hydrangea_macrophylla_leuchtfeuer3.jpg",
+      "assets/plants/hydrangea_macrophylla_leuchtfeuer_1.jpg",
+      "assets/plants/hydrangea_macrophylla_leuchtfeuer_2.jpg",
+      "assets/plants/hydrangea_macrophylla_leuchtfeuer_3.jpg",
+      "assets/plants/hydrangea_macrophylla_leuchtfeuer_4.jpg",
+      "assets/plants/hydrangea_macrophylla_leuchtfeuer_5.jpg",
+      "assets/plants/hydrangea_macrophylla_leuchtfeuer_6.jpg"
     ]
   },
   {
@@ -2384,7 +2456,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/xylosma_congestum.jpg"
+      "assets/plants/xylosma_congestum.jpg",
+      "assets/plants/xylosma_congestum2.jpg",
+      "assets/plants/xylosma_congestum3.jpg",
+      "assets/plants/xylosma_congestum_1.jpg",
+      "assets/plants/xylosma_congestum_2.jpg",
+      "assets/plants/xylosma_congestum_3.jpg",
+      "assets/plants/xylosma_congestum_4.jpg",
+      "assets/plants/xylosma_congestum_5.jpg",
+      "assets/plants/xylosma_congestum_6.jpg"
     ]
   },
   {
@@ -2411,7 +2491,16 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/asparagus_densiflorus_myers.jpg"
+      "assets/plants/asparagus_densiflorus_myers.jpg",
+      "assets/plants/asparagus_densiflorus_myers_2.jpg",
+      "assets/plants/asparagus_densiflorus_myers_3.jpg",
+      "assets/plants/asparagus_densiflorus_myers_4.jpg",
+      "assets/plants/asparagus_densiflorus_myers_1.jpg",
+      "assets/plants/asparagus_densiflorus_myers_5.jpg",
+      "assets/plants/asparagus_densiflorus_myers_6.jpg",
+      "assets/plants/asparagus_densiflorus_myers_7.jpg",
+      "assets/plants/asparagus_densiflorus_myers_8.jpg",
+      "assets/plants/asparagus_densiflorus_myers_9.jpg"
     ]
   },
   {
@@ -2438,7 +2527,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/philodendron_xanadu.jpg"
+      "assets/plants/philodendron_xanadu.jpg",
+      "assets/plants/philodendron_xanadu2.jpg",
+      "assets/plants/philodendron_xanadu3.jpg",
+      "assets/plants/philodendron_xanadu_1.jpg",
+      "assets/plants/philodendron_xanadu_2.jpg",
+      "assets/plants/philodendron_xanadu_3.jpg",
+      "assets/plants/philodendron_xanadu_4.jpg",
+      "assets/plants/philodendron_xanadu_5.jpg",
+      "assets/plants/philodendron_xanadu_6.jpg"
     ]
   },
   {
@@ -2465,7 +2562,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/limonium_perezii.jpg"
+      "assets/plants/limonium_perezii.jpg",
+      "assets/plants/limonium_perezii2.jpg",
+      "assets/plants/limonium_perezii3.jpg",
+      "assets/plants/limonium_perezii_1.jpg",
+      "assets/plants/limonium_perezii_2.jpg",
+      "assets/plants/limonium_perezii_3.jpg",
+      "assets/plants/limonium_perezii_4.jpg",
+      "assets/plants/limonium_perezii_5.jpg",
+      "assets/plants/limonium_perezii_6.jpg"
     ]
   },
   {
@@ -2492,7 +2597,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/dietes.jpg"
+      "assets/plants/dietes.jpg",
+      "assets/plants/dietes2.jpg",
+      "assets/plants/dietes3.jpg",
+      "assets/plants/dietes_1.jpg",
+      "assets/plants/dietes_2.jpg",
+      "assets/plants/dietes_3.jpg",
+      "assets/plants/dietes_4.jpg",
+      "assets/plants/dietes_5.jpg",
+      "assets/plants/dietes_6.jpg"
     ]
   },
   {
@@ -2519,11 +2632,19 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/lavandula_dentata.jpg"
+      "assets/plants/lavandula_dentata.jpg",
+      "assets/plants/lavandula_dentata2.jpg",
+      "assets/plants/lavandula_dentata3.jpg",
+      "assets/plants/lavandula_dentata_1.jpg",
+      "assets/plants/lavandula_dentata_2.jpg",
+      "assets/plants/lavandula_dentata_3.jpg",
+      "assets/plants/lavandula_dentata_4.jpg",
+      "assets/plants/lavandula_dentata_5.jpg",
+      "assets/plants/lavandula_dentata_6.jpg"
     ]
   },
   {
-    "botanical": "Lavandula ginginsii 'Goodwin Creek Grey'",
+    "botanical": "Lavandula x ginginsii 'Goodwin Creek Grey'",
     "common": "Goodwin Creek Grey Lavender",
     "synonyms": [],
     "size": "2–3′",
@@ -2546,7 +2667,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/lavandula_ginginsii_goodwin_creek_grey.jpg"
+      "assets/plants/lavandula_ginginsii_goodwin_creek_grey.jpg",
+      "assets/plants/lavandula_ginginsii_goodwin_creek_grey2.jpg",
+      "assets/plants/lavandula_ginginsii_goodwin_creek_grey3.jpg"
     ]
   },
   {
@@ -2573,7 +2696,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/tulbaghia_violacea.jpg"
+      "assets/plants/tulbaghia_violacea.jpg",
+      "assets/plants/tulbaghia_violacea2.jpg",
+      "assets/plants/tulbaghia_violacea3.jpg",
+      "assets/plants/tulbaghia_violacea_1.jpg",
+      "assets/plants/tulbaghia_violacea_2.jpg",
+      "assets/plants/tulbaghia_violacea_3.jpg",
+      "assets/plants/tulbaghia_violacea_4.jpg",
+      "assets/plants/tulbaghia_violacea_5.jpg",
+      "assets/plants/tulbaghia_violacea_6.jpg"
     ]
   },
   {
@@ -2600,7 +2731,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/phlomis_fruticosa.jpg"
+      "assets/plants/phlomis_fruticosa.jpg",
+      "assets/plants/phlomis_fruticosa2.jpg",
+      "assets/plants/phlomis_fruticosa3.jpg",
+      "assets/plants/phlomis_fruticosa_1.jpg",
+      "assets/plants/phlomis_fruticosa_2.jpg",
+      "assets/plants/phlomis_fruticosa_3.jpg",
+      "assets/plants/phlomis_fruticosa_4.jpg",
+      "assets/plants/phlomis_fruticosa_5.jpg",
+      "assets/plants/phlomis_fruticosa_6.jpg"
     ]
   },
   {
@@ -2627,7 +2766,12 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/achillea_moonshine_yellow.jpg"
+      "assets/plants/achillea_moonshine_yellow.jpg",
+      "assets/plants/achillea_moonshine_yellow2.jpg",
+      "assets/plants/achillea_moonshine_yellow_1.jpg",
+      "assets/plants/achillea_moonshine_yellow_2.jpg",
+      "assets/plants/achillea_moonshine_yellow_3.jpg",
+      "assets/plants/achillea_moonshine_yellow_4.jpg"
     ]
   },
   {
@@ -2654,7 +2798,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/azalea_southern_charm_pink.jpg"
+      "assets/plants/azalea_southern_charm_pink.jpg",
+      "assets/plants/azalea_southern_charm_pink2.jpg",
+      "assets/plants/azalea_southern_charm_pink3.jpg"
     ]
   },
   {
@@ -2681,11 +2827,19 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/azalea_red_bird.jpg"
+      "assets/plants/azalea_red_bird.jpg",
+      "assets/plants/azalea_red_bird_2.jpg",
+      "assets/plants/azalea_red_bird_3.jpg",
+      "assets/plants/azalea_red_bird_1.jpg",
+      "assets/plants/azalea_red_bird_4.jpg",
+      "assets/plants/azalea_red_bird_5.jpg",
+      "assets/plants/azalea_red_bird_6.jpg",
+      "assets/plants/azalea_red_bird_7.jpg",
+      "assets/plants/azalea_red_bird_8.jpg"
     ]
   },
   {
-    "botanical": "Lomandra longifolia 'Platinum Beauty'ï",
+    "botanical": "Lomandra longifolia 'Platinum Beauty'",
     "common": "Platinum Beauty Lomandra",
     "synonyms": [],
     "size": "3–4′",
@@ -2708,7 +2862,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/lomandra_longifolia_platinum_beauty.jpg"
+      "assets/plants/lomandra_longifolia_platinum_beauty.jpg",
+      "assets/plants/lomandra_longifolia_platinum_beauty2.jpg",
+      "assets/plants/lomandra_longifolia_platinum_beauty3.jpg",
+      "assets/plants/lomandra_longifolia_platinum_beauty_1.jpg",
+      "assets/plants/lomandra_longifolia_platinum_beauty_2.jpg",
+      "assets/plants/lomandra_longifolia_platinum_beauty_3.jpg",
+      "assets/plants/lomandra_longifolia_platinum_beauty_4.jpg",
+      "assets/plants/lomandra_longifolia_platinum_beauty_5.jpg",
+      "assets/plants/lomandra_longifolia_platinum_beauty_6.jpg"
     ]
   },
   {
@@ -2735,13 +2897,18 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/Strelitzia_Nocolao_00.jpg",
-      "assets/plants/Strelitzia_Nocolao_01.jpg",
-      "assets/plants/Strelitzia_Nocolao_02.jpg"
+      "assets/plants/strelitzia_nocolao_00.jpg",
+      "assets/plants/strelitzia_nocolao_01.jpg",
+      "assets/plants/strelitzia_nocolao_02.jpg",
+      "assets/plants/strelitzia_nocolao2.jpg",
+      "assets/plants/strelitzia_nocolao3.jpg",
+      "assets/plants/strelitzia_nicolai_1.jpg",
+      "assets/plants/strelitzia_nicolai_2.jpg",
+      "assets/plants/strelitzia_nicolai_3.jpg"
     ]
   },
   {
-    "botanical": "Tecomaria capensis (Orange)",
+    "botanical": "Tecoma capensis",
     "common": "Cape Honeysuckle",
     "synonyms": [],
     "size": "6–10′",
@@ -2764,7 +2931,9 @@ const PLANTS = [
       "dec": "△"
     },
     "images": [
-      "assets/plants/tecomaria_capensis_orange.jpg"
+      "assets/plants/tecomaria_capensis_orange.jpg",
+      "assets/plants/tecomaria_capensis_orange2.jpg",
+      "assets/plants/tecomaria_capensis_orange3.jpg"
     ]
   },
   {
@@ -2791,15 +2960,20 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/Strelitzia_Regimae_00.jpg",
-      "assets/plants/Strelitzia_Regimae_01.jpg",
-      "assets/plants/Strelitzia_Regimae_02.jpg",
-      "assets/plants/Strelitzia_Regimae_03.jpg"
+      "assets/plants/strelitzia_regimae_00.jpg",
+      "assets/plants/strelitzia_regimae_01.jpg",
+      "assets/plants/strelitzia_regimae_02.jpg",
+      "assets/plants/strelitzia_regimae_03.jpg",
+      "assets/plants/strelitzia_regimae2.jpg",
+      "assets/plants/strelitzia_regimae3.jpg",
+      "assets/plants/strelitzia_reginae_1.jpg",
+      "assets/plants/strelitzia_reginae_2.jpg",
+      "assets/plants/strelitzia_reginae_3.jpg"
     ]
   },
   {
-    "botanical": "Tacoma orange Jubliee",
-    "common": "Orange Jubilee",
+    "botanical": "Tecoma 'Orange Jubilee'",
+    "common": "Orange Jubilee Tecoma",
     "synonyms": [],
     "size": "8–12′",
     "target": "-30–50%",
@@ -2821,8 +2995,10 @@ const PLANTS = [
       "dec": "△"
     },
     "images": [
-      "assets/plants/tacoma_orange_jubliee.jpg",
-      "assets/plants/tacoma_orange_jubliee_2.jpg"
+      "assets/plants/tecomaria_orange_jubliee.jpg",
+      "assets/plants/tecomaria_orange_jubliee_2.jpg",
+      "assets/plants/tecomaria_orange_jubilee2.jpg",
+      "assets/plants/tecomaria_orange_jubilee3.jpg"
     ]
   },
   {
@@ -2853,7 +3029,8 @@ const PLANTS = [
       "dec": "△"
     },
     "images": [
-      "assets/plants/tecoma_stans.jpg"
+      "assets/plants/tecoma_stans.jpg",
+      "assets/plants/tecomaria_stans.jpg"
     ]
   },
   {
@@ -2880,7 +3057,15 @@ const PLANTS = [
       "dec": "△"
     },
     "images": [
-      "assets/plants/salvia_allen_chickering.jpg"
+      "assets/plants/salvia_allen_chickering.jpg",
+      "assets/plants/salvia_allen_chickering2.jpg",
+      "assets/plants/salvia_allen_chickering3.jpg",
+      "assets/plants/salvia_allen_chickering_1.jpg",
+      "assets/plants/salvia_allen_chickering_2.jpg",
+      "assets/plants/salvia_allen_chickering_3.jpg",
+      "assets/plants/salvia_allen_chickering_4.jpg",
+      "assets/plants/salvia_allen_chickering_5.jpg",
+      "assets/plants/salvia_allen_chickering_6.jpg"
     ]
   },
   {
@@ -2907,12 +3092,20 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/salvia_leucantha_santa_barbara.jpg"
+      "assets/plants/salvia_leucantha_santa_barbara.jpg",
+      "assets/plants/salvia_leucantha_santa_barbara2.jpg",
+      "assets/plants/salvia_leucantha_santa_barbara3.jpg",
+      "assets/plants/salvia_leucantha_santa_barbara_1.jpg",
+      "assets/plants/salvia_leucantha_santa_barbara_2.jpg",
+      "assets/plants/salvia_leucantha_santa_barbara_3.jpg",
+      "assets/plants/salvia_leucantha_santa_barbara_4.jpg",
+      "assets/plants/salvia_leucantha_santa_barbara_5.jpg",
+      "assets/plants/salvia_leucantha_santa_barbara_6.jpg"
     ]
   },
   {
-    "botanical": "Salvia leucantha 'Daniela's Dream'",
-    "common": "Daniela's Dream Salvia",
+    "botanical": "Salvia leucantha 'Danielle's Dream'",
+    "common": "Danielle's Dream Salvia",
     "synonyms": [],
     "size": "3–4′",
     "target": "Cut to 12–18″ in winter",
@@ -2934,7 +3127,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/salvia_leucantha_danielles_dream.jpg"
+      "assets/plants/salvia_leucantha_danielles_dream.jpg",
+      "assets/plants/salvia_leucantha_danielles_dream2.jpg",
+      "assets/plants/salvia_leucantha_danielles_dream3.jpg"
     ]
   },
   {
@@ -2961,11 +3156,19 @@ const PLANTS = [
       "dec": "△"
     },
     "images": [
-      "assets/plants/salvia_mystic_spires.jpg"
+      "assets/plants/salvia_mystic_spires.jpg",
+      "assets/plants/salvia_mystic_spires2.jpg",
+      "assets/plants/salvia_mystic_spires3.jpg",
+      "assets/plants/salvia_mystic_spires_1.jpg",
+      "assets/plants/salvia_mystic_spires_2.jpg",
+      "assets/plants/salvia_mystic_spires_3.jpg",
+      "assets/plants/salvia_mystic_spires_4.jpg",
+      "assets/plants/salvia_mystic_spires_5.jpg",
+      "assets/plants/salvia_mystic_spires_6.jpg"
     ]
   },
   {
-    "botanical": "Bougainvillea 'La jolla'",
+    "botanical": "Bougainvillea 'La Jolla'",
     "common": "La Jolla Bougainvillea",
     "synonyms": [],
     "size": "6–8′",
@@ -2988,7 +3191,15 @@ const PLANTS = [
       "dec": "△"
     },
     "images": [
-      "assets/plants/bougainvillea_la_jolla.jpg"
+      "assets/plants/bougainvillea_la_jolla.jpg",
+      "assets/plants/bougainvillea_la_jolla2.jpg",
+      "assets/plants/bougainvillea_la_jolla3.jpg",
+      "assets/plants/bougainvillea_la_jolla_1.jpg",
+      "assets/plants/bougainvillea_la_jolla_2.jpg",
+      "assets/plants/bougainvillea_la_jolla_3.jpg",
+      "assets/plants/bougainvillea_la_jolla_4.jpg",
+      "assets/plants/bougainvillea_la_jolla_5.jpg",
+      "assets/plants/bougainvillea_la_jolla_6.jpg"
     ]
   },
   {
@@ -3015,7 +3226,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/cordyline_lime_passion.jpg"
+      "assets/plants/cordyline_lime_passion.jpg",
+      "assets/plants/cordyline_lime_passion2.jpg",
+      "assets/plants/cordyline_lime_passion3.jpg",
+      "assets/plants/cordyline_lime_passion_1.jpg",
+      "assets/plants/cordyline_lime_passion_2.jpg",
+      "assets/plants/cordyline_lime_passion_3.jpg",
+      "assets/plants/cordyline_lime_passion_4.jpg",
+      "assets/plants/cordyline_lime_passion_5.jpg",
+      "assets/plants/cordyline_lime_passion_6.jpg"
     ]
   },
   {
@@ -3042,7 +3261,15 @@ const PLANTS = [
       "dec": "△"
     },
     "images": [
-      "assets/plants/bougainvillea_barbara_karst.jpg"
+      "assets/plants/bougainvillea_barbara_karst.jpg",
+      "assets/plants/bougainvillea_barbara_karst2.jpg",
+      "assets/plants/bougainvillea_barbara_karst3.jpg",
+      "assets/plants/bougainvillea_barbara_karst_1.jpg",
+      "assets/plants/bougainvillea_barbara_karst_2.jpg",
+      "assets/plants/bougainvillea_barbara_karst_3.jpg",
+      "assets/plants/bougainvillea_barbara_karst_4.jpg",
+      "assets/plants/bougainvillea_barbara_karst_5.jpg",
+      "assets/plants/bougainvillea_barbara_karst_6.jpg"
     ]
   },
   {
@@ -3069,7 +3296,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/leucadendron_discolor_pom_pom.jpg"
+      "assets/plants/leucadendron_discolor_pom_pom.jpg",
+      "assets/plants/leucadendron_discolor_pom_pom2.jpg",
+      "assets/plants/leucadendron_discolor_pom_pom3.jpg"
     ]
   },
   {
@@ -3097,7 +3326,15 @@ const PLANTS = [
     },
     "images": [
       "assets/plants/cordyline_design_a_line.jpg",
-      "assets/plants/cordyline_design_a_line_2.jpg"
+      "assets/plants/cordyline_design_a_line_2.jpg",
+      "assets/plants/cordyline_design_a_line2.jpg",
+      "assets/plants/cordyline_design_a_line3.jpg",
+      "assets/plants/cordyline_design_a_line_1.jpg",
+      "assets/plants/cordyline_design_a_line_3.jpg",
+      "assets/plants/cordyline_design_a_line_4.jpg",
+      "assets/plants/cordyline_design_a_line_5.jpg",
+      "assets/plants/cordyline_design_a_line_6.jpg",
+      "assets/plants/cordyline_design_a_line_7.jpg"
     ]
   },
   {
@@ -3124,7 +3361,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/dianella_tesmanica_variegata.jpg"
+      "assets/plants/dianella_tesmanica_variegata.jpg",
+      "assets/plants/dianella_tesmanica_variegata2.jpg",
+      "assets/plants/dianella_tesmanica_variegata3.jpg"
     ]
   },
   {
@@ -3151,34 +3390,15 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/dianella_revoluta_little_rev.jpg"
-    ]
-  },
-  {
-    "botanical": "Pennisetum 'Massalsium' 'Red Bunny'",
-    "common": "Red Bunny Fountain Grass",
-    "synonyms": [],
-    "size": "3–4′",
-    "target": "Cut to 6–8″ in late winter",
-    "aggression": "Heavy",
-    "type": "Year",
-    "fertilize": "Light fert spring",
-    "calendar": {
-      "jan": "",
-      "feb": "■",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "■",
-      "aug": "■",
-      "sep": "■",
-      "oct": "■",
-      "nov": "■",
-      "dec": "■"
-    },
-    "images": [
-      "assets/plants/pennisetum_massalcum_red_bunny.jpg"
+      "assets/plants/dianella_revoluta_little_rev.jpg",
+      "assets/plants/dianella_revoluta_little_rev2.jpg",
+      "assets/plants/dianella_revoluta_little_rev3.jpg",
+      "assets/plants/dianella_revoluta_little_rev_1.jpg",
+      "assets/plants/dianella_revoluta_little_rev_2.jpg",
+      "assets/plants/dianella_revoluta_little_rev_3.jpg",
+      "assets/plants/dianella_revoluta_little_rev_4.jpg",
+      "assets/plants/dianella_revoluta_little_rev_5.jpg",
+      "assets/plants/dianella_revoluta_little_rev_6.jpg"
     ]
   },
   {
@@ -3205,11 +3425,19 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/agapanthus_tinkerbell.jpg"
+      "assets/plants/agapanthus_tinkerbell.jpg",
+      "assets/plants/agapanthus_tinkerbell_2.jpg",
+      "assets/plants/agapanthus_tinkerbell_3.jpg",
+      "assets/plants/agapanthus_tinkerbell_1.jpg",
+      "assets/plants/agapanthus_tinkerbell_4.jpg",
+      "assets/plants/agapanthus_tinkerbell_5.jpg",
+      "assets/plants/agapanthus_tinkerbell_6.jpg",
+      "assets/plants/agapanthus_tinkerbell_7.jpg",
+      "assets/plants/agapanthus_tinkerbell_8.jpg"
     ]
   },
   {
-    "botanical": "Hemerocallis 'stella d orro'",
+    "botanical": "Hemerocallis 'Stella d'Oro'",
     "common": "Stella de Oro Daylily",
     "synonyms": [],
     "size": "1–2′",
@@ -3232,16 +3460,20 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/hemercocallis_stella_d_orro.jpg"
+      "assets/plants/hemercocallis_stella_d_orro.jpg",
+      "assets/plants/hemercocallis_stella_d_orro2.jpg",
+      "assets/plants/hemercocallis_stella_d_orro3.jpg"
     ]
   },
   {
     "botanical": "Chondropetalum Tectorum",
     "common": "Cape Rush",
     "images": [
-      "assets/plants/Chondropetalum_Tectorum_00.jpg",
-      "assets/plants/Chondropetalum_Tectorum_01.jpg",
-      "assets/plants/Chondropetalum_Tectorum_02.jpg"
+      "assets/plants/chondropetalum_tectorum_00.jpg",
+      "assets/plants/chondropetalum_tectorum_01.jpg",
+      "assets/plants/chondropetalum_tectorum_02.jpg",
+      "assets/plants/chondropetalum_tectorum2.jpg",
+      "assets/plants/chondropetalum_tectorum3.jpg"
     ],
     "size": "3–4′",
     "target": "Cut old stalks to ground annually",
@@ -3264,38 +3496,14 @@ const PLANTS = [
     }
   },
   {
-    "botanical": "Hemercocallis \"Stella d'Orro\"",
-    "common": "Stella d'Orro Daylily",
-    "images": [
-      "assets/plants/Hemercocallis_stella_d_orro.jpg"
-    ],
-    "size": "12–18″",
-    "target": "Cut to 6″ after bloom",
-    "aggression": "Medium",
-    "type": "Warm",
-    "fertilize": "Feed after first bloom",
-    "calendar": {
-      "jan": "",
-      "feb": "",
-      "mar": "■",
-      "apr": "■",
-      "may": "■",
-      "jun": "■",
-      "jul": "■",
-      "aug": "■",
-      "sep": "■",
-      "oct": "",
-      "nov": "",
-      "dec": ""
-    }
-  },
-  {
     "botanical": "Lantana \"Confetti\"",
     "common": "Confetti Lantana",
     "images": [
-      "assets/plants/Lanatana_Confetti_00.jpg",
-      "assets/plants/Lanatana_Confetti_01.jpg",
-      "assets/plants/Lanatana_Confetti_02.jpg"
+      "assets/plants/lanatana_confetti_00.jpg",
+      "assets/plants/lanatana_confetti_01.jpg",
+      "assets/plants/lanatana_confetti_02.jpg",
+      "assets/plants/lanatana_confetti2.jpg",
+      "assets/plants/lanatana_confetti3.jpg"
     ],
     "size": "3–4′",
     "target": "Hard cut to 12″ in late winter",
@@ -3321,9 +3529,11 @@ const PLANTS = [
     "botanical": "Lantana \"New Gold\"",
     "common": "New Gold Lantana",
     "images": [
-      "assets/plants/Lanatana_New_Gold_00.jpg",
-      "assets/plants/Lanatana_New_Gold_01.jpg",
-      "assets/plants/Lanatana_New_Gold_02.jpg"
+      "assets/plants/lanatana_new_gold_00.jpg",
+      "assets/plants/lanatana_new_gold_01.jpg",
+      "assets/plants/lanatana_new_gold_02.jpg",
+      "assets/plants/lanatana_new_gold2.jpg",
+      "assets/plants/lanatana_new_gold3.jpg"
     ],
     "size": "12–18″",
     "target": "Trim lightly to shape",
@@ -3346,12 +3556,15 @@ const PLANTS = [
     }
   },
   {
-    "botanical": "Pennisetum Massalcum \"Red Bunny\"",
+    "botanical": "Pennisetum 'Red Bunny'",
     "common": "Red Bunny Fountain Grass",
     "images": [
-      "assets/plants/Pennisetum_Massalcum_Red_Bunny_00.jpg",
-      "assets/plants/Pennisetum_Massalcum_Red_Bunny_01.jpg",
-      "assets/plants/Pennisetum_Massalcum_Red_Bunny_02.jpg"
+      "assets/plants/pennisetum_massalcum_red_bunny_00.jpg",
+      "assets/plants/pennisetum_massalcum_red_bunny_01.jpg",
+      "assets/plants/pennisetum_massalcum_red_bunny_02.jpg",
+      "assets/plants/pennisetum_massalcum_red_bunny.jpg",
+      "assets/plants/pennisetum_massalcum_red_bunny2.jpg",
+      "assets/plants/pennisetum_massalcum_red_bunny3.jpg"
     ],
     "size": "2–3′",
     "target": "Cut to 6″ in late winter",
@@ -3377,9 +3590,11 @@ const PLANTS = [
     "botanical": "Shefflera Arboricola",
     "common": "Arboricola",
     "images": [
-      "assets/plants/Shefflera_Arboricola_00.jpg",
-      "assets/plants/Shefflera_Arboricola_01.jpg",
-      "assets/plants/Shefflera_Arboricola_02.jpg"
+      "assets/plants/shefflera_arboricola_00.jpg",
+      "assets/plants/shefflera_arboricola_01.jpg",
+      "assets/plants/shefflera_arboricola_02.jpg",
+      "assets/plants/shefflera_arboricola2.jpg",
+      "assets/plants/shefflera_arboricola3.jpg"
     ],
     "size": "6–8′",
     "target": "Light shaping cuts only",
@@ -3405,7 +3620,15 @@ const PLANTS = [
     "botanical": "Lantana montevidensis",
     "common": "Purple Lantana",
     "images": [
-      "assets/plants/lantana_montevidensis_purple.jpg"
+      "assets/plants/lantana_montevidensis_purple.jpg",
+      "assets/plants/lantana_montevidensis_purple2.jpg",
+      "assets/plants/lantana_montevidensis_purple3.jpg",
+      "assets/plants/lantana_montevidensis_1.jpg",
+      "assets/plants/lantana_montevidensis_2.jpg",
+      "assets/plants/lantana_montevidensis_3.jpg",
+      "assets/plants/lantana_montevidensis_4.jpg",
+      "assets/plants/lantana_montevidensis_5.jpg",
+      "assets/plants/lantana_montevidensis_6.jpg"
     ],
     "size": "2–3′",
     "target": "Trim to shape in late winter",
@@ -3426,7 +3649,611 @@ const PLANTS = [
       "nov": "",
       "dec": ""
     }
+  },
+  {
+    "botanical": "Bougainvillea 'Raspberry Ocean'",
+    "common": "Raspberry Ocean Bougainvillea",
+    "images": [
+      "assets/plants/bougainvillea_raspberry_oce.jpg"
+    ],
+    "size": "4–6′",
+    "target": "Trim to shape, remove dead blooms",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Cordyline australis \"Red Star\"",
+    "common": "Red Star Cordyline",
+    "images": [
+      "assets/plants/cordyline_red_star.jpg"
+    ],
+    "size": "6–8′",
+    "target": "Remove dead lower leaves",
+    "aggression": "Light",
+    "type": "Year-round",
+    "fertilize": "Feed in spring",
+    "calendar": {
+      "jan": "■",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Helictotrichon sempervirens",
+    "common": "Blue Oat Grass",
+    "images": [
+      "assets/plants/helictotrichon_sempervirens.jpg"
+    ],
+    "size": "2–3′",
+    "target": "Cut to 6″ in late winter",
+    "aggression": "Medium",
+    "type": "Cool",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "",
+      "aug": "",
+      "sep": "■",
+      "oct": "■",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Melinis nerviglumis",
+    "common": "Ruby Silk Grass",
+    "images": [
+      "assets/plants/melinis_nerviglumis.jpg",
+      "assets/plants/melinis_nerviglumis2.jpg",
+      "assets/plants/melinis_nerviglumis3.jpg"
+    ],
+    "size": "2–3′",
+    "target": "Cut to 6″ in late winter",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Miscanthus sinensis",
+    "common": "Maiden Grass",
+    "images": [
+      "assets/plants/miscanthus_sinensis.jpg",
+      "assets/plants/miscanthus_sinensis2.jpg",
+      "assets/plants/miscanthus_sinensis3.jpg"
+    ],
+    "size": "5–7′",
+    "target": "Cut to 12″ in late winter",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Miscanthus sinensis 'Morning Light'",
+    "common": "Morning Light Maiden Grass",
+    "images": [
+      "assets/plants/miscanthus_sinensis_morning_light.jpg",
+      "assets/plants/miscanthus_sinensis_morning_light2.jpg",
+      "assets/plants/miscanthus_sinensis_morning_light3.jpg"
+    ],
+    "size": "4–6′",
+    "target": "Cut to 12″ in late winter",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Pennisetum Fairy Tails",
+    "common": "Fairy Tails Fountain Grass",
+    "images": [
+      "assets/plants/pennisetum_fairy_tails.jpg"
+    ],
+    "size": "3–4′",
+    "target": "Cut to 6″ in late winter",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Pennisetum spathiolatum",
+    "common": "Slender Fountain Grass",
+    "images": [
+      "assets/plants/pennisetum_spathiolatum.jpg",
+      "assets/plants/pennisetum_spathiolatum_2.jpg",
+      "assets/plants/pennisetum_spathiolatum3.jpg"
+    ],
+    "size": "2–3′",
+    "target": "Cut to 6″ in late winter",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Rosa Iceberg",
+    "common": "Iceberg Rose",
+    "images": [
+      "assets/plants/rosa_iceberg.jpg"
+    ],
+    "size": "3–4′",
+    "target": "Rose - prune hard in winter, deadhead in season",
+    "aggression": "Medium",
+    "type": "Year-round",
+    "fertilize": "Feed in spring and after first bloom",
+    "calendar": {
+      "jan": "■",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Camellia japonica 'Tomorrow's Pink Wonder'",
+    "common": "Tomorrow's Pink Wonder Camellia",
+    "images": [
+      "assets/plants/camellia_japonica_tomorrows_pink_wonder.jpg"
+    ],
+    "size": "6–10′",
+    "target": "Light shape after bloom",
+    "aggression": "Light",
+    "type": "Year",
+    "fertilize": "Acid-loving plant food in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "△",
+      "mar": "■",
+      "apr": "■",
+      "may": "△",
+      "jun": "",
+      "jul": "",
+      "aug": "",
+      "sep": "",
+      "oct": "",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Camellia japonica 'Debutante'",
+    "common": "Debutante Camellia",
+    "images": [
+      "assets/plants/camellia_japonica_debutante.jpg"
+    ],
+    "size": "6–8′",
+    "target": "Light shape after bloom",
+    "aggression": "Light",
+    "type": "Year",
+    "fertilize": "Acid-loving plant food in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "△",
+      "mar": "■",
+      "apr": "■",
+      "may": "△",
+      "jun": "",
+      "jul": "",
+      "aug": "",
+      "sep": "",
+      "oct": "",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Calamagrostis x acutiflora 'Karl Foerster'",
+    "common": "Karl Foerster Feather Reed Grass",
+    "images": [
+      "assets/plants/calamagrostis_x_acutiflora_karl_foerster.jpg",
+      "assets/plants/calamagrostis_x_acutiflora_karl_foerster2.jpg",
+      "assets/plants/calamagrostis_x_acutiflora_karl_foerster3.jpg"
+    ],
+    "size": "4–5′",
+    "target": "Cut to 6–12\" in late winter",
+    "aggression": "Medium",
+    "type": "Cool",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "△",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "",
+      "aug": "",
+      "sep": "△",
+      "oct": "△",
+      "nov": "",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Westringia fruticosa 'Smokey'",
+    "common": "Smokey Coast Rosemary",
+    "synonyms": [
+      "westringia fruticosa smokey",
+      "smokey westringia",
+      "smokey coast rosemary"
+    ],
+    "size": "4–6′",
+    "target": "-25–40%",
+    "aggression": "Medium",
+    "type": "Year",
+    "fertilize": "Light fert after prune",
+    "calendar": {
+      "jan": "",
+      "feb": "△",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "△",
+      "aug": "",
+      "sep": "",
+      "oct": "△",
+      "nov": "■",
+      "dec": "△"
+    },
+    "images": [
+      "assets/plants/westringia_fruticosa_smokey.jpg",
+      "assets/plants/westringia_fruticosa_smokey_2.jpg"
+    ]
+  },
+  {
+    "botanical": "Azalea 'Southern Charm'",
+    "common": "Southern Charm Azalea",
+    "size": "4–6′",
+    "target": "Light shape after bloom",
+    "aggression": "Light",
+    "type": "Shade",
+    "fertilize": "Acid fert spring",
+    "images": [
+      "assets/plants/azalea_southern_charm_1.jpg",
+      "assets/plants/azalea_southern_charm_2.jpg",
+      "assets/plants/azalea_southern_charm_3.jpg"
+    ],
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Dianella 'Tasmanica Variegata'",
+    "common": "Variegated Flax Lily",
+    "size": "2–3′",
+    "target": "Cut to 6–8″ annually",
+    "aggression": "Heavy",
+    "type": "Year",
+    "fertilize": "Light fert after cut",
+    "images": [
+      "assets/plants/dianella_tasmanica_variegata_1.jpg",
+      "assets/plants/dianella_tasmanica_variegata_2.jpg",
+      "assets/plants/dianella_tasmanica_variegata_3.jpg"
+    ],
+    "calendar": {
+      "jan": "",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Hemerocallis 'stella d orro'",
+    "common": "Stella de Oro Daylily",
+    "size": "1–2′",
+    "target": "Cut back in late winter",
+    "aggression": "Medium",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "images": [
+      "assets/plants/hemerocallis_stella_d_orro_1.jpg",
+      "assets/plants/hemerocallis_stella_d_orro_2.jpg",
+      "assets/plants/hemerocallis_stella_d_orro_3.jpg"
+    ],
+    "calendar": {
+      "jan": "",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Lantana 'Confetti'",
+    "common": "Confetti Lantana",
+    "size": "2–3′",
+    "target": "Cut back 50%",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light fert spring",
+    "images": [
+      "assets/plants/lantana_confetti_1.jpg",
+      "assets/plants/lantana_confetti_2.jpg",
+      "assets/plants/lantana_confetti_3.jpg"
+    ],
+    "calendar": {
+      "jan": "",
+      "feb": "△",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "△",
+      "aug": "",
+      "sep": "",
+      "oct": "△",
+      "nov": "■",
+      "dec": "△"
+    }
+  },
+  {
+    "botanical": "Lantana 'New Gold'",
+    "common": "New Gold Lantana",
+    "size": "2–3′",
+    "target": "Cut back 50%",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light fert spring",
+    "images": [
+      "assets/plants/lantana_new_gold_1.jpg",
+      "assets/plants/lantana_new_gold_2.jpg",
+      "assets/plants/lantana_new_gold_3.jpg"
+    ],
+    "calendar": {
+      "jan": "",
+      "feb": "△",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "△",
+      "aug": "",
+      "sep": "",
+      "oct": "△",
+      "nov": "■",
+      "dec": "△"
+    }
+  },
+  {
+    "botanical": "Leucadendron discolor",
+    "common": "Pom Pom Leucadendron",
+    "size": "4–6′",
+    "target": "Light shape after bloom",
+    "aggression": "Light",
+    "type": "Year",
+    "fertilize": "None or very light",
+    "images": [
+      "assets/plants/leucadendron_discolor_1.jpg",
+      "assets/plants/leucadendron_discolor_2.jpg",
+      "assets/plants/leucadendron_discolor_3.jpg"
+    ],
+    "calendar": {
+      "jan": "",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Salvia leucantha 'Daniela's Dream'",
+    "common": "Daniela's Dream Salvia",
+    "size": "3–4′",
+    "target": "Cut to 12–18″ in winter",
+    "aggression": "Heavy",
+    "type": "Year",
+    "fertilize": "Light fert spring",
+    "images": [
+      "assets/plants/salvia_leucantha_danielas_dream_1.jpg",
+      "assets/plants/salvia_leucantha_danielas_dream_2.jpg",
+      "assets/plants/salvia_leucantha_danielas_dream_3.jpg"
+    ],
+    "calendar": {
+      "jan": "",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Schefflera arboricola",
+    "common": "Schefflera",
+    "size": "6–10′",
+    "target": "Light shape as needed",
+    "aggression": "Light",
+    "type": "Shade",
+    "fertilize": "Light fert spring",
+    "images": [
+      "assets/plants/schefflera_arboricola_1.jpg",
+      "assets/plants/schefflera_arboricola_2.jpg",
+      "assets/plants/schefflera_arboricola_3.jpg"
+    ],
+    "calendar": {
+      "jan": "△",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "△",
+      "sep": "△",
+      "oct": "△",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Tecomaria capensis (Orange)",
+    "common": "Cape Honeysuckle",
+    "size": "6–10′",
+    "target": "-30–50%",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light fert after prune",
+    "images": [
+      "assets/plants/tecomaria_capensis_orange_1.jpg",
+      "assets/plants/tecomaria_capensis_orange_2.jpg",
+      "assets/plants/tecomaria_capensis_orange_3.jpg"
+    ],
+    "calendar": {
+      "jan": "",
+      "feb": "△",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "△",
+      "aug": "",
+      "sep": "",
+      "oct": "△",
+      "nov": "■",
+      "dec": "△"
+    }
   }
 ];
-
-module.exports = PLANTS;
