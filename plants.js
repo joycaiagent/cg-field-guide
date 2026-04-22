@@ -2519,15 +2519,9 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/philodendron_xanadu.jpg",
-      "assets/plants/philodendron_xanadu2.jpg",
-      "assets/plants/philodendron_xanadu3.jpg",
       "assets/plants/philodendron_xanadu_1.jpg",
       "assets/plants/philodendron_xanadu_2.jpg",
-      "assets/plants/philodendron_xanadu_3.jpg",
-      "assets/plants/philodendron_xanadu_4.jpg",
-      "assets/plants/philodendron_xanadu_5.jpg",
-      "assets/plants/philodendron_xanadu_6.jpg"
+      "assets/plants/philodendron_xanadu_3.jpg"
     ]
   },
   {
