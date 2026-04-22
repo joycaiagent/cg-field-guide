@@ -3413,9 +3413,6 @@ const PLANTS = [
       "dec": "■"
     },
     "images": [
-      "assets/plants/dianella_revoluta_little_rev.jpg",
-      "assets/plants/dianella_revoluta_little_rev2.jpg",
-      "assets/plants/dianella_revoluta_little_rev3.jpg",
       "assets/plants/dianella_revoluta_little_rev_1.jpg",
       "assets/plants/dianella_revoluta_little_rev_2.jpg",
       "assets/plants/dianella_revoluta_little_rev_3.jpg",
