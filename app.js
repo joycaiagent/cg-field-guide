@@ -24,7 +24,7 @@
     'philodendron':  'assets/plants/philodendron_xanadu_00.jpg',
     'rhaphiolepis':  'assets/plants/rhaphiolepis_indica_1.jpg',
     'rosa':          'assets/plants/rosa_iceberg.jpg',
-    'salvia':        'assets/plants/salvia_allen_chickering_00.jpg',
+    'salvia':        'assets/plants/salvia_allen_chickering_1.jpg',
     'schefflera':    'assets/plants/schefflera_arboricola_1.jpg',
     'strelitzia':    'assets/plants/strelitzia_nicolai_1.jpg',
     'tecoma':        'assets/plants/tecoma_stans_1.jpg',
