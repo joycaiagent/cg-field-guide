@@ -39,7 +39,7 @@
   // ── Popular plants (quick-tap shortcuts) ─────────────────
   const POPULAR_PLANTS = [
     { botanical: 'Bougainvillea spectabilis',  common: 'Bougainvillea' },
-    { botanical: 'Lantana camera',             common: 'Lantana' },
+    { botanical: 'Lantana montevidensis',     common: 'Purple Lantana' },
     { botanical: 'Pittosporum',                 common: 'Pittosporum' },
     { botanical: 'Carissa macrocarpa',          common: 'Natal Plum' },
     { botanical: 'Lomandra longifolia \'Breeze\'', common: 'Lomandra' },
@@ -124,7 +124,7 @@
         (pl.botanical || '').toLowerCase() === p.botanical.toLowerCase() ||
         (pl.botanical || '').toLowerCase().startsWith(p.botanical.toLowerCase())
       );
-      const thumb = getThumb(p);
+      const thumb = getThumb(plant || p);
       const item = document.createElement('button');
       item.type = 'button';
       item.className = 'popular-item';
