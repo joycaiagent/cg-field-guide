@@ -52,12 +52,22 @@
   <!-- ── Plant ID panel ── -->
   <section id="plant-tab" class="tab-panel" role="tabpanel">
 
+    <!-- Popular plants quick-access -->
+    <div class="popular-plants" id="popular-plants">
+      <p class="section-label">⭐ Popular</p>
+      <div class="popular-grid" id="popular-grid"></div>
+    </div>
+
+    <!-- Browse all -->
+    <div class="browse-section" id="browse-section">
+      <button type="button" class="browse-toggle" id="browse-toggle">📋 Browse all plants ▾</button>
+      <div class="browse-list hidden" id="browse-list"></div>
+    </div>
+
     <!-- Photo tips -->
     <div class="photo-tips" id="photo-tips">
       <strong>📸 Tip:</strong> <span id="photo-tip-text">Get close — include leaves or flowers for best results</span>
     </div>
-
-
 
     <!-- Multi-photo previews -->
     <div id="photo-previews" class="photo-previews hidden"></div>

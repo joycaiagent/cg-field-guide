@@ -4,7 +4,49 @@
   'use strict';
 
   let currentTab = 'plant';
-  const APP_LAST_UPDATED = 'Apr 17, 2026';
+  const APP_LAST_UPDATED = 'Apr 22, 2026';
+
+  // ── Thumbnail lookup (maps genus → first available image) ──
+  const _thumbMap = {
+    'achillea':      'assets/plants/achillea_millefolium_pomegranate.jpg',
+    'agapanthus':    'assets/plants/agapanthus_tinkerbell.jpg',
+    'bougainvillea': 'assets/plants/bougainvillea_barbara_karst.jpg',
+    'carissa':       'assets/plants/carissa_green_carpet.jpg',
+    'chondropetalum':'assets/plants/chondropetalum_tectorum_1.jpg',
+    'cordyline':     'assets/plants/cordyline_australis_red_star_2.jpg',
+    'dianella':      'assets/plants/dianella_revoluta_little_rev_00.jpg',
+    'dietes':        'assets/plants/dietes_00.jpg',
+    'lantana':       'assets/plants/lantana_confetti.jpg',
+    'lavandula':     'assets/plants/lavandula_dentata_00.jpg',
+    'lomandra':      'assets/plants/lomandra_longifolia_breeze_1.jpg',
+    'miscanthus':    'assets/plants/miscanthus_sinensis.jpg',
+    'pennisetum':    'assets/plants/pennisetum_fairy_tails.jpg',
+    'philodendron':  'assets/plants/philodendron_xanadu_00.jpg',
+    'rhaphiolepis':  'assets/plants/rhaphiolepis_indica_1.jpg',
+    'rosa':          'assets/plants/rosa_iceberg.jpg',
+    'salvia':        'assets/plants/salvia_allen_chickering_00.jpg',
+    'schefflera':    'assets/plants/schefflera_arboricola_1.jpg',
+    'strelitzia':    'assets/plants/strelitzia_nicolai_1.jpg',
+    'tecoma':        'assets/plants/tecoma_stans_1.jpg',
+    'trachelospermum':'assets/plants/trachelospermum_jasminoides.jpg',
+  };
+
+  function getThumb(plant) {
+    const key = (plant.botanical || plant.name || '').split(' ')[0].toLowerCase();
+    return _thumbMap[key] || null;
+  }
+
+  // ── Popular plants (quick-tap shortcuts) ─────────────────
+  const POPULAR_PLANTS = [
+    { botanical: 'Bougainvillea spectabilis',  common: 'Bougainvillea' },
+    { botanical: 'Lantana camera',             common: 'Lantana' },
+    { botanical: 'Pittosporum',                 common: 'Pittosporum' },
+    { botanical: 'Carissa macrocarpa',          common: 'Natal Plum' },
+    { botanical: 'Lomandra longifolia \'Breeze\'', common: 'Lomandra' },
+    { botanical: 'Myoporum parvifolium',        common: 'Myoporum' },
+    { botanical: 'Podocarpus',                 common: 'Podocarpus' },
+    { botanical: 'Salvia leucantha',           common: 'Mexican Bush Sage' },
+  ];
 
   // ── DOM refs ──────────────────────────────────────────────
   const $ = id => document.getElementById(id);
@@ -69,6 +111,75 @@
       : '🔍 Search pests…';
     clearResults();
   }
+
+  // ── Popular plants grid ────────────────────────────────────
+  function initPopularPlants() {
+    const grid = $('popular-grid');
+    if (!grid) return;
+    POPULAR_PLANTS.forEach(p => {
+      const plant = PLANTS.find(pl =>
+        (pl.botanical || '').toLowerCase() === p.botanical.toLowerCase() ||
+        (pl.botanical || '').toLowerCase().startsWith(p.botanical.toLowerCase())
+      );
+      const thumb = getThumb(p);
+      const item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'popular-item';
+      item.innerHTML = `
+        ${thumb ? `<img src="${thumb}" class="popular-thumb" alt="${p.common}" loading="lazy" />` : '<div class="popular-thumb" style="display:flex;align-items:center;justify-content:center;font-size:1.4rem;">🌿</div>'}
+        <span class="popular-name">${p.common}</span>
+      `;
+      item.addEventListener('click', () => {
+        if (plant) {
+          displayPlantResult(plant, 'exact');
+          hidePreview();
+          searchBar.value = plant.botanical;
+        } else {
+          statusMsg.textContent = 'Plant not found in database.';
+        }
+      });
+      grid.appendChild(item);
+    });
+  }
+
+  // ── Browse all plants ──────────────────────────────────────
+  function initBrowseAll() {
+    const toggle = $('browse-toggle');
+    const list = $('browse-list');
+    if (!toggle || !list) return;
+
+    // Build alphabetical list
+    const sorted = [...PLANTS].sort((a, b) =>
+      (a.botanical || '').localeCompare(b.botanical || '')
+    );
+    list.innerHTML = sorted.map(p => {
+      const thumb = getThumb(p);
+      return `<button type="button" class="browse-item" data-bot="${p.botanical}">
+        ${thumb ? `<img src="${thumb}" style="width:18px;height:18px;object-fit:cover;border-radius:3px;vertical-align:middle;margin-right:4px;" />` : ''}
+        ${p.botanical}${p.common && p.common !== p.botanical ? ' – ' + p.common : ''}
+      </button>`;
+    }).join('');
+
+    toggle.addEventListener('click', () => {
+      const isHidden = list.classList.toggle('hidden');
+      toggle.innerHTML = isHidden ? '📋 Browse all plants ▾' : '📋 Browse all plants ▴';
+    });
+
+    list.addEventListener('click', e => {
+      const btn = e.target.closest('.browse-item');
+      if (!btn) return;
+      const bot = btn.dataset.bot;
+      const plant = PLANTS.find(p => p.botanical === bot);
+      if (plant) {
+        displayPlantResult(plant, 'exact');
+        hidePreview();
+        searchBar.value = plant.botanical;
+      }
+    });
+  }
+
+  initPopularPlants();
+  initBrowseAll();
 
   function hidePreview() {
     if (previewImg) previewImg.classList.add('hidden');
@@ -766,8 +877,17 @@
     }
     searchResults.innerHTML = visibleSearchItems.map((item, index) => {
       if (currentTab === 'plant') {
-        const label = item.botanical + (item.common ? ' (' + item.common + ')' : '');
-        return `<button type="button" class="search-item" data-result-index="${index}">${label}</button>`;
+        const thumb = getThumb(item);
+        const thumbHtml = thumb
+          ? `<img src="${thumb}" class="search-thumb" alt="" loading="lazy" />`
+          : `<div class="search-thumb" style="display:flex;align-items:center;justify-content:center;font-size:0.9rem;background:#e8f5f5;color:var(--teal);">🌿</div>`;
+        return `<button type="button" class="search-item" data-result-index="${index}">
+          ${thumbHtml}
+          <span class="search-item-text">
+            <span class="search-item-name">${item.botanical}</span>
+            ${item.common ? `<span class="search-item-common">${item.common}</span>` : ''}
+          </span>
+        </button>`;
       } else {
         return `<button type="button" class="search-item" data-result-index="${index}">${item.name} <span class="sev-tag ${item.severity === 'High' ? 'sev-high' : 'sev-med'}">${item.severity}</span></button>`;
       }
