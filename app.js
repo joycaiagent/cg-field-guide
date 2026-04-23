@@ -16,7 +16,7 @@
     'cordyline':     'assets/plants/cordyline_australis_red_star_2.jpg',
     'dianella':      'assets/plants/dianella_revoluta_little_rev_00.jpg',
     'dietes':        'assets/plants/dietes_00.jpg',
-    'lantana':       'assets/plants/lantana_confetti.jpg',
+    'lantana':       'assets/plants/lantana_montevidensis_purple_00.jpg',
     'lavandula':     'assets/plants/lavandula_dentata_00.jpg',
     'lomandra':      'assets/plants/lomandra_longifolia_breeze_1.jpg',
     'miscanthus':    'assets/plants/miscanthus_sinensis.jpg',
