@@ -800,7 +800,11 @@
     }
     pestResultCard.classList.remove('hidden');
     const severityClass = pest.severity === 'High' ? 'sev-high' : pest.severity === 'Medium' ? 'sev-med' : 'sev-low';
+    const pestImageHtml = pest.image
+      ? `<img src="${pest.image}" alt="${pest.name}" class="pest-detail-img" style="max-width:100%;border-radius:8px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.15);"> `
+      : '';
     pestResultBody.innerHTML = `
+      ${pestImageHtml}
       <h2 class="plant-name">${pest.name}</h2>
       <div class="sev-badge ${severityClass}">Severity: ${pest.severity}</div>
       <h3>Plants Affected</h3>
