@@ -72,6 +72,7 @@
   const plantTab   = $('plant-tab');
   const pestTab    = $('pest-tab');
   const searchBar  = $('search-bar');
+  const searchClear = $('search-clear');
   const searchResults = $('search-results');
   const offlineBanner = $('offline-banner');
   const previewImg  = $('preview-img');
@@ -110,6 +111,8 @@
       ? '🔍 Search plants by name…'
       : '🔍 Search pests…';
     clearResults();
+    searchBar.value = '';
+    if (searchClear) searchClear.classList.add('hidden');
   }
 
   // ── Popular plants grid ────────────────────────────────────
@@ -771,6 +774,7 @@
   if (searchBar) {
     searchBar.addEventListener('input', e => {
       const q = e.target.value.trim();
+      if (searchClear) searchClear.classList.toggle('hidden', !q);
       if (!q) {
         if (searchResults) searchResults.classList.add('hidden');
         return;
@@ -803,6 +807,16 @@
           }
         }
       }
+    });
+  }
+
+  // ── Search clear button ────────────────────────────────────
+  if (searchClear) {
+    searchClear.addEventListener('click', () => {
+      searchBar.value = '';
+      searchClear.classList.add('hidden');
+      hideSearchResults();
+      searchBar.focus();
     });
   }
 

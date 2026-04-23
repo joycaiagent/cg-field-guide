@@ -30,16 +30,19 @@
 
   <!-- Search bar (sticky) -->
   <div class="search-section">
-    <input
-      id="search-bar"
-      class="search-input"
-      type="search"
-      placeholder="🔍 Search plants by name…"
-      autocomplete="off"
-      autocorrect="off"
-      autocapitalize="off"
-      spellcheck="false"
-    />
+    <div class="search-wrap">
+      <input
+        id="search-bar"
+        class="search-input"
+        type="search"
+        placeholder="🔍 Search plants by name…"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+      />
+      <button type="button" id="search-clear" class="search-clear hidden" aria-label="Clear search">✕</button>
+    </div>
     <div id="search-results" class="hidden"></div>
   </div>
 
