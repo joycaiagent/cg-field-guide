@@ -414,8 +414,6 @@
         ? 'No plant detected. Try including leaves, flowers, or bark in the photo.'
         : "This plant isn't in the CG Landscape pruning guide. Ask your supervisor.";
       statusMsg.textContent = '';
-      const _ts = document.getElementById('test-status');
-      if (_ts) _ts.textContent = 'Step 1: removing hidden from result-card…';
       resultCard.classList.remove('hidden');
       resultBody.innerHTML = `
         <p class="no-match" style="color:var(--teal);font-weight:600;">Not in our 87-plant database</p>

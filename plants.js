@@ -4310,5 +4310,80 @@ const PLANTS = [
       "nov": "■",
       "dec": "△"
     }
+  },
+  {
+    "botanical": "Hebe 'Evening Glow'",
+    "common": "Evening Glow Hebe",
+    "synonyms": ["hebe"],
+    "images": [],
+    "size": "2–3′",
+    "target": "Light shaping as needed",
+    "aggression": "Light",
+    "type": "Year",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "■",
+      "feb": "■",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "■",
+      "jul": "■",
+      "aug": "■",
+      "sep": "■",
+      "oct": "■",
+      "nov": "■",
+      "dec": "■"
+    }
+  },
+  {
+    "botanical": "Bougainvillea spectabilis 'Rafflesia'",
+    "common": "Bougainvillea Rafflesia",
+    "synonyms": ["bougainvillea", "rafflesia"],
+    "images": [],
+    "size": "Vining",
+    "target": "Train and prune to support",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "",
+      "sep": "",
+      "oct": "△",
+      "nov": "■",
+      "dec": ""
+    }
+  },
+  {
+    "botanical": "Calamagrostis x acutiflora 'Big Mouth'",
+    "common": "Big Mouth Feather Reed Grass",
+    "synonyms": ["calamagrostis", "big mouth", "feather reed grass"],
+    "images": [],
+    "size": "4–5′",
+    "target": "Cut to 6–12″ in late winter",
+    "aggression": "Medium",
+    "type": "Warm",
+    "fertilize": "Light feed in spring",
+    "calendar": {
+      "jan": "",
+      "feb": "",
+      "mar": "■",
+      "apr": "■",
+      "may": "■",
+      "jun": "△",
+      "jul": "△",
+      "aug": "",
+      "sep": "",
+      "oct": "△",
+      "nov": "■",
+      "dec": ""
+    }
   }
 ];
