@@ -40,6 +40,8 @@
   const addMoreRow  = $('add-more-row');
   const addMoreBtn  = $('add-more-btn');
   const identifyBtn = $('identify-btn');
+  const fileInput   = $('file-input');
+  const cameraInput = $('camera-input');
   const lightbox = $('image-lightbox');
   const lightboxImg = $('image-lightbox-img');
   const lightboxStage = $('image-lightbox-stage');
@@ -158,7 +160,7 @@
   updateOnlineStatus();
 
 
-// Add More button
+  // Add More button
   if (addMoreBtn) {
     addMoreBtn.addEventListener('click', () => {
       if (selectedPhotos.length < MAX_PHOTOS) fileInput && fileInput.click();
