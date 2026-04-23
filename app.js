@@ -158,35 +158,7 @@
   updateOnlineStatus();
 
 
-  // ── Camera / Upload ────────────────────────────────────────
-  const takePhotoBtn = $('take-photo-btn');
-  const uploadBtn   = $('upload-btn');
-  const fileInput   = $('file-input');
-  const cameraInput = $('camera-input');
-
-  // Take Photo → opens environment camera
-  if (takePhotoBtn) {
-    takePhotoBtn.addEventListener('click', () => {
-      if (selectedPhotos.length >= MAX_PHOTOS) {
-        statusMsg.textContent = `Max ${MAX_PHOTOS} photos allowed.`;
-        return;
-      }
-      if (cameraInput) cameraInput.click();
-    });
-  }
-
-  // Upload Photo → opens gallery picker
-  if (uploadBtn) {
-    uploadBtn.addEventListener('click', () => {
-      if (selectedPhotos.length >= MAX_PHOTOS) {
-        statusMsg.textContent = `Max ${MAX_PHOTOS} photos allowed.`;
-        return;
-      }
-      if (fileInput) fileInput.click();
-    });
-  }
-
-  // Add More button
+// Add More button
   if (addMoreBtn) {
     addMoreBtn.addEventListener('click', () => {
       if (selectedPhotos.length < MAX_PHOTOS) fileInput && fileInput.click();
